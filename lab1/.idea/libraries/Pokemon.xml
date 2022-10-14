@@ -5,5 +5,8 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <excluded>
+      <root url="jar://$PROJECT_DIR$/lib/Pokemon.jar!/" />
+    </excluded>
   </library>
 </component>
