@@ -1,0 +1,204 @@
+@startuml Classes Model
+
+
+enum Properties {}
+enum ObjectNature {}
+
+LocationDescription -- Properties
+abstract class LocationDescription implements Positioned, PropertiesInclude{
+    # Thing[] content
+    # int PosX
+    # int PosY
+    # int PosZ
+
+    + LocationDescription(int PosX, int PosY, int PosZ)
+
+    + Properties[] getProperties()
+    + setProperties(Properties[] properties)
+    + addProperty(Properties propertiesList)
+
+    + abstract Thing[] getContent()
+    + abstract setContent(Thing[] tings)
+
+}
+Thing -- Properties
+Thing -- ObjectNature
+abstract class Thing implements PropertiesInclude, Positioned{
+    # String name
+
+    # Properties[] properties 
+    + Thing(Properties[] properties)
+
+    + String getName()
+    + setName(String name)
+   
+    +abstract String type(ObjectNature nature)
+}
+    
+interface Positioned {
+    + getPosX
+    + getPosY
+    + getPosZ
+
+    + setPosX
+    + setPosY
+    + setPosZ
+
+}
+
+PropertiesInclude -- Properties
+interface PropertiesInclude {
+    + Properties[] getProperties()
+    + setProperties(Properties[] properties)
+    + addProperty(Properties propertiesList)
+
+}
+
+Character -- Properties
+abstract class Character extends Thing {
+    # int PosX
+    # int PosY
+    # int PosZ
+    # int Size 
+    # String name
+    # Properties[] properties 
+
+    + Character(int Size, String name)
+
+    + abstract String getName()
+    + abstract int getSize()
+    + abstract walk(int x, int y, int z)
+
+    + String type(ObjectNature nature)
+    + abstract setProperties(Properties[] properties)
+
+    + setProperties(Properties[] properties)
+    + String describe(PropertiesInclude target)
+    + String describe(Object target) 
+}
+
+
+class Puh extends Character {
+    
+    # Properties[] properties
+
+    +Puh(int Size, String name)
+
+    + String getName()
+    + int getSize()
+
+    + setPosX
+    + setPosY
+    + setPosZ
+
+    
+    + walk(int x, int y, int z)
+
+    + String tired()
+    + String sad()
+    
+    + boolean speak(Character character)
+    + pursue(Character Puh)
+
+    +setProperties(Properties[] properties)
+}                        
+
+class Pyatachok extends Character  {
+    
+    # Properties[] properties
+
+    
+
+    +Puh(int Size, String name)
+
+    + String getName()
+    + int getSize()
+    + walk(int x, int y, int z)
+
+    + setPosX
+    + setPosY
+    + setPosZ
+
+    + boolean speak(Character character)
+    + String thinking()
+
+    +setProperties(Properties[] properties)
+}    
+
+class Rabbit extends Character  {
+
+    # Properties[] properties
+
+    
+
+    +Puh(int Size, String name)
+
+    + String getName()
+    + int getSize()
+    + boolean speak(Character character)
+    + walk(int x, int y, int z)
+    
+    + setPosX
+    + setPosY
+    + setPosZ
+
+    + String think()
+    + hide(Character Rabbit)
+    
+    +setProperties(Properties[] properties)
+}  
+
+class Pit extends LocationDescription{
+
+    # Thing[] things
+    # int PosX
+    # int PosY
+    # int PosZ
+
+    +pit(PosX, PosY, PosZ)
+
+    + setPosX
+    + setPosY
+    + setPosZ
+
+    + setContent(Thing[] tings)
+    + Thing[] getContent()
+
+    + pursue(Character character)
+
+
+}
+
+
+class fog extends LocationDescription{
+    # Thing[] things
+    # int PosX
+    # int PosY
+    # int PosZ
+
+    +fog(PosX, PosY, PosZ)
+
+    + setPosX
+    + setPosY
+    + setPosZ
+
+    + setContent(Thing[] tings)
+    + Thing[] getContent()
+
+    + hide(Character character)
+
+
+}
+Sand -- ObjectNature
+
+class Sand extends Thing{
+    # String name
+
+    + setPosX
+    + setPosY
+    + setPosZ
+
+    + setName(String name)
+    + String type(ObjectNature nature)
+
+}

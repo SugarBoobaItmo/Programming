@@ -1,0 +1,168 @@
+@startuml Classes Model
+
+enum Properties
+
+abstract class Physical{
+    # DimentionalTriple  pos
+    # DimentionalTriple  size
+    + Physical(DimentionalTriple  pos, DimentionalTriple  size)
+
+    # setPos(DimentionalTriple pos)
+    + DimentionalTriple pos getPos()
+    # offsetPos(DimentionalTriple pos)
+
+    # setSize(DimentionalTriple size)
+    + DimentionalTriple size getSize()
+    # offsetSize(DimentionalTriple size)
+
+}
+
+Creature -- Properties
+abstract class Creature extends Physical implements Energed, Descriptable{
+    # Location location
+    + Creature(String name, int size, int energy, Location location)
+    # String name
+
+    + abstract String getName()
+
+    # int size
+    + int getSize()
+    + setSize(int size)
+
+    # int energy
+    + int getEnergy()
+    + setEnergy(int energy)
+
+    # Properties[] personality
+    + abstract setPoroperties(Properties[] personality)
+    + Properties[] personality getProperties()
+
+    + getPos(Location location)
+    + setPos(Location location)
+    + offset(Location location)
+    + changeLoc(Location location)
+
+    + abstract String say()
+    + abstract listen(String)
+    + abstract String describe()
+}
+
+abstract class Location extends Physical implements Descriptable{
+    # DimentionalTriple pos 
+    + Location(DimentionalTriple pos, DimentionalTriple size)
+
+    + DimentionalTriple pos getPos()
+    + setPos(DimentionalTriple pos)
+    + offset(DimentionalTriple pos)
+
+    + abstract boolean checkConsist(Physical physical)
+    + abstract String describe()
+}
+
+interface Energed{
+    + relax(int duration)
+    + work(int duration)
+    + boolean isTired()
+
+}
+
+interface Runable {
+    + run()
+}
+
+interface Descriptable {
+    + String describe()
+}
+
+Puh -- Properties
+class Puh extends Creature {
+    # Location location
+    + Puh(String name, int size, int energy, Location location)
+    # String name
+
+    # int size
+
+    # int energy
+
+    + relax(int duration)
+    + work(int duration)
+    + boolean isTired()
+
+    # Properties[] personality
+    + setPoroperties(Properties[] personality)
+
+    + changeLoc(Location location)
+
+    + String say()
+    + listen(String)
+    + String describe()
+}
+Pyatachok -- Properties
+class Pyatachok extends Creature{
+
+    # Location location
+    + Pyatachok(String name, int size, int energy, Location location)
+    # String name
+
+    # int size
+
+    # int energy
+
+    + relax(int duration)
+    + work(int duration)
+    + boolean isTired()
+
+    # Properties[] personality
+    + setPoroperties(Properties[] personality)
+
+    + changeLoc(Location location)
+
+    + String say()
+    + listen(String)
+    + String describe()
+}
+
+Rabbit -- Properties
+class Rabbit extends Creature implements Runable{
+
+    # Location location
+    + Rabbit(String name, int size, int energy, Location location)
+    # String name
+
+    # int size
+
+    # int energy
+
+    + relax(int duration)
+    + work(int duration)
+    + boolean isTired()
+
+    # Properties[] personality
+    + setPoroperties(Properties[] personality)
+
+    + changeLoc(Location location)
+
+    + String say()
+    + listen(String)
+    + String describe()
+
+    +run()
+}
+
+class Pit extends Location implements Runable{
+    # DimentionalTriple pos 
+    + Pit(DimentionalTriple pos)
+
+    + boolean checkConsist(Physical physical)
+    + String describe()
+    + run()
+}
+
+class Fog extends Location{
+    # DimentionalTriple pos 
+    + Fog(DimentionalTriple pos)
+
+    + boolean checkConsist(Physical physical)
+    + String describe()
+    
+}
