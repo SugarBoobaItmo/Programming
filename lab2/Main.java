@@ -12,10 +12,10 @@ import src.enums.Properties;
 public class Main {
     public static void main(String[] args) {
         Pit pit = new Pit(new Point(11, 10, 3), "Pit", new Point(11, 11, 11));
-        System.out.println(pit.describe());
+        System.out.println(pit.describe() + " сгенерирована");
 
         Fog fog = new Fog(new Point(0, 0, 0), "Fog", new Point(10, 11, 11));
-        System.out.println(fog.describe());
+        System.out.println(fog.describe()+ " сгенерирована");
 
         Puh bear = new Puh(new Point(0, 0, 0), "Puhi", 10, 100, new Properties[] { Properties.SCARED, Properties.SAD });
         System.out.println("На свет появился " + bear.describe());
@@ -57,7 +57,7 @@ public class Main {
                 System.out.println(bear.getName() + " поработал. Его эгергия " + bear.getEnergy());
                 System.out.println(bear.getName() + " похудел от работы и теперь его вес " + bear.getCreatureSize());
             }
-            System.out.println(bear.getName() + " истощен и не может работать");
+            System.out.println(bear.getName() + " истощен и возможно при смерти");
         } else if (pit.checkConsist(bear)) {
             bear.relax(10);
             System.out.println(bear.getName() + " отдохнул");
