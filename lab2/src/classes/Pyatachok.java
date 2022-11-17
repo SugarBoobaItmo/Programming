@@ -2,8 +2,9 @@ package src.classes;
 
 import src.abs.Creature;
 import src.enums.Properties;
+import src.interfaces.Waiting;
 
-public class Pyatachok extends Creature {
+public class Pyatachok extends Creature implements Waiting {
     public Pyatachok(Point pos, String name, int creatureSize, int energy, Properties[] personality) {
         super(pos, name, creatureSize, energy, personality);
     }
@@ -15,23 +16,27 @@ public class Pyatachok extends Creature {
 
     @Override
     public void relax(int duration) {
-        energy += duration;
+        this.setEnergy(this.getEnergy()+duration);
     }
 
     @Override
     public void work(int duration) {
-        if ((energy - duration * 3) >= 0) {
-            energy -= duration * 3;
+        if ((this.getEnergy() - duration * 3) >= 0) {
+            this.setEnergy(this.getEnergy()-duration * 3);
         } else {
-            energy = 0;
+            this.setEnergy(0);
         }
-        if (this.creatureSize > 1) {
-            this.creatureSize -= 1;
+        if (this.getCreatureSize() > 1) {
+            this.setCreatureSize(this.getCreatureSize()-1);
         }
     }
 
     @Override
     public boolean isTired() {
-        return energy < 50;
+        return this.getEnergy() < 50; 
+    }
+    @Override
+    public String waiting(int duration, Creature creature){
+        return getName() + " ждет "+ creature.getName() + " " + duration + " минут";
     }
 }

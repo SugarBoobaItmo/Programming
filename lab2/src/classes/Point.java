@@ -3,7 +3,7 @@ package src.classes;
 import java.util.Objects;
 
 public class Point {
-    public final int x, y, z;
+    private final int x, y, z;
 
     public Point(int x, int y, int z){
         this.x = x;
@@ -27,4 +27,15 @@ public class Point {
     public int hashCode() {
         return Objects.hash(this.x, this.y, this.z);
     }
+
+    public int getX(){
+        return x;
+    }
+    public int getY(){
+        return x;
+    }
+    public int getZ(){
+        return x;
+    }
+
 }

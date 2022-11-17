@@ -39,12 +39,12 @@ public abstract class Location extends Positioned implements Descriptable {
             return false;
         }
         Location otherLocation = (Location) other;
-        return this.name.equals(otherLocation.name) && this.pos.equals(otherLocation.pos);
+        return this.name.equals(otherLocation.name) && this.getPosition().equals(otherLocation.getPosition());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, pos, getClass());
+        return Objects.hash(name, this.getPosition(), getClass());
     }
 
     public abstract String describe();

@@ -2,7 +2,7 @@ package src.abs;
 import src.classes.Point;
 
 public abstract class Positioned {
-    protected Point pos;
+    private Point pos;
 
     public Positioned(Point pos){
         this.pos = pos;
@@ -12,4 +12,7 @@ public abstract class Positioned {
         return pos;
     } 
 
+    public void setPosition(Point pos){
+        this.pos = pos;
+    } 
 }

@@ -22,12 +22,17 @@ public class Main {
         Rabbit rabbit = new Rabbit(new Point(10, 9, 3), "Rabbi", 10, 100,
                 new Properties[] { Properties.CLEVER, Properties.SAD });
         System.out.println("На свет появился " + rabbit.describe());
-        Pyatachok pig = new Pyatachok(new Point(8, 10, 3), "Piggi", 5, 10,
+        Pyatachok pig = new Pyatachok(new Point(11, 10, 3), "Piggi", 5, 60,
                 new Properties[] { Properties.SCARED, Properties.SMALL, Properties.STUPID });
         System.out.println("На свет появился " + pig.describe());
 
         int x, y;
         Random random = new Random();
+        if (fog.checkConsist(rabbit)) {
+            if (!pit.checkConsist(bear)){
+                rabbit.snort();
+                System.out.println(rabbit.getName() +" фыркнул и теперь его энергия "+ rabbit.getEnergy());
+            }
         while (!pit.checkConsist(rabbit) && !rabbit.isTired()) {
             System.out.println("Этот " + rabbit.getName() + " пока не догнал яму");
             x = random.nextInt(10) - 5;
@@ -37,9 +42,9 @@ public class Main {
             y = random.nextInt(10) - 5;
             pit.run(x, y);
             System.out.println(rabbit.say());
-            if (fog.checkConsist(rabbit)) {
+            
                 rabbit.work(20);
-                System.out.println(rabbit.getName() + " поработал. Его эгергия " + rabbit.getEnergy());
+                System.out.println(rabbit.getName() + " поработал. Его энгергия " + rabbit.getEnergy());
                 System.out
                         .println(rabbit.getName() + " похудел от работы и теперь его вес " + rabbit.getCreatureSize());
             }
@@ -54,7 +59,7 @@ public class Main {
         if (fog.checkConsist(bear)) {
             while (!bear.isTired()) {
                 bear.work(15);
-                System.out.println(bear.getName() + " поработал. Его эгергия " + bear.getEnergy());
+                System.out.println(bear.getName() + " поработал. Его энгергия " + bear.getEnergy());
                 System.out.println(bear.getName() + " похудел от работы и теперь его вес " + bear.getCreatureSize());
             }
             System.out.println(bear.getName() + " истощен и возможно при смерти");
@@ -66,14 +71,18 @@ public class Main {
         if (fog.checkConsist(pig)) {
             System.out.println(pig.say());
             while (!pig.isTired()) {
-                pig.work(15);
-                System.out.println(pig.getName() + " поработал. Его эгергия " + pig.getEnergy());
+                pig.work(10);
+                System.out.println(pig.getName() + " поработал. Его энгергия " + pig.getEnergy());
                 System.out.println(pig.getName() + " похудел от работы и теперь его вес " + pig.getCreatureSize());
             }
             System.out.println(pig.getName() + " истощен и не может работать");
         } else if (pit.checkConsist(pig)) {
+            if (pit.checkConsist(rabbit)){
+                System.out.println(pig.waiting(10, rabbit));
+            }
             pig.relax(10);
             System.out.println(pig.getName() + " отдохнул");
         }
+        
     }
 }

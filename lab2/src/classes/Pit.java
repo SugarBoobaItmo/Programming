@@ -15,20 +15,20 @@ public class Pit extends Location implements Runnable {
 
     public boolean checkConsist(Positioned obj) {
 
-        boolean diapasonX = (this.getPosition2().x >= obj.getPosition().x)
-                && (obj.getPosition().x >= this.getPosition().x);
-        boolean diapasonY = (this.getPosition2().y >= obj.getPosition().y)
-                && (obj.getPosition().y >= this.getPosition().y);
-        boolean diapasonZ = (this.getPosition2().z >= obj.getPosition().z)
-                && (obj.getPosition().z >= this.getPosition().z);
+        boolean diapasonX = (this.getPosition2().getX() >= obj.getPosition().getX())
+                && (obj.getPosition().getX() >= this.getPosition().getX());
+        boolean diapasonY = (this.getPosition2().getY() >= obj.getPosition().getY())
+                && (obj.getPosition().getY() >= this.getPosition().getY());
+        boolean diapasonZ = (this.getPosition2().getY() >= obj.getPosition().getY())
+                && (obj.getPosition().getY() >= this.getPosition().getY());
 
         return diapasonX && diapasonY && diapasonZ;
     }
 
     @Override
     public void run(int x, int y) {
-        Point newPos = new Point(pos.x + x, pos.y + y, pos.z);
-        pos = newPos;
+        Point newPos = new Point(this.getPosition().getX() + x, this.getPosition().getY() + y, this.getPosition().getZ());
+        this.setPosition(newPos);
     }
 
 }

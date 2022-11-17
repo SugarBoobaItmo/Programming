@@ -13,11 +13,11 @@ public class Fog extends Location {
     }
 
     public boolean checkConsist(Positioned obj) {
-        boolean diapasonX = (this.getPosition2().x >= obj.getPosition().x)
-                && (obj.getPosition().x >= this.getPosition().x);
+        boolean diapasonX = (this.getPosition2().getX() >= obj.getPosition().getX())
+                && (obj.getPosition().getX() >= this.getPosition().getX());
 
-        boolean diapasonY = (this.getPosition2().y >= obj.getPosition().y)
-                && (obj.getPosition().y >= this.getPosition().y);
+        boolean diapasonY = (this.getPosition2().getY() >= obj.getPosition().getY())
+                && (obj.getPosition().getY() >= this.getPosition().getY());
 
         return diapasonX && diapasonY;
     }

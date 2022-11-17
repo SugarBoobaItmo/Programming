@@ -7,15 +7,17 @@ import java.util.Objects;
 import src.classes.Point;
 import src.interfaces.Descriptable;
 import src.interfaces.Energed;
+import src.interfaces.Silent;
+import src.interfaces.Standing;
+
 import java.util.Random;
 
-public abstract class Creature extends Positioned implements Energed, Descriptable {
-    // Location location;
-    protected Properties[] personality;
+public abstract class Creature extends Positioned implements Energed, Descriptable, Silent, Standing{
+    private Properties[] personality;
 
-    protected String name;
-    protected int creatureSize;
-    protected int energy;
+    private String name;
+    private int creatureSize;
+    private int energy;
 
     public Creature(Point pos, String name, int creatureSize, int energy, Properties[] personality) {
         super(pos);
@@ -23,6 +25,24 @@ public abstract class Creature extends Positioned implements Energed, Descriptab
         this.creatureSize = creatureSize;
         this.energy = energy;
         this.personality = personality;
+    }
+
+    public void setCreatureSize(int creatureSize) {
+
+        this.creatureSize = creatureSize;
+    }
+
+    public void setEnergy(int energy) {
+        this.energy = energy;
+    }
+
+    public void setProperties(Properties[] personality) {
+
+        this.personality = personality;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getCreatureSize() {
@@ -43,12 +63,23 @@ public abstract class Creature extends Positioned implements Energed, Descriptab
         return name;
 
     }
-
     @Override
     public String describe() {
         Random rand = new Random();
         Properties property = personality[rand.nextInt(personality.length)];
         return property.translation + " " + name + " и его размер " + creatureSize;
+    }
+
+    @Override
+    public String sayNothing(){
+        return "Просто молчит";
+    }
+
+    @Override
+    public String stand(){
+       
+        return "Встал";
+        
     }
 
     @Override
