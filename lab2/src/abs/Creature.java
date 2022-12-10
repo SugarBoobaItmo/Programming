@@ -12,7 +12,7 @@ import src.interfaces.Standing;
 
 import java.util.Random;
 
-public abstract class Creature extends Positioned implements Energed, Descriptable, Silent, Standing{
+public abstract class Creature extends Positioned implements Energed, Descriptable, Silent, Standing {
     private Properties[] personality;
 
     private String name;
@@ -27,21 +27,21 @@ public abstract class Creature extends Positioned implements Energed, Descriptab
         this.personality = personality;
     }
 
-    public void setCreatureSize(int creatureSize) {
+    protected void setCreatureSize(int creatureSize) {
 
         this.creatureSize = creatureSize;
     }
 
-    public void setEnergy(int energy) {
+    protected void setEnergy(int energy) {
         this.energy = energy;
     }
 
-    public void setProperties(Properties[] personality) {
+    protected void setProperties(Properties[] personality) {
 
         this.personality = personality;
     }
 
-    public void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
@@ -63,6 +63,7 @@ public abstract class Creature extends Positioned implements Energed, Descriptab
         return name;
 
     }
+
     @Override
     public String describe() {
         Random rand = new Random();
@@ -71,15 +72,15 @@ public abstract class Creature extends Positioned implements Energed, Descriptab
     }
 
     @Override
-    public String sayNothing(){
+    public String sayNothing() {
         return "Просто молчит";
     }
 
     @Override
-    public String stand(){
-       
+    public String stand() {
+
         return "Встал";
-        
+
     }
 
     @Override

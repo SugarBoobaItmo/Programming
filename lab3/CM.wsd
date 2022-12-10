@@ -22,12 +22,12 @@ abstract class Creature extends Positioned implements Energed, Silent, Standing,
     + int getCreatureSize()
     + void setEnergy(int)
     + String sayNothing()
-    + String say()  
+    + String say()
     + int getEnergy()
     + String getName()
-    + void setName() 
+    + void setName()
     + void setProperties
-    
+
 }
 
 
@@ -120,5 +120,5 @@ class Pit extends Location implements Runable{
 class Fog extends Location{
     + boolean checkConsist(Physical physical)
     + String describe()
-    
+
 }

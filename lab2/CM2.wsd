@@ -48,7 +48,7 @@ abstract class Creature extends Physical implements Energed, Descriptable{
 }
 
 abstract class Location extends Physical implements Descriptable{
-    # DimentionalTriple pos 
+    # DimentionalTriple pos
     + Location(DimentionalTriple pos, DimentionalTriple size)
 
     + DimentionalTriple pos getPos()
@@ -150,7 +150,7 @@ class Rabbit extends Creature implements Runable{
 }
 
 class Pit extends Location implements Runable{
-    # DimentionalTriple pos 
+    # DimentionalTriple pos
     + Pit(DimentionalTriple pos)
 
     + boolean checkConsist(Physical physical)
@@ -159,10 +159,10 @@ class Pit extends Location implements Runable{
 }
 
 class Fog extends Location{
-    # DimentionalTriple pos 
+    # DimentionalTriple pos
     + Fog(DimentionalTriple pos)
 
     + boolean checkConsist(Physical physical)
     + String describe()
-    
+
 }

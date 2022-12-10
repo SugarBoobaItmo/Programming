@@ -11,7 +11,8 @@ import src.interfaces.Runnable;
 
 import java.util.Random;
 
-public abstract class Creature extends Positioned implements Energed, Descriptable, Silent, Standing, Hearable, Runnable{
+public abstract class Creature extends Positioned
+        implements Energed, Descriptable, Silent, Standing, Hearable, Runnable {
     private Properties[] personality;
 
     private String name;
@@ -26,29 +27,27 @@ public abstract class Creature extends Positioned implements Energed, Descriptab
         this.personality = personality;
     }
 
-    public void setCreatureSize(int creatureSize) throws IncorrectSizeException{
-        if (creatureSize < 150){
+    protected void setCreatureSize(int creatureSize) throws IncorrectSizeException {
+        if (creatureSize < 150) {
             this.creatureSize = creatureSize;
         } else {
-            throw new IncorrectSizeException(name+" достиг максимального размера");
+            throw new IncorrectSizeException(name + " достиг максимального размера");
         }
     }
 
-    public void setEnergy(int energy) {
+    protected void setEnergy(int energy) {
         this.energy = energy;
     }
 
-    public void setProperties(Properties[] personality) {
-
+    protected void setProperties(Properties[] personality) {
         this.personality = personality;
     }
 
-    public void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
     public int getCreatureSize() {
-
         return creatureSize;
     }
 
@@ -68,7 +67,8 @@ public abstract class Creature extends Positioned implements Energed, Descriptab
 
     @Override
     public void run(int x, int y) {
-        Point newPos = new Point(this.getPosition().getX() + x, this.getPosition().getY() + y, this.getPosition().getZ());
+        Point newPos = new Point(this.getPosition().getX() + x, this.getPosition().getY() + y,
+                this.getPosition().getZ());
         this.setPosition(newPos);
     }
 
@@ -80,20 +80,20 @@ public abstract class Creature extends Positioned implements Energed, Descriptab
     }
 
     @Override
-    public String sayNothing(){
+    public String sayNothing() {
         return "Просто молчит";
     }
 
     @Override
-    public String stand(){
-       
+    public String stand() {
+
         return "Встал";
-        
+
     }
 
     @Override
-    public String hear(String obj){
-        return this.name+" услышал "+ obj; 
+    public String hear(String obj) {
+        return this.name + " услышал " + obj;
     }
 
     @Override
@@ -119,6 +119,7 @@ public abstract class Creature extends Positioned implements Energed, Descriptab
     }
 
     public abstract String say();
+
     public abstract void eat();
 
 }

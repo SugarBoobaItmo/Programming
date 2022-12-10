@@ -1,22 +1,22 @@
 package src.enums;
 
 public enum Liquids {
-        WATER("вода"), 
-        WINE("вино"),
-        BEER("пиво"),
-        KOMPOT("компот"),
-        MILKSHAKE("милкшэйк"),
-        MILK("молоко"),
-        BRAGA("брага");
+    WATER("вода"),
+    WINE("вино"),
+    BEER("пиво"),
+    KOMPOT("компот"),
+    MILKSHAKE("милкшэйк"),
+    MILK("молоко"),
+    BRAGA("брага");
 
-        private final String translation;
+    private final String translation;
 
-        Liquids(String translation) {
-            this.translation = translation;
-        }
+    Liquids(String translation) {
+        this.translation = translation;
+    }
 
-        public String getTranslation(){
-                return this.translation;
-        }
-        
+    public String getTranslation() {
+        return this.translation;
+    }
+
 }

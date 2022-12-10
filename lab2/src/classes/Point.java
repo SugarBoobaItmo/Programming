@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Point {
     private final int x, y, z;
 
-    public Point(int x, int y, int z){
+    public Point(int x, int y, int z) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -18,7 +18,7 @@ public class Point {
         }
         if (other == null || other.getClass() != this.getClass()) {
             return false;
-        } 
+        }
         Point otherPoint = (Point) other;
         return this.x == otherPoint.x && this.y == otherPoint.y && this.z == otherPoint.z;
     }
@@ -28,13 +28,15 @@ public class Point {
         return Objects.hash(this.x, this.y, this.z);
     }
 
-    public int getX(){
+    public int getX() {
         return x;
     }
-    public int getY(){
+
+    public int getY() {
         return x;
     }
-    public int getZ(){
+
+    public int getZ() {
         return x;
     }
 

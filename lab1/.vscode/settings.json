@@ -1,9 +1,4 @@
 {
-  "java.project.sourcePaths": [
-    "src"
-  ],
-  "java.project.referencedLibraries": [
-    "lib/**/*.jar",
-    "lib\\Pokemon.jar"
-  ]
+	"java.project.sourcePaths": ["src"],
+	"java.project.referencedLibraries": ["lib/**/*.jar", "lib\\Pokemon.jar"]
 }

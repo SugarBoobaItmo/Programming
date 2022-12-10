@@ -19,22 +19,21 @@ public class Ru extends Animal implements Pushable, Flipable, Explainable, Swall
         return "А я уже принял";
     }
 
-
     @Override
     public void relax(int duration) {
-        this.setEnergy(this.getEnergy()+duration+15);
+        this.setEnergy(this.getEnergy() + duration + 15);
     }
 
     @Override
     public void work(int duration) {
         if ((this.getEnergy() - duration) > 0) {
-            this.setEnergy(this.getEnergy()-duration);
+            this.setEnergy(this.getEnergy() - duration);
         } else {
             this.setEnergy(0);
         }
         try {
             if (this.getCreatureSize() > 1) {
-                this.setCreatureSize(this.getCreatureSize()-1);
+                this.setCreatureSize(this.getCreatureSize() - 1);
             }
         } catch (Exception e) {
             throw new RuntimeException("Impossible state");
@@ -43,28 +42,28 @@ public class Ru extends Animal implements Pushable, Flipable, Explainable, Swall
 
     @Override
     public boolean isTired() {
-        return this.getEnergy() < 1; 
+        return this.getEnergy() < 1;
     }
-    
-    @Override 
-    public void eat(){
-        this.setEnergy(getEnergy()+20);
+
+    @Override
+    public void eat() {
+        this.setEnergy(getEnergy() + 20);
     }
 
     @Override
     public void swallow(Liquids liquid) {
-        System.out.println("проглотил "+ liquid + "не задумываясь");
-        
+        System.out.println("проглотил " + liquid + "не задумываясь");
+
     }
 
     @Override
     public String explain(Creature creature, String info) {
-        return "объяснил "+ creature+ " "+ info;
+        return "объяснил " + creature + " " + info;
     }
 
     @Override
     public String flip(Thing thing, int quantity) {
-        return "безжалостно уронил "+thing+" в количестве "+quantity+" шт.";
+        return "безжалостно уронил " + thing + " в количестве " + quantity + " шт.";
     }
 
     @Override
@@ -72,21 +71,28 @@ public class Ru extends Animal implements Pushable, Flipable, Explainable, Swall
 
         if (obj instanceof Creature) {
             Creature creature = (Creature) obj;
-            creature.setEnergy(getEnergy()-1);
+            int x, y;
+            x = this.getPosition().getX();
+            y = this.getPosition().getY();
+            creature.run(x + 6, y + 6);
         }
-        
     }
 
     @Override
     public void throwing(Thing thing, Creature creature) {
-        if (thing.getOwner().equals(this)){
-            if (creature.getEnergy()>10){
 
-                creature.setEnergy(getEnergy()-10);
-            } else creature.setEnergy(0);
-        } else creature.setEnergy(getEnergy()-1);
-        
+        if (creature.getEnergy() < 10) {
+            int power;
+            if (thing.getOwner().equals(this)) {
+                power = 5;
+            } else {
+                power = 3;
+            }
+
+            int x, y;
+            x = this.getPosition().getX();
+            y = this.getPosition().getY();
+            creature.run(x + power, y + power);
+        }
     }
-
-
 }

@@ -15,7 +15,7 @@ public class Rest extends StatusMove {
     @Override
     protected void applySelfEffects(Pokemon p) {
         Effect.sleep(p);
-        
+
         double fullHP = p.getStat(Stat.HP);
         double hpOffset = p.getHP() - fullHP;
         p.setMod(Stat.HP, (int) hpOffset);

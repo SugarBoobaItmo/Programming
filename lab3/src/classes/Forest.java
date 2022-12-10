@@ -1,6 +1,5 @@
 package src.classes;
 
-
 import java.util.Random;
 
 import src.abs.Location;
@@ -18,8 +17,8 @@ public class Forest extends Location {
             this.trees[i] = new Tree(random.nextInt(20));
         }
     }
-    
-    public Tree[] getTrees(){
+
+    public Tree[] getTrees() {
         return trees;
     }
 
@@ -37,15 +36,16 @@ public class Forest extends Location {
         return diapasonX && diapasonY;
     }
 
-    static class Tree implements Descriptable{
+    static class Tree implements Descriptable {
         private int height;
 
-        public Tree(int height){
+        public Tree(int height) {
             this.height = height;
         }
+
         @Override
         public String describe() {
-            return "высота этого дерева "+ height;
-        } 
+            return "высота этого дерева " + height;
+        }
     }
 }

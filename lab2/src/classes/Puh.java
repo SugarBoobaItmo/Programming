@@ -16,32 +16,31 @@ public class Puh extends Creature implements Waiting {
 
     @Override
     public void relax(int duration) {
-        this.setEnergy(this.getEnergy()+duration + 1);
-        this.setCreatureSize(this.getCreatureSize()+duration);
+        this.setEnergy(this.getEnergy() + duration + 1);
+        this.setCreatureSize(this.getCreatureSize() + duration);
     }
 
     @Override
     public void work(int duration) {
         if ((this.getEnergy() - duration * 2) >= 0) {
-            this.setEnergy(this.getEnergy()-duration * 2);
+            this.setEnergy(this.getEnergy() - duration * 2);
         } else {
             this.setEnergy(0);
         }
         if (this.getCreatureSize() > 1) {
-            this.setCreatureSize(this.getCreatureSize()-1);
+            this.setCreatureSize(this.getCreatureSize() - 1);
         }
     }
 
     @Override
     public boolean isTired() {
-        return this.getEnergy() < 10; 
-        
+        return this.getEnergy() < 10;
+
     }
 
     @Override
-    public String waiting(int duration, Creature creature){
-        return getName() + " ждет "+ creature.getName() + " " + duration + " минут";
+    public String waiting(int duration, Creature creature) {
+        return getName() + " ждет " + creature.getName() + " " + duration + " минут";
     }
-    
 
 }

@@ -7,11 +7,12 @@ import src.interfaces.Descriptable;
 public class House extends Location {
 
     private String material;
-    private Door door = new Door(material);
+    private Door door;
 
     public House(Point pos, String name, Point pos2, String material) {
         super(pos, name, pos2);
         this.material = material;
+        this.door = new Door();
     }
 
     public String describe() {
@@ -28,26 +29,23 @@ public class House extends Location {
         return diapasonX && diapasonY;
     }
 
-    public String getMaterial(){
+    public String getMaterial() {
         return material;
     }
-    public Door getDoor(){
+
+    public Door getDoor() {
         return door;
     }
 
-    class Door implements Descriptable{
-        private String material;
-
-        public Door(String material){
-            this.material = material;
-        }
+    class Door implements Descriptable {
+        public Door() {}
 
         @Override
         public String describe() {
-            return "изготовлено из материала "+material;
+            return "изготовлено из материала " + material;
         }
-       
-        public String getMaterial(){
+
+        public String getMaterial() {
             return material;
         }
     }

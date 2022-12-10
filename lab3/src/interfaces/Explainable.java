@@ -1,4 +1,5 @@
 package src.interfaces;
+
 import src.abs.Creature;
 
 public interface Explainable {

@@ -27,7 +27,8 @@ public class Pit extends Location implements Runnable {
 
     @Override
     public void run(int x, int y) {
-        Point newPos = new Point(this.getPosition().getX() + x, this.getPosition().getY() + y, this.getPosition().getZ());
+        Point newPos = new Point(this.getPosition().getX() + x, this.getPosition().getY() + y,
+                this.getPosition().getZ());
         this.setPosition(newPos);
     }
 

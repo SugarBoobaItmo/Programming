@@ -14,22 +14,21 @@ public class Rabbit extends Animal implements Snortable {
         return "Теперь я знаю, где мы!";
     }
 
-
     @Override
     public void relax(int duration) {
-        this.setEnergy(this.getEnergy()+duration+10);
+        this.setEnergy(this.getEnergy() + duration + 10);
     }
 
     @Override
     public void work(int duration) {
         if ((this.getEnergy() - duration) >= 3) {
-            this.setEnergy(this.getEnergy()-duration);
+            this.setEnergy(this.getEnergy() - duration);
         } else {
             this.setEnergy(0);
         }
         try {
             if (this.getCreatureSize() > 1) {
-                this.setCreatureSize(this.getCreatureSize()-1);
+                this.setCreatureSize(this.getCreatureSize() - 1);
             }
         } catch (Exception e) {
             throw new RuntimeException("Impossible state");
@@ -38,27 +37,26 @@ public class Rabbit extends Animal implements Snortable {
 
     @Override
     public boolean isTired() {
-        return this.getEnergy() < 3; 
+        return this.getEnergy() < 3;
     }
 
-    @Override 
-    public void snort(){
-        if (this.getEnergy()-1>0){
-            this.setEnergy(getEnergy()-1);
+    @Override
+    public void snort() {
+        if (this.getEnergy() - 1 > 0) {
+            this.setEnergy(getEnergy() - 1);
         }
     }
-    
-    @Override 
-    public void eat(){
-        this.setEnergy(getEnergy()+5);
+
+    @Override
+    public void eat() {
+        this.setEnergy(getEnergy() + 5);
         try {
-            
-            this.setCreatureSize(getCreatureSize()+1);
+
+            this.setCreatureSize(getCreatureSize() + 1);
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println(this.getName()+"немного переел");
-    }
+            System.out.println(this.getName() + "немного переел");
+        }
     }
 
-    
 }

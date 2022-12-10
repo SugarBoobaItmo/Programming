@@ -26,15 +26,15 @@ Thing -- ObjectNature
 abstract class Thing implements PropertiesInclude, Positioned{
     # String name
 
-    # Properties[] properties 
+    # Properties[] properties
     + Thing(Properties[] properties)
 
     + String getName()
     + setName(String name)
-   
+
     +abstract String type(ObjectNature nature)
 }
-    
+
 interface Positioned {
     + getPosX
     + getPosY
@@ -59,9 +59,9 @@ abstract class Character extends Thing {
     # int PosX
     # int PosY
     # int PosZ
-    # int Size 
+    # int Size
     # String name
-    # Properties[] properties 
+    # Properties[] properties
 
     + Character(int Size, String name)
 
@@ -74,12 +74,12 @@ abstract class Character extends Thing {
 
     + setProperties(Properties[] properties)
     + String describe(PropertiesInclude target)
-    + String describe(Object target) 
+    + String describe(Object target)
 }
 
 
 class Puh extends Character {
-    
+
     # Properties[] properties
 
     +Puh(int Size, String name)
@@ -91,23 +91,24 @@ class Puh extends Character {
     + setPosY
     + setPosZ
 
-    
+
     + walk(int x, int y, int z)
 
     + String tired()
     + String sad()
-    
+
     + boolean speak(Character character)
     + pursue(Character Puh)
 
     +setProperties(Properties[] properties)
-}                        
+}
+
 
 class Pyatachok extends Character  {
-    
+
     # Properties[] properties
 
-    
+
 
     +Puh(int Size, String name)
 
@@ -123,13 +124,14 @@ class Pyatachok extends Character  {
     + String thinking()
 
     +setProperties(Properties[] properties)
-}    
+}
+
 
 class Rabbit extends Character  {
 
     # Properties[] properties
 
-    
+
 
     +Puh(int Size, String name)
 
@@ -137,16 +139,17 @@ class Rabbit extends Character  {
     + int getSize()
     + boolean speak(Character character)
     + walk(int x, int y, int z)
-    
+
     + setPosX
     + setPosY
     + setPosZ
 
     + String think()
     + hide(Character Rabbit)
-    
+
     +setProperties(Properties[] properties)
-}  
+}
+
 
 class Pit extends LocationDescription{
 

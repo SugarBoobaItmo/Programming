@@ -18,16 +18,15 @@ public class Kenga extends Animal implements Pourable, Explainable {
         return "М-м-м-м, я не говорю";
     }
 
-
     @Override
     public void relax(int duration) {
-        this.setEnergy(this.getEnergy()+duration+20);
+        this.setEnergy(this.getEnergy() + duration + 20);
     }
 
     @Override
     public void work(int duration) {
         if ((this.getEnergy() - duration) > 0) {
-            this.setEnergy(this.getEnergy()-duration+2);
+            this.setEnergy(this.getEnergy() - duration + 2);
         } else {
             this.setEnergy(0);
         }
@@ -36,53 +35,54 @@ public class Kenga extends Animal implements Pourable, Explainable {
 
     @Override
     public boolean isTired() {
-        return this.getEnergy() < 30; 
+        return this.getEnergy() < 30;
     }
-    
-    @Override 
-    public void eat(){
-        this.setEnergy(getEnergy()+2);
+
+    @Override
+    public void eat() {
+        this.setEnergy(getEnergy() + 2);
     }
 
     @Override
     public String explain(Creature creature, String info) {
-        return "объяснила "+ creature+ " "+ info;
+        return "объяснила " + creature + " " + info;
     }
 
     @Override
     public String pour(Liquids liquid, Thing thing) {
 
-        return "Налила "+liquid+" в "+thing.getName();
+        return "Налила " + liquid + " в " + thing.getName();
     }
 
-    public String[] cook(Meals meal){
-        class eatingDishes{
+    public String[] cook(Meals meal) {
+        class eatingDishes {
             private Meals meal;
-            private String[] dish1 = new String[]{"каша", "яйцо", "хлеб", "круасан", Liquids.MILK.getTranslation()};
-            private String[] dish2 = new String[]{"суп", "салат", "греча", "пельмени"}; 
-            private String[] dish3 = new String[]{Liquids.KOMPOT.getTranslation(), "запеканка с повидлом", "хлеб с маслом", "круасан"}; 
-            private String[] dish4 = new String[]{"макароны", Liquids.WINE.getTranslation(), "рыба"}; 
+            private String[] dish1 = new String[] { "каша", "яйцо", "хлеб", "круасан", Liquids.MILK.getTranslation() };
+            private String[] dish2 = new String[] { "суп", "салат", "греча", "пельмени" };
+            private String[] dish3 = new String[] { Liquids.KOMPOT.getTranslation(), "запеканка с повидлом",
+                    "хлеб с маслом", "круасан" };
+            private String[] dish4 = new String[] { "макароны", Liquids.WINE.getTranslation(), "рыба" };
 
-            public eatingDishes(Meals meal){
+            public eatingDishes(Meals meal) {
                 this.meal = meal;
             }
-            public String[] getDish(){
-                if (meal == Meals.BREAKFAST){
+
+            public String[] getDish() {
+                if (meal == Meals.BREAKFAST) {
                     return dish1;
-                }else if (meal == Meals.LUNCH){
+                } else if (meal == Meals.LUNCH) {
                     return dish2;
-                }else if (meal == Meals.DINNER){
+                } else if (meal == Meals.DINNER) {
                     return dish3;
-                }else if (meal == Meals.SUPPER){
+                } else if (meal == Meals.SUPPER) {
                     return dish4;
                 }
 
-                return new String[]{};
-            }   
+                return new String[] {};
+            }
         }
         eatingDishes dishes = new eatingDishes(meal);
         return dishes.getDish();
     }
-
 
 }
