@@ -1,0 +1,124 @@
+@startuml Classes Model
+
+enum Properties
+
+abstract class Positioned {
+    # Point pos
+    + Point getPosition()
+    + void setPosition()
+}
+
+Creature -- Properties
+abstract class Creature extends Positioned implements Energed, Silent, Standing, Descriptable{
+    # String name
+    # int creatureSize
+    # int energy
+    # Properties personality
+
+    + Properties[] getProperties()
+    + String stand()
+    + String describe
+    + void setCreatureSize(int)
+    + int getCreatureSize()
+    + void setEnergy(int)
+    + String sayNothing()
+    + String say()  
+    + int getEnergy()
+    + String getName()
+    + void setName() 
+    + void setProperties
+    
+}
+
+
+abstract class Location extends Positioned implements Descriptable{
+    # String name
+    # Point pos2
+    + String getName()
+    + String describe()
+    + Point getPosition2()
+    + boolean checkConsist()
+}
+
+
+
+interface Energed{
+    + relax(int duration)
+    + work(int duration)
+    + boolean isTired()
+
+}
+
+interface Runnable {
+    + void run(int, int)
+}
+
+interface Descriptable {
+    + String describe()
+}
+
+interface Silent {
+    + String sayNothing()
+}
+
+interface Standing {
+    + String stand()
+}
+
+interface Waiting {
+    + String waiting(int, Creature)
+}
+
+interface Snortable {
+    + void snort()
+}
+
+class Point {
+    # int x
+    # int Yellow
+    # int z
+    + int getX()
+    + int getY()
+    + int getZ()
+}
+
+Puh -- Properties
+class Puh extends Creature implements Waiting {
+    + void work(int)
+    + boolean isTired()
+    + String waiting(int, Creature)
+    + String say()
+    + void relax(int)
+}
+
+Pyatachok -- Properties
+class Pyatachok extends Creature implements Waiting{
+    + void work(int)
+    + boolean isTired()
+    + String waiting(int, Creature)
+    + String say()
+    + void relax(int)
+
+}
+
+Rabbit -- Properties
+class Rabbit extends Creature implements Runable, Snortable{
+    + void work(int)
+    + boolean isTired()
+    + String say()
+    + void relax(int)
+    + void run(int, int)
+    + String snort()
+}
+
+class Pit extends Location implements Runable{
+    + boolean checkConsist(Physical physical)
+    + String describe()
+    + run()
+}
+
+class Fog extends Location{
+    + boolean checkConsist(Physical physical)
+    + String describe()
+    
+}
