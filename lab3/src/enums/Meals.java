@@ -2,7 +2,7 @@ package src.enums;
 
 public enum Meals {
     BREAKFAST,
-    LUNCH, 
+    LUNCH,
     DINNER,
     SUPPER;
 }

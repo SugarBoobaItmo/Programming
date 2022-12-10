@@ -1,4 +1,5 @@
 package src.interfaces;
+
 import src.abs.Thing;
 import src.enums.Liquids;
 

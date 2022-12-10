@@ -28,26 +28,27 @@ public class House extends Location {
         return diapasonX && diapasonY;
     }
 
-    public String getMaterial(){
+    public String getMaterial() {
         return material;
     }
-    public Door getDoor(){
+
+    public Door getDoor() {
         return door;
     }
 
-    class Door implements Descriptable{
+    class Door implements Descriptable {
         private String material;
 
-        public Door(String material){
+        public Door(String material) {
             this.material = material;
         }
 
         @Override
         public String describe() {
-            return "изготовлено из материала "+material;
+            return "изготовлено из материала " + material;
         }
-       
-        public String getMaterial(){
+
+        public String getMaterial() {
             return material;
         }
     }

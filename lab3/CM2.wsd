@@ -6,8 +6,8 @@ enum Meals
 
 abstract class Positioned {
     # Point pos
-    + Point getPosition() 
-    + void setPosition() 
+    + Point getPosition()
+    + void setPosition()
 }
 
 class IncorectSize extends Exception{}
@@ -28,14 +28,14 @@ abstract class Creature extends Positioned implements Hearable, Energed, Silent,
     + int getCreatureSize()
     + void setEnergy(int)
     + String sayNothing()
-    + String say()  
+    + String say()
     + int getEnergy()
-    + String getName() 
-    + void setName() 
+    + String getName()
+    + void setName()
     + void setProperties()
     + void eat()
     + void run(int, int)
-    + String hear(String) 
+    + String hear(String)
 }
 
 abstract class Human extends Creature{}
@@ -64,17 +64,18 @@ abstract class Thing   {
 
 ' Meal -- Properties
 ' abstract class Meal implements Descriptable{
-'     # String name
-'     # int kkal
-'     # Properties[] characteristics
+    '     # String name
+    '     # int kkal
+    '     # Properties[] characteristics
 
-'     + int getKkal
-'     + String getName
-'     + Properties[] getProperties()
-' }
+    '     + int getKkal
+    '     + String getName
+    '     + Properties[] getProperties()
+    '
+}
 
 interface Pourable {
-    + String pour(Liquids, Thing) 
+    + String pour(Liquids, Thing)
 }
 
 interface Swallowable {
@@ -99,8 +100,9 @@ interface Explainable {
 }
 
 ' interface Persuadable {
-'     + String persuade(Creature)
-' }
+    '     + String persuade(Creature)
+    '
+}
 
 interface Beepable {
     + void beep()
@@ -122,7 +124,7 @@ interface Energed{
     + relax(int duration)
     + work(int duration)
     + boolean isTired()
-    
+
 }
 
 interface Runnable {
@@ -177,15 +179,17 @@ class Pyatachok extends Creature implements Waiting, Beepable{
     + String say()
     + void relax(int)
     + void beep()
-    
+
 
 
     ' hear(String sound) {
-    '     if (this.confidance) {
-    '         return "I don`t hear anythiong"
-    '     }
-    '     !return "I hear " + sound    
-    ' }
+        '     if (this.confidance) {
+            '         return "I don`t hear anythiong"
+            '
+        }
+        '     !return "I hear " + sound
+        '
+    }
 
 }
 
@@ -234,7 +238,7 @@ Kenga -- Properties
 class Kenga extends Creature implements Pourable, Explainable {
 
     + Explainable(Creature, String)
-    + String pour(Liquids, Thing) 
+    + String pour(Liquids, Thing)
     + String cook(Meals)
     + void work(int)
     + boolean isTired()
@@ -260,7 +264,7 @@ class Pit extends Location implements Runnable{
 class Fog extends Location{
     + boolean checkConsist(Physical physical)
     + String describe()
-    
+
 }
 
 class House extends Location{
@@ -286,7 +290,7 @@ class Forest extends Location {
     + Tree[] getTrees
     + boolean checkConsist(Physical physical)
     + String describe()
-    
+
 }
 
 Forest -- Tree
@@ -301,11 +305,14 @@ class Pot extends Thing implements Pushable{
     + void push(Positioned)
 
     ' push(Positoned obj) {
-    '     if (obj instanceof Pot) {
-    '         return "Bonk"
-    '     } 
-    '     return "Chponk"
-    ' }
+        '     if (obj instanceof Pot) {
+            '         return "Bonk"
+            '
+        }
+
+        '     return "Chponk"
+        '
+    }
 }
 
 class Chair extends Thing{
@@ -349,10 +356,11 @@ class Cup extends Thing{
 }
 
 ' class Water extends Meal {
-'     + int getKkal
-'     + String getName
-'     + Properties[] getProperties()
-' }
+    '     + int getKkal
+    '     + String getName
+    '     + Properties[] getProperties()
+    '
+}
 
 
 

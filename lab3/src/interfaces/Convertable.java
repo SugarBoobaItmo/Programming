@@ -1,4 +1,5 @@
 package src.interfaces;
+
 import src.enums.Properties;
 
 public interface Convertable {

@@ -10,6 +10,7 @@ import src.classes.Puh;
 import src.classes.Pyatachok;
 import src.classes.Rabbit;
 import src.enums.Properties;
+
 public class Main {
     public static void timer(Runnable action) {
         int startTime = 0;
@@ -22,10 +23,8 @@ public class Main {
         Pit pit = new Pit(new Point(11, 10, 3), "Pit", new Point(11, 11, 11));
         System.out.println(pit.describe() + " сгенерирована");
 
-        
-
         Fog fog = new Fog(new Point(0, 0, 0), "Fog", new Point(10, 11, 11));
-        System.out.println(fog.describe()+ " сгенерирована");
+        System.out.println(fog.describe() + " сгенерирована");
 
         Puh bear = new Puh(new Point(0, 0, 0), "Puhi", 10, 100, new Properties[] { Properties.SCARED, Properties.SAD });
         System.out.println("На свет появился " + bear.describe());
@@ -39,20 +38,20 @@ public class Main {
         int x, y;
         Random random = new Random();
         if (fog.checkConsist(rabbit)) {
-            if (!pit.checkConsist(bear)){
+            if (!pit.checkConsist(bear)) {
                 rabbit.snort();
-                System.out.println(rabbit.getName() +" фыркнул и теперь его энергия "+ rabbit.getEnergy());
+                System.out.println(rabbit.getName() + " фыркнул и теперь его энергия " + rabbit.getEnergy());
             }
-        while (!pit.checkConsist(rabbit) && !rabbit.isTired()) {
-            System.out.println("Этот " + rabbit.getName() + " пока не догнал яму");
-            x = random.nextInt(10) - 5;
-            y = random.nextInt(10) - 5;
-            rabbit.run(x, y);
-            x = random.nextInt(10) - 5;
-            y = random.nextInt(10) - 5;
-            pit.run(x, y);
-            System.out.println(rabbit.say());
-            
+            while (!pit.checkConsist(rabbit) && !rabbit.isTired()) {
+                System.out.println("Этот " + rabbit.getName() + " пока не догнал яму");
+                x = random.nextInt(10) - 5;
+                y = random.nextInt(10) - 5;
+                rabbit.run(x, y);
+                x = random.nextInt(10) - 5;
+                y = random.nextInt(10) - 5;
+                pit.run(x, y);
+                System.out.println(rabbit.say());
+
                 rabbit.work(20);
                 System.out.println(rabbit.getName() + " поработал. Его энгергия " + rabbit.getEnergy());
                 System.out
@@ -87,12 +86,12 @@ public class Main {
             }
             System.out.println(pig.getName() + " истощен и не может работать");
         } else if (pit.checkConsist(pig)) {
-            if (pit.checkConsist(rabbit)){
+            if (pit.checkConsist(rabbit)) {
                 System.out.println(pig.waiting(10, rabbit));
             }
             pig.relax(10);
             System.out.println(pig.getName() + " отдохнул");
         }
-        
+
     }
 }
