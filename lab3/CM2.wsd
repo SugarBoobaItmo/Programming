@@ -72,7 +72,7 @@ abstract class Thing   {
     '     + String getName
     '     + Properties[] getProperties()
     '
-}
+
 
 interface Pourable {
     + String pour(Liquids, Thing)
@@ -102,7 +102,7 @@ interface Explainable {
 ' interface Persuadable {
     '     + String persuade(Creature)
     '
-}
+
 
 interface Beepable {
     + void beep()
@@ -189,9 +189,9 @@ class Pyatachok extends Creature implements Waiting, Beepable{
         }
         '     !return "I hear " + sound
         '
-    }
+    
 
-}
+
 
 Rabbit -- Properties
 class Rabbit extends Animal implements Snortable{
@@ -312,8 +312,8 @@ class Pot extends Thing implements Pushable{
 
         '     return "Chponk"
         '
-    }
-}
+    
+
 
 class Chair extends Thing{
     # Creature owner
@@ -360,7 +360,7 @@ class Cup extends Thing{
     '     + String getName
     '     + Properties[] getProperties()
     '
-}
+
 
 
 

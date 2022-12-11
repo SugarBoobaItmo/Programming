@@ -49,7 +49,10 @@ public class Puh extends Animal implements Waiting {
     }
 
     @Override
-    public void eat() {
+    public void eat(String[] food) {
+        for (String i: food){
+            System.out.println("съел "+i);
+        }
         this.setEnergy(getEnergy() + 10);
         try {
 

@@ -7,7 +7,8 @@ public enum Liquids {
     KOMPOT("компот"),
     MILKSHAKE("милкшэйк"),
     MILK("молоко"),
-    BRAGA("брага");
+    BRAGA("брага"),
+    HONNEY("мед");
 
     private final String translation;
 

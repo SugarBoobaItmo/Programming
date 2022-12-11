@@ -46,24 +46,28 @@ public class Ru extends Animal implements Pushable, Flipable, Explainable, Swall
     }
 
     @Override
-    public void eat() {
+    public void eat(String[] food) {
+        for (String i: food){
+            System.out.println("съел "+i);
+        }
         this.setEnergy(getEnergy() + 20);
     }
 
     @Override
-    public void swallow(Liquids liquid) {
-        System.out.println("проглотил " + liquid + "не задумываясь");
+    public String swallow(Liquids liquid) {
+        this.setEnergy(getEnergy()+10);
+        return ("проглотил " + liquid + " не задумываясь");
 
     }
 
     @Override
     public String explain(Creature creature, String info) {
-        return "объяснил " + creature + " " + info;
+        return "объяснил " + creature.getName() + " " + info;
     }
 
     @Override
     public String flip(Thing thing, int quantity) {
-        return "безжалостно уронил " + thing + " в количестве " + quantity + " шт.";
+        return " безжалостно уронил " + thing + " в количестве " + quantity + " шт.";
     }
 
     @Override
@@ -75,13 +79,14 @@ public class Ru extends Animal implements Pushable, Flipable, Explainable, Swall
             x = this.getPosition().getX();
             y = this.getPosition().getY();
             creature.run(x + 6, y + 6);
+            System.out.println(this.getName()+" толкнул "+ creature.getName()+" на 6 м." );
         }
     }
 
     @Override
     public void throwing(Thing thing, Creature creature) {
 
-        if (creature.getEnergy() < 10) {
+        if (creature.getEnergy() < 80) {
             int power;
             if (thing.getOwner().equals(this)) {
                 power = 5;
@@ -93,6 +98,7 @@ public class Ru extends Animal implements Pushable, Flipable, Explainable, Swall
             x = this.getPosition().getX();
             y = this.getPosition().getY();
             creature.run(x + power, y + power);
+            System.out.println(this.getName()+" кинул "+ thing.getName() +" в "+ creature.getName()+" и тот отлетел на "+power+" м.");
         }
     }
 }

@@ -36,7 +36,7 @@ public class Forest extends Location {
         return diapasonX && diapasonY;
     }
 
-    static class Tree implements Descriptable {
+    static class Tree {
         private int height;
 
         public Tree(int height) {
@@ -44,7 +44,7 @@ public class Forest extends Location {
         }
 
         @Override
-        public String describe() {
+        public String toString() {
             return "высота этого дерева " + height;
         }
     }

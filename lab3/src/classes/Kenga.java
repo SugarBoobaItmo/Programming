@@ -1,6 +1,9 @@
 package src.classes;
 
+import java.util.Random;
+
 import src.abs.Animal;
+import src.abs.Container;
 import src.abs.Creature;
 import src.abs.Thing;
 import src.enums.Liquids;
@@ -15,7 +18,7 @@ public class Kenga extends Animal implements Pourable, Explainable {
 
     @Override
     public String say() {
-        return "М-м-м-м, я не говорю";
+        return "Выметайтесь из дома";
     }
 
     @Override
@@ -39,29 +42,39 @@ public class Kenga extends Animal implements Pourable, Explainable {
     }
 
     @Override
-    public void eat() {
+    public void eat(String[] food) {
         this.setEnergy(getEnergy() + 2);
+        for (String i: food){
+            System.out.println("съела "+i);
+        }
     }
 
     @Override
     public String explain(Creature creature, String info) {
-        return "объяснила " + creature + " " + info;
+        return "объяснила " + creature.getName() + " " + info;
     }
 
     @Override
-    public String pour(Liquids liquid, Thing thing) {
-
-        return "Налила " + liquid + " в " + thing.getName();
+    public String pour(Liquids liquid, Container container) {
+        container.setContent(liquid);
+        return " налила " + liquid + " в " + container.getName();
+    }
+    
+    @Override
+    public String describe() {
+        Random rand = new Random();
+        Properties property = this.getProperties()[rand.nextInt(this.getProperties().length)];
+        return property.translation + " " + this.getName() + " и её размер " + this.getCreatureSize();
     }
 
     public String[] cook(Meals meal) {
         class eatingDishes {
             private Meals meal;
-            private String[] dish1 = new String[] { "каша", "яйцо", "хлеб", "круасан", Liquids.MILK.getTranslation() };
-            private String[] dish2 = new String[] { "суп", "салат", "греча", "пельмени" };
-            private String[] dish3 = new String[] { Liquids.KOMPOT.getTranslation(), "запеканка с повидлом",
+            private String[] dish1 = new String[] {"яйцо", "хлеб", "круасан"};
+            private String[] dish2 = new String[] {"суп", "салат", "пельмени" };
+            private String[] dish3 = new String[] {"яблоко с корицей",
                     "хлеб с маслом", "круасан" };
-            private String[] dish4 = new String[] { "макароны", Liquids.WINE.getTranslation(), "рыба" };
+            private String[] dish4 = new String[] {"макароны", "мясо" };
 
             public eatingDishes(Meals meal) {
                 this.meal = meal;

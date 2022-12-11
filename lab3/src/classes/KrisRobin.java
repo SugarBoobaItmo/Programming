@@ -2,8 +2,9 @@ package src.classes;
 
 import src.abs.Human;
 import src.enums.Properties;
+import src.interfaces.Understandible;
 
-public class KrisRobin extends Human {
+public class KrisRobin extends Human implements Understandible{
     public KrisRobin(Point pos, String name, int creatureSize, int energy, Properties[] personality) {
         super(pos, name, creatureSize, energy, personality);
     }
@@ -36,12 +37,20 @@ public class KrisRobin extends Human {
     }
 
     @Override
+    public String understood(String info) {
+        return "понял "+ info; 
+    }
+
+    @Override
     public boolean isTired() {
         return this.getEnergy() < 1;
     }
 
     @Override
-    public void eat() {
+    public void eat(String[] food) {
+        for(String i: food){
+            System.out.println("съел "+ i);
+        }
         this.setEnergy(getEnergy() + 20);
         try {
 

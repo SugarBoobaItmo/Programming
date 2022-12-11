@@ -120,6 +120,6 @@ public abstract class Creature extends Positioned
 
     public abstract String say();
 
-    public abstract void eat();
+    public abstract void eat(String[] food);
 
 }

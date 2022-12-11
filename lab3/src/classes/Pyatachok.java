@@ -4,9 +4,10 @@ import src.abs.Animal;
 import src.abs.Creature;
 import src.enums.Properties;
 import src.interfaces.Beepable;
+import src.interfaces.Understandible;
 import src.interfaces.Waiting;
 
-public class Pyatachok extends Animal implements Waiting, Beepable {
+public class Pyatachok extends Animal implements Waiting, Beepable, Understandible {
     public Pyatachok(Point pos, String name, int creatureSize, int energy, Properties[] personality) {
         super(pos, name, creatureSize, energy, personality);
     }
@@ -59,7 +60,15 @@ public class Pyatachok extends Animal implements Waiting, Beepable {
     }
 
     @Override
-    public void eat() {
+    public String understood(String info) {
+        return "понял "+ info; 
+    }
+
+    @Override
+    public void eat(String[] food) {
+        for (String i: food){
+            System.out.println("съел "+i);
+        }
         if (confidance) {
             this.setEnergy(getEnergy() + 9);
         } else

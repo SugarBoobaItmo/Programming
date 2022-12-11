@@ -5,7 +5,14 @@ public enum Properties {
     SAD("Грустный"),
     SCARED("Испуганный"),
     CLEVER("Умный"),
-    STUPID("Глупый");
+    STUPID("Глупый"),
+    FRIENDLY("Дружественный"),
+    OBEDIENT("Послушный"),
+    KIND("Добрый"),
+    BIG("Большой"),
+    SAVING("Спасительный"),
+    BESTOFALL("Лучший из лучших"),
+    STRICT("Строгая");
 
     public final String translation;
 
@@ -13,8 +20,8 @@ public enum Properties {
         this.translation = translation;
     }
 
-    @Override
-    public String toString() {
+    
+    public String getTranslation() {
         return "Перевод на русский " + translation;
     }
 
