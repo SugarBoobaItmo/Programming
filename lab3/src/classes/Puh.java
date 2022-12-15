@@ -3,9 +3,11 @@ package src.classes;
 import src.abs.Animal;
 import src.abs.Creature;
 import src.enums.Properties;
+import src.exceptions.IncorrectSizeException;
 import src.interfaces.Waiting;
 
 public class Puh extends Animal implements Waiting {
+
     public Puh(Point pos, String name, int creatureSize, int energy, Properties[] personality) {
         super(pos, name, creatureSize, energy, personality);
     }
@@ -32,8 +34,7 @@ public class Puh extends Animal implements Waiting {
             if (this.getCreatureSize() > 1) {
                 this.setCreatureSize(this.getCreatureSize() - 1);
             }
-        } catch (Exception e) {
-            throw new RuntimeException("Impossible state");
+        } catch (IncorrectSizeException e) {
         }
     }
 
@@ -57,7 +58,7 @@ public class Puh extends Animal implements Waiting {
         try {
 
             this.setCreatureSize(getCreatureSize() + 10);
-        } catch (Exception e) {
+        } catch (IncorrectSizeException e) {
             System.out.println(e.getMessage());
             System.out.println(this.getName() + "немного переел");
         }

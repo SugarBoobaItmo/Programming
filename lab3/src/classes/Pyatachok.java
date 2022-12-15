@@ -3,6 +3,7 @@ package src.classes;
 import src.abs.Animal;
 import src.abs.Creature;
 import src.enums.Properties;
+import src.exceptions.IncorrectSizeException;
 import src.interfaces.Beepable;
 import src.interfaces.Understandible;
 import src.interfaces.Waiting;
@@ -39,8 +40,7 @@ public class Pyatachok extends Animal implements Waiting, Beepable, Understandib
             if (this.getCreatureSize() > 1) {
                 this.setCreatureSize(this.getCreatureSize() - 1);
             }
-        } catch (Exception e) {
-            throw new RuntimeException("Impossible state");
+        } catch (IncorrectSizeException e) {
         }
     }
 

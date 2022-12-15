@@ -6,16 +6,13 @@ import src.abs.*;
 
 import src.classes.*;
 import src.enums.*;
+import src.exceptions.IncorrectSizeException;
 
 public class Main {
-    public static void timer(Runnable action) {
-        int startTime = 0;
-        action.run();
-        int endTime = 10;
-        System.out.println(endTime - startTime);
-    }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IncorrectSizeException {
+        Creature.CreatureDispatcher dispatcher = new Creature.CreatureDispatcher();
+        // dispatcher.killAll();
         System.out.println("Загрузка истории ");
         System.out.println();
         House house = new House(new Point(15, 20, 3), "Kenga'sHouse", new Point(20, 25, 3), "дерево");
@@ -26,7 +23,7 @@ public class Main {
         Ru babyKang = new Ru(new Point(16, 21, 3), "KrohaRu", 5, 120,
                 new Properties[] { Properties.FRIENDLY, Properties.SMALL });
         System.out.println("На свет появился " + babyKang.describe());
-        Tigra tiger = new Tigra(new Point(16, 23, 3), "Tiger", 8, 80, new Properties[] { Properties.FRIENDLY });
+        Tigra tiger = new Tigra(new Point(16, 23, 3), "Tiger", 145, 80, new Properties[] { Properties.FRIENDLY });
         System.out.println("На свет появился " + tiger.describe());
         System.out.println();
 
@@ -38,7 +35,7 @@ public class Main {
             System.out.println(kangaroo.getName() + " успела приготовить: ");
             String[] meal = kangaroo.cook(Meals.BREAKFAST);
             for (int i = 0; i < meal.length; i++) {
-                System.out.println(i + ". " + meal[i]);
+                System.out.println(i+1 + ". " + meal[i]);
             }
             mealIsReady = true;
 
@@ -65,7 +62,6 @@ public class Main {
 
         System.out.println(kangaroo.getName() + " : " + kangaroo.say());
         System.out.println();
-
         babyKang.setPosition(forest.getPosition());
         System.out.println(babyKang.getName() + " ушел в " + forest.getName());
 
@@ -92,9 +88,9 @@ public class Main {
 
                 tiger.setPosition(house.getPosition());
                 System.out.println(tiger.getName() + " ушел в " + house.getName());
-                System.out.println(tiger.getName() + " забыл " + basket + " на координатах x: "
-                        + cone.getPosition().getX() + " y: " + cone.getPosition().getY()+" под деревом");
-                System.out.println(forest.getTrees()[0]);
+                Forest.Tree tree = forest.new Tree(random.nextInt(10));
+                System.out.println(tiger.getName() + " забыл " + basket + " под деревом, "+ tree);
+                tree.getCoordinates();
                 break;
             } else {
                 System.out.println("нет шишек");
@@ -118,6 +114,7 @@ public class Main {
             }
             ;
         }
+        // dispatcher.killAll();
 
         System.out.println();
 
@@ -127,13 +124,13 @@ public class Main {
         // kangaroo.cook(Meals.DINNER);
         if (random.nextInt(2) == 0) {
             System.out.println(
-                    boy.getName() + " внезапно появился в локации " + house.getName() + ", открыв " + house.getDoor());
+                    boy.getName() + " внезапно появился в локации " + house.getName());
             boy.setPosition(house.getPosition());
 
             System.out.println(tiger.getName() + " уселся есть");
             tiger.eat(kangaroo.cook(Meals.DINNER));
 
-            System.out.println();
+            // System.out.println();
             System.out
                     .println(babyKang.getName() + " " + babyKang.explain(tiger, "что не так с его бисквитным Кашлем"));
             System.out.println(tiger.getName() + " " + tiger.explain(babyKang, "что-то интересное"));
@@ -180,6 +177,7 @@ public class Main {
         System.out.println("На свет появился " + bear.describe());
         Rabbit rabbit = new Rabbit(new Point(10, 9, 3), "Rabbi", 10, 100,
                 new Properties[] { Properties.CLEVER, Properties.SAD });
+        
         System.out.println("На свет появился " + rabbit.describe());
         Pyatachok pig = new Pyatachok(new Point(11, 10, 3), "Piggi", 5, 60,
                 new Properties[] { Properties.SCARED, Properties.SMALL, Properties.STUPID });
@@ -274,7 +272,7 @@ public class Main {
                 System.out.println(boy.getName()+" нашел "+pig.getName());
                 
             } else System.out.println(boy.getName()+" не нашел "+pig.getName());
-
+            
             System.out.println();
             tiger.setPosition(forest.getPosition());
             for (int i=0; i<random.nextInt(4); i++) {
@@ -317,16 +315,22 @@ public class Main {
                     
                 };
 
-                System.out.println(rabbit.getName()+" "+rabbit.hear(voice.getName()));
+                System.out.println(rabbit.hear(voice.getName()));
                 rabbit.setPosition(voice.getPosition());
                 System.out.println(rabbit.getName()+" побежал на голос");
 
                 tiger.convert(new Properties[]{Properties.KIND, Properties.BIG, Properties.SAVING, Properties.BESTOFALL});
 
                 System.out.println(rabbit.getName()+" настолько обрадовался видеть "+ tiger.getName()+ " что теперь тот: ");
-                for (Properties i: tiger.getProperties()){
-                    System.out.print(i+", ");
+                for (int i= 0; i<tiger.getProperties().length; i++){
+                    if (i!=tiger.getProperties().length-1){
+
+                        System.out.print(tiger.getProperties()[i]+", ");
+                    } else System.out.print(tiger.getProperties()[i]);
+
                 }
+                
+                System.out.println();
 
             }
             
@@ -334,5 +338,7 @@ public class Main {
             System.out.println(boy.getName()+" не дошел до "+ house.getName()+" поэтому герои "+ pig.getName()+", "+ bear.getName()+", "+ rabbit.getName()+" потерялись навсегда");
             
         }
+        System.out.println();
+        dispatcher.showAllCreatures();
     }
 }

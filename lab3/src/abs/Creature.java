@@ -1,6 +1,7 @@
 package src.abs;
 
 import src.enums.Properties;
+import src.exceptions.DeadCharactersException;
 import src.exceptions.IncorrectSizeException;
 
 import java.util.Objects;
@@ -25,6 +26,7 @@ public abstract class Creature extends Positioned
         this.creatureSize = creatureSize;
         this.energy = energy;
         this.personality = personality;
+        CreatureDispatcher.registerCreature(this);
     }
 
     protected void setCreatureSize(int creatureSize) throws IncorrectSizeException {
@@ -122,4 +124,43 @@ public abstract class Creature extends Positioned
 
     public abstract void eat(String[] food);
 
+    private void die(){
+        this.setPosition(null);
+        this.name = "Dead"+this.getName();
+        this.creatureSize = 0;
+        this.energy = 0;
+        this.personality = null; 
+        
+    } 
+
+    public static class CreatureDispatcher{
+        static private Creature[] creatures = new Creature[]{};
+
+        public static void registerCreature(Creature obj){
+            Creature[] b = new Creature[creatures.length+1];
+
+            for (int i=0; i<creatures.length;i++){
+                b[i] = creatures[i];
+            }
+            b[creatures.length] = obj;
+            creatures = b;
+        }
+
+        public static void showAllCreatures(){
+            System.out.println("Данные герои приняли участие в истории: ");
+            for (int i=0; i<creatures.length; i++){
+                System.out.println(i+1+")"+" "+creatures[i].getName());
+            }
+        }
+        public static void killAll(){
+            for (int i = 0; i<creatures.length;i++){
+                creatures[i].die();
+            }
+            if (creatures.length>0){
+
+                throw new DeadCharactersException("К сожалению игра с  мертвыми карается законом");
+            } else System.out.println("А некого убивать");
+
+        }
+    }
 }

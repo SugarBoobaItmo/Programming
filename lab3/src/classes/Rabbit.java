@@ -2,6 +2,7 @@ package src.classes;
 
 import src.abs.Animal;
 import src.enums.Properties;
+import src.exceptions.IncorrectSizeException;
 import src.interfaces.Snortable;
 
 public class Rabbit extends Animal implements Snortable {
@@ -30,8 +31,8 @@ public class Rabbit extends Animal implements Snortable {
             if (this.getCreatureSize() > 1) {
                 this.setCreatureSize(this.getCreatureSize() - 1);
             }
-        } catch (Exception e) {
-            throw new RuntimeException("Impossible state");
+        } catch (IncorrectSizeException e) {
+            // throw new RuntimeException("Impossible state");
         }
     }
 
@@ -49,16 +50,16 @@ public class Rabbit extends Animal implements Snortable {
 
     @Override
     public void eat(String[] food) {
-        for (String i: food){
-            System.out.println("съел "+i);
+        for (String i : food) {
+            System.out.println("съел " + i);
         }
         this.setEnergy(getEnergy() + 5);
         try {
 
             this.setCreatureSize(getCreatureSize() + 1);
-        } catch (Exception e) {
+        } catch (IncorrectSizeException e) {
             System.out.println(e.getMessage());
-            System.out.println(this.getName() + "немного переел");
+            System.out.println(this.getName() + " немного переел");
         }
     }
 

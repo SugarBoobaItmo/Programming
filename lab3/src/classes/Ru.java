@@ -6,6 +6,7 @@ import src.abs.Positioned;
 import src.abs.Thing;
 import src.enums.Liquids;
 import src.enums.Properties;
+import src.exceptions.IncorrectSizeException;
 import src.interfaces.*;
 import src.interfaces.Throwable;
 
@@ -35,8 +36,8 @@ public class Ru extends Animal implements Pushable, Flipable, Explainable, Swall
             if (this.getCreatureSize() > 1) {
                 this.setCreatureSize(this.getCreatureSize() - 1);
             }
-        } catch (Exception e) {
-            throw new RuntimeException("Impossible state");
+        } catch (IncorrectSizeException e) {
+
         }
     }
 

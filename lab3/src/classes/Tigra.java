@@ -2,6 +2,7 @@ package src.classes;
 
 import src.enums.Properties;
 import src.exceptions.IncorrectSituationException;
+import src.exceptions.IncorrectSizeException;
 import src.abs.Animal;
 import src.abs.Creature;
 import src.abs.Positioned;
@@ -27,7 +28,7 @@ public class Tigra extends Animal
     }
 
     @Override
-    public void work(int duration) {
+    public void work(int duration) throws IncorrectSizeException{
         if ((this.getEnergy() - duration) > 0) {
             this.setEnergy(this.getEnergy() - duration);
         } else {
@@ -37,13 +38,13 @@ public class Tigra extends Animal
             if (this.getCreatureSize() > 10) {
                 this.setCreatureSize(this.getCreatureSize() - 10);
             }
-        } catch (Exception e) {
-            throw new RuntimeException("Impossible state");
+        } catch (IncorrectSizeException e) {
+
         }
     }
 
     @Override
-    public boolean isTired() throws IncorrectSituationException {
+    public boolean isTired(){
         if (getEnergy() < 1) {
             return true;
         }
@@ -52,11 +53,18 @@ public class Tigra extends Animal
     }
 
     @Override
-    public void eat(String[] food) {
+    public void eat(String[] food){
         for (String i: food){
             System.out.println("съел "+i);
         }
         this.setEnergy(getEnergy() + 5);
+        try {
+
+            this.setCreatureSize(getCreatureSize()+5);
+        } catch (IncorrectSizeException e){
+            System.out.println(e.getMessage());
+            System.out.println(this.getName() + " немного переел");
+        }
     }
 
     @Override
