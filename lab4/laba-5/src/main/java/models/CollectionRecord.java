@@ -1,33 +1,35 @@
 package models;
 
 import java.time.ZonedDateTime;
+import java.util.Comparator;
 import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "StudyGroups")
 public class CollectionRecord {
-    private LinkedHashSet<StudyGroup> collection;
+    private TreeMap<Integer ,StudyGroup> collection;
     private CollectionInfo info;
 
-    public CollectionRecord(LinkedHashSet<StudyGroup> collection, CollectionInfo info) {
+    public CollectionRecord(TreeMap<Integer, StudyGroup> collection, CollectionInfo info) {
         this.collection = collection;
         this.info = info;
+        
     };
 
     
     public CollectionRecord() {
-        this.collection = new LinkedHashSet<StudyGroup>();
+        this.collection = new TreeMap<Integer ,StudyGroup>();
         this.info = new CollectionInfo(null, null);
     }
     
-    @XmlElement(name = "StudyGroup")
-    public LinkedHashSet<StudyGroup> getCollection() {
+    public TreeMap<Integer, StudyGroup> getCollection() {
         return this.collection;
     }
     
-    @XmlElement
     public CollectionInfo getInfo() {
         return this.info;
     }

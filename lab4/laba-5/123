@@ -1,0 +1,13 @@
+help
+info
+history
+info
+execute_script 123
+clear
+save
+cede 232
+insert execute_script
+insert 1
+
+save
+

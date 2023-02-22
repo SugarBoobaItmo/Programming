@@ -1,28 +1,46 @@
 package models;
 
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 
 import javax.xml.bind.annotation.XmlElement;
 
 public class CollectionInfo {
-    public final ZonedDateTime creationTime;
+    public final LocalDateTime creationTime;
     public final String owner;
-
+    public String filePath;
     
-    public CollectionInfo(ZonedDateTime creationTime, String owner) {
+    public CollectionInfo(LocalDateTime creationTime, String owner) {
 
         this.creationTime = creationTime;
         this.owner = owner;
 
-
     }
 
-    public ZonedDateTime getCreationTime() {
+    public LocalDateTime getCreationTime() {
         return creationTime;
     }
 
     
     public String getOwner() {
         return owner;
+    }
+
+    public String[] deserialize() {
+        return null;       
+
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+    
+    @Override
+    public String toString() {
+        return "CollectionInfo : creationTime=" + creationTime + ", owner=" + owner;
     }
 }

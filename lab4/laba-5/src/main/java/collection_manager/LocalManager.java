@@ -1,77 +1,94 @@
 package collection_manager;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.Inet4Address;
+import java.net.UnknownHostException;
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
+import java.util.ArrayList;
 import java.util.LinkedHashSet;
+import java.util.TreeMap;
 
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-
+import csvutils.CsvUtils;
 import models.CollectionRecord;
 import models.StudyGroup;
-import xmlutils.XmlUtils;
 
 
 public class LocalManager extends AbstractManager {
-    private String filePath;
+    
+
+    public LocalManager() {
+        super();
+
+        String owner;
+        try {
+            owner = Inet4Address.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            owner = "Unknown";
+        }
+
+        this.collectionRecord = new CollectionRecord(
+            new TreeMap<Integer, StudyGroup>(), 
+            new models.CollectionInfo(LocalDateTime.now(), owner)
+            );  
+        this.collectionRecord.getInfo().setFilePath("file.csv");
+
+    }
 
     public LocalManager(String filePath) {
-        this.filePath = filePath;    
+        
+        collectionRecord = CsvUtils.csvToRecord(filePath);
+        collectionRecord.getInfo().setFilePath(filePath);
+   
     }
 
     @Override
-    public void load() {
-        
-            XmlUtils.recordToXml(collectionRecord, filePath);
-            System.out.println("Collection loaded");
-            // collectionRecord = XmlUtils.xmlToRecord(filePath);
-            
-        
-      
-        
-    }
+    public void add(Integer index, StudyGroup group) {
 
-    @Override
-
-    @XmlElement(name = "StudyGroup")
-    public void add(StudyGroup group) {
-        // System.out.println(group);
-         
-        collectionRecord = new CollectionRecord(new LinkedHashSet<StudyGroup>(), new models.CollectionInfo(ZonedDateTime.now(), filePath));
-        collectionRecord.getCollection().add(group);
-        
-        // TODO Auto-generated method stub
+        collectionRecord.getCollection().put(index, group);
         
     }
 
     @Override
-    public void update() {
-        // TODO Auto-generated method stub
+    public void insert(int index, StudyGroup group) {
+        collectionRecord.getCollection().put(index, group);
         
     }
 
     @Override
-    public void removeById() {
-        // TODO Auto-generated method stub
-        
+    public void update(int index, StudyGroup group) {
+        collectionRecord.getCollection().put(index, group);
+   
+    }
+
+    @Override
+    public void removeGreater(StudyGroup greater_group) {
+        ArrayList<Integer> keys = new ArrayList<Integer>();
+        collectionRecord.getCollection().forEach((k, v) -> {if(v.compareTo(greater_group) > 0) keys.add(k);});
+        collectionRecord.getCollection().keySet().removeAll(keys);
     }
 
     @Override
     public void clear() {
-        // TODO Auto-generated method stub
+
+        collectionRecord.getCollection().clear();
         
     }
 
     @Override
-    public void addIfMax() {
-        // TODO Auto-generated method stub
-        
+    public void removeLower(StudyGroup lower_group) {
+        ArrayList<Integer> keys = new ArrayList<Integer>();
+        collectionRecord.getCollection().forEach((k, v) -> {if(v.compareTo(lower_group) < 0) keys.add(k);});
+        collectionRecord.getCollection().keySet().removeAll(keys);
     }
 
     @Override
-    public void removeGreater() {
-        // TODO Auto-generated method stub
-        
+    public void removeKey(int key) {
+        if (collectionRecord.getCollection().containsKey(key))
+        collectionRecord.getCollection().remove(key);
+        else System.out.println("No such key");
     }
+
+
 }
