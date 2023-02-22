@@ -4,5 +4,5 @@ public enum Meals {
     BREAKFAST,
     LUNCH,
     DINNER,
-    SUPPER;
+    SUPPER
 }

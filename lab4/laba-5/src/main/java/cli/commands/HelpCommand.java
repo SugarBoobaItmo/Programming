@@ -1,15 +1,18 @@
 package cli.commands;
 
+import java.util.List;
 
-public class HelpCommand extends AbstractCommand{
+public class HelpCommand extends AbstractCommand {
     public HelpCommand() {
         super("help", "Write commands info");
     }
 
     @Override
-    public void execute(String[] inlineParams) {
-        // TODO Auto-generated method stub
-        
+    public void execute(List<String> inlineParams) {
+        for (String i : inlineParams) {
+            System.out.println(i);
+        }
+
     }
 
 }

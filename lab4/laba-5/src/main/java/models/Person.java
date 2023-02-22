@@ -1,27 +1,19 @@
 package models;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlType;
-
-import java.util.Date;
+import java.time.LocalDateTime;
 
 // @XmlRootElement(name = "Person")
-@XmlType(propOrder = { "name", "birthday", "height", "weight", "passportID" })
-public class Person {
-    private String name; // Поле не может быть null, Строка не может быть пустой
-    private Date birthday; // Поле не может быть null
-    private int height; // Значение поля должно быть больше 0
-    private long weight; // Значение поля должно быть больше 0
-    private String passportID; // Значение этого поля должно быть уникальным, Длина строки должна быть не
-                               // меньше 5, Длина строки не должна быть больше 20, Поле может быть null
+public class Person implements Comparable<Person>{
+    private String name; //Поле не может быть null, Строка не может быть пустой
+    private LocalDateTime birthday; //Поле может быть null
+    private String passportID; //Длина строки не должна быть больше 24, Поле не может быть null
+    private Color hairColor; //Поле не может быть null
 
-    public Person(String name, Date birthday, int height, long weight, String passportID) {
+    public Person(String name, LocalDateTime birthday, String passportID, Color hairColor) {
         this.name = name;
         this.birthday = birthday;
-        this.height = height;
-        this.weight = weight;
         this.passportID = passportID;
-
+        this.hairColor = hairColor;
 
     }
 
@@ -29,9 +21,8 @@ public class Person {
     public Person() {
         this.name = null;
         this.birthday = null;
-        this.height = 0;
-        this.weight = 0;
         this.passportID = null;
+        this.hairColor = null;
 
     }
 
@@ -39,56 +30,61 @@ public class Person {
         return name;
     }
 
-    public java.util.Date getBirthday() {
+    public LocalDateTime getBirthday() {
         return birthday;
     }
-    
-    public int getHeight() {
-        return height;
-    }
-    
-    public long getWeight() {
-        return weight;
-    }
-    
+        
     public String getPassportID() {
         return passportID;
     }
 
-    @XmlElement    
+    
+    public Color getHairColor() {
+        return hairColor;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
-    @XmlElement
-    public void setBirthday(Date birthday) {
+
+    public void setBirthday(LocalDateTime birthday) {
         this.birthday = birthday;
     }
 
-    @XmlElement
-    public void setHeight(int height) {
-        this.height = height;
-    }
 
-    @XmlElement
-    public void setWeight(long weight) {
-        this.weight = weight;
-    }
-
-    @XmlElement
+    
+    
     public void setPassportID(String passportID) {
         this.passportID = passportID;
     }
+    
+    public void setHairColor(Color hairColor) {
+        this.hairColor = hairColor;    }
 
     @Override
     public String toString() {
-        return "Person{" +
+        return 
                 "name='" + name + '\'' +
                 ", birthday=" + birthday +
-                ", height=" + height +
-                ", weight=" + weight +
                 ", passportID='" + passportID + '\'' +
-                '}';
+                ", hairColor=" + hairColor.getColor();
+    }
+
+    @Override
+    public int compareTo(Person groupAdmin) {
+        int comparingResult = this.name.compareTo(groupAdmin.name);
+        if (comparingResult==0) {
+            if (this.birthday==null){
+                if (groupAdmin.birthday==null) comparingResult = 0;
+                else comparingResult = -1;
+            }
+                else comparingResult = this.birthday.compareTo(groupAdmin.birthday);
+        }
+        if (comparingResult==0) comparingResult = this.passportID.compareTo(groupAdmin.passportID);
+        if (comparingResult==0) comparingResult = this.hairColor.compareTo(groupAdmin.hairColor);
+
+        return comparingResult;
     }
 
 }

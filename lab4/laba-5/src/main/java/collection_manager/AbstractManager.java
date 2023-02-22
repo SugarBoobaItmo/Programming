@@ -2,6 +2,7 @@ package collection_manager;
 
 
 import java.util.LinkedHashSet;
+import java.util.TreeMap;
 
 import models.CollectionInfo;
 import models.CollectionRecord;
@@ -15,19 +16,20 @@ public abstract class AbstractManager {
         return this.collectionRecord.getInfo();
     }
 
-    public LinkedHashSet<StudyGroup> getCollection() {
+    public TreeMap<Integer, StudyGroup> getCollection() {
         return this.collectionRecord.getCollection();
     }
 
-    public abstract void load();
-    public abstract void add(StudyGroup group);
-    public abstract void update();
-    public abstract void removeById();
-    public abstract void clear();
-    public abstract void addIfMax();
-    public abstract void removeGreater();
+    public CollectionRecord getCollectionRecord(){
+        return this.collectionRecord;
+    }
 
-    // filter_starts_with_name
-    // filter_contains_name
-    // print_sorted_students_count
+    public abstract void add(Integer index, StudyGroup group);
+    public abstract void update(int index, StudyGroup group);
+    public abstract void removeGreater(StudyGroup greaterGroup);
+    public abstract void clear();
+    public abstract void removeLower(StudyGroup lowerGroup);
+    public abstract void removeKey(int key);
+    public abstract void insert(int index, StudyGroup group);
+
 }
