@@ -1,9 +1,7 @@
 package models;
 
 import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 
-import javax.xml.bind.annotation.XmlElement;
 
 public class CollectionInfo {
     public final LocalDateTime creationTime;

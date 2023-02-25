@@ -1,12 +1,7 @@
 package models;
 
-import java.time.ZonedDateTime;
-import java.util.Comparator;
-import java.util.LinkedHashSet;
-import java.util.Map;
 import java.util.TreeMap;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "StudyGroups")

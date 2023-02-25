@@ -1,42 +1,36 @@
 package cli.commands;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
 
-import cli.commands.checker.Checker;
+import cli.commands.checker.Checkers;
+import cli.commands.exceptions.ExecuteError;
+import cli.interfaces.LineReader;
+import cli.interfaces.LineWriter;
 import collection_manager.AbstractManager;
-import models.Semester;
-import models.Color;
 
 import models.StudyGroup;
 
 public class InsertCommand extends ElementCommand {
 
-    public InsertCommand(String name, String description, AbstractManager manager) {
-        super(name, description, manager);
+    public InsertCommand(AbstractManager manager) {
+        super("Insert", "Insert element to collection", manager);
     }
 
     @Override
-    public void execute(List<String> inlineParams) {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+        Checkers.checkInlineParamsCount(1, inlineParams);
+        Checkers.checkLong(inlineParams.get(1));
 
-        if ((inlineParams.size() == 2 && Checker.numbChecker(inlineParams.get(1)))) {
-            StudyGroup studyGroup = readElement(inlineParams.get(1));
-            if (studyGroup != null) {
-                manager.insert(Integer.parseInt(inlineParams.get(1)), studyGroup);
-            } else {
-                System.out.println("Incorrect command, please write it with correct parameters");
-                return;
-            }
-
-        } else {
-            System.out.println("Incorrect command, please write it with correct parameters");
+        if(manager.getCollection().containsKey(Integer.parseInt(inlineParams.get(1)))) {
+            output.writeLine("Key already exists" + "\n");
             return;
         }
-
+        StudyGroup studyGroup = this.readElement(inlineParams.get(1), input, output);
+        if (studyGroup != null) {
+            manager.insert(Integer.parseInt(inlineParams.get(1)), studyGroup);
+        } else {
+            output.writeLine("Study group not found" + "\n");
+            return;
+        }
     }
-
 }

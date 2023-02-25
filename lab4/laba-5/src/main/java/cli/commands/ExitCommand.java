@@ -2,24 +2,20 @@ package cli.commands;
 
 import java.util.List;
 
-import collection_manager.AbstractManager;
+import cli.commands.checker.Checkers;
+import cli.commands.exceptions.ExecuteError;
+import cli.interfaces.LineReader;
+import cli.interfaces.LineWriter;
 
 public class ExitCommand extends AbstractCommand {
 
-    public ExitCommand(String name, String description) {
-        super(name, description);
-        // TODO Auto-generated constructor stub
+    public ExitCommand() {
+        super("Exit", "Exit from program");
     }
 
     @Override
-    public void execute(List<String> inlineParams) {
-        if (inlineParams.size() == 1) {
-            System.out.println("Goodbye!");
-            System.exit(0);
-        } else {
-            System.out.println("Incorrect command, please write it without parameters");
-        }
-
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+        Checkers.checkInlineParamsCount(0, inlineParams);
+        output.writeLine("Goodbye!" + "\n");
     }
-
 }

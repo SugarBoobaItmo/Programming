@@ -1,0 +1,17 @@
+help
+info
+history
+info
+execute_script 123
+clear
+save
+insert 4124
+    sdsad
+    asdsad
+    asdsadas
+    asdsadasd
+    asdsad
+    asdsad
+insert 1
+save
+show

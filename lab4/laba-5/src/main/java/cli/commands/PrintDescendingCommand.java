@@ -1,26 +1,27 @@
 package cli.commands;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Stream;
 
+import cli.commands.checker.Checkers;
+import cli.commands.exceptions.ExecuteError;
+import cli.interfaces.LineReader;
+import cli.interfaces.LineWriter;
 import collection_manager.AbstractManager;
-import models.StudyGroup;
 
 public class PrintDescendingCommand extends AbstractCollectionCommand {
-    
-    public PrintDescendingCommand(String name, String description, AbstractManager manager) {
-        super(name, description, manager);
+
+    public PrintDescendingCommand(AbstractManager manager) {
+        super("Print_descending", "Print collection in descending order", manager);
     }
 
     @Override
-    public void execute(List<String> inlineParams) {
-        if (inlineParams.size() == 1) {
-            manager.getCollection().values().stream().sorted(Comparator.reverseOrder())
-                    .forEach((studyGroup) -> System.out.println("-" + studyGroup));
-        } else {
-            System.out.println("Incorrect command, please write it without parameters");
-        }
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+        Checkers.checkInlineParamsCount(0, inlineParams);
+        manager.getCollection()
+                .values()
+                .stream()
+                .sorted(Comparator.reverseOrder())
+                .forEach((studyGroup) -> output.writeLine("-" + studyGroup + "\n"));
     }
 }
