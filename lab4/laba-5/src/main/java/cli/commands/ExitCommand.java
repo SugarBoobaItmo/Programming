@@ -17,5 +17,6 @@ public class ExitCommand extends AbstractCommand {
     public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
         Checkers.checkInlineParamsCount(0, inlineParams);
         output.writeLine("Goodbye!" + "\n");
+        System.exit(0);
     }
 }

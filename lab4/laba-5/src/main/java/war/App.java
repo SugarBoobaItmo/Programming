@@ -39,7 +39,7 @@ public class App {
         cli.registerCommand("remove_key", new RemoveKeyCommand(manager));
         cli.registerCommand("filter_starts_with_name", new FilterStartsWithNameCommand(manager));
         cli.registerCommand("filter_by_transferred_students", new FilterByTransferredStudentsCommand(manager));
-        
+
         cli.startCLI();
     }
 }

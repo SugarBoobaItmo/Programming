@@ -21,7 +21,10 @@ public class RemoveLowerCommand extends ElementCommand {
 
         output.writeLine("Enter id of element" + "\n");
 
-        StudyGroup studyGroup = this.readElement(input.readLine(), input, output);
+        StudyGroup studyGroup;
+        
+        studyGroup = this.readElement(input.readLine(), input, output);
+       
         if (studyGroup != null) {
             manager.removeLower(studyGroup);
         } else {

@@ -31,7 +31,9 @@ public class UpdateCommand extends ElementCommand {
             return;
         }
 
-        StudyGroup studyGroup = this.readElement(inlineParams.get(1), input, output);
+        StudyGroup studyGroup;
+        studyGroup = this.readElement(inlineParams.get(1), input, output);
+       
         if (studyGroup != null) {
             manager.insert(Integer.parseInt(inlineParams.get(1)), studyGroup);
         } else {

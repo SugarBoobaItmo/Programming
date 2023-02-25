@@ -25,7 +25,10 @@ public class InsertCommand extends ElementCommand {
             output.writeLine("Key already exists" + "\n");
             return;
         }
-        StudyGroup studyGroup = this.readElement(inlineParams.get(1), input, output);
+        StudyGroup studyGroup;
+        
+        studyGroup = this.readElement(inlineParams.get(1), input, output);
+        
         if (studyGroup != null) {
             manager.insert(Integer.parseInt(inlineParams.get(1)), studyGroup);
         } else {

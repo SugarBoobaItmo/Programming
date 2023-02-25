@@ -1,5 +1,10 @@
 package cli;
 
+import java.io.FileInputStream;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -24,6 +29,7 @@ public class CLIClient {
         this.debugMode = debugMode;
         this.registerCommand("help", new HelpCommand());
         this.registerCommand("history", new HistoryCommand());
+        this.registerCommand("execute_script", new ExecuteScriptCommand());
     }
 
     public void registerCommand(String commandName, AbstractCommand command) {
@@ -37,6 +43,7 @@ public class CLIClient {
             List<String> params = parseParams(line);
             try {
                 AbstractCommand command = resolveCommand(params);
+
                 executeCommand(params, command, scanner::nextLine, System.out::print);
             } catch (CommandNotFound e) {
                 System.out.println("Command not found: " + e.getMessage());
@@ -116,15 +123,50 @@ public class CLIClient {
         }
     }
 
-    public class ExecuteCommand extends AbstractCommand {
-        public ExecuteCommand() {
-            super("Execute", "Execute script from file");
+    public class ExecuteScriptCommand extends AbstractCommand {
+        public ExecuteScriptCommand() {
+            super("ExecuteScript", "Execute script from file");
         }
 
         @Override
         public void execute(List<String> inlineParams, LineReader input, LineWriter output)
                 throws IncorrectInlineParamsCount {
             Checkers.checkInlineParamsCount(1, inlineParams);
+            String[] fileLines = scriptReader(inlineParams.get(1));
+            if (fileLines != null) {
+                for (String line : fileLines) {
+                    List<String> params = parseParams(line);
+                    try {
+                        AbstractCommand command = resolveCommand(params);
+                        executeCommand(params, command, scanner::nextLine, System.out::print);
+                    } catch (CommandNotFound e) {
+                        System.out.println("Command not found: " + e.getMessage());
+                    }
+                }
+            }
         }
+
+        public String[] scriptReader(String filePath) {
+
+            try (InputStreamReader reader = new InputStreamReader(new FileInputStream(filePath))) {
+                int t;
+                StringBuilder sb = new StringBuilder();
+
+                while ((t = reader.read()) != -1) {
+                    char r = (char) t;
+                    sb.append(r);
+
+                }
+                // String lines = sb.toString().replace("\n", "");
+
+                return sb.toString().split(System.lineSeparator());
+
+            } catch (IOException e) {
+                System.out.println("File \"" + filePath + "\" not found");
+                return null;
+            }
+        }
+
     }
+
 }

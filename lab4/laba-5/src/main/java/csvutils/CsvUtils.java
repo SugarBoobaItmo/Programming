@@ -2,16 +2,14 @@ package csvutils;
 
 import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.nio.charset.Charset;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Map;
+
 import java.util.TreeMap;
 
 import models.CollectionInfo;
@@ -22,7 +20,7 @@ public class CsvUtils {
     public static void recordToCsv(CollectionRecord collectionRecord, String filePath){
     // convert record to csv
     ArrayList<String[]> values4converting = new ArrayList<String[]>();
-    ArrayList<String> valuesKeys = new ArrayList<String>();
+    // ArrayList<String> valuesKeys = new ArrayList<String>();
 
     for (StudyGroup i : collectionRecord.getCollection().values()) {
         values4converting.add(i.deserialize());
@@ -67,12 +65,11 @@ public class CsvUtils {
 
     public static CollectionRecord csvToRecord(String filePath){
         TreeMap<Integer, StudyGroup> collection = new TreeMap<>();
-        try {
+        try (InputStreamReader reader = new InputStreamReader(new FileInputStream(filePath))){
             
-            FileInputStream file = new FileInputStream(filePath);
-            InputStreamReader reader = new InputStreamReader(file);
+           
     
-            ArrayList<String[]> elems = new ArrayList<String[]>();
+            // ArrayList<String[]> elems = new ArrayList<String[]>();
     
             int t;
             StringBuilder sb = new StringBuilder();
@@ -90,20 +87,16 @@ public class CsvUtils {
             String elemsString = sb.toString();
             elemsString = elemsString.replaceAll("\"", "");
             String[] lines = elemsString.split("\n");
-            // System.out.println(lines.length);
     
             for(int i = 0; i < lines.length-1; i++){
                 StudyGroup studyGroup = new StudyGroup();
                 String[] values = lines[i].split(",");
                 
                 studyGroup.serialize(values);
-                // System.out.println(i+studyGroup.toString());
-                // System.out.println(collection.get(i-1));
+
                 collection.put(studyGroup.getId(), studyGroup);
-                // System.out.println(studyGroup.toString());
             }
-            // System.out.println(collection.toString());
-            //  System.out.println(elemsString);
+
             reader.close();
             return new CollectionRecord(collection, new CollectionInfo(LocalDateTime.parse(lines[lines.length-1].split(",")[1]), lines[lines.length-1].split(",")[0]));
 

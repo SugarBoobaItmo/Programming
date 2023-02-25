@@ -29,8 +29,5 @@ public class CollectionRecord {
         return this.info;
     }
 
-    // @XmlElement
-    // public String getCurrentTime() {
-    //     return info.getCreationTime().toString();
-    // }
+
 }

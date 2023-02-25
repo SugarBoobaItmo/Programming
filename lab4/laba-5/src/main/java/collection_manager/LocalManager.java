@@ -37,12 +37,6 @@ public class LocalManager extends AbstractManager {
 
     }
 
-    @Override
-    public void add(Integer index, StudyGroup group) {
-
-        collectionRecord.getCollection().put(index, group);
-
-    }
 
     @Override
     public void insert(int index, StudyGroup group) {

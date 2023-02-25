@@ -22,7 +22,6 @@ public abstract class AbstractManager {
         return this.collectionRecord;
     }
 
-    public abstract void add(Integer index, StudyGroup group);
 
     public abstract void update(int index, StudyGroup group);
 
