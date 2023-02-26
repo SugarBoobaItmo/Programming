@@ -24,7 +24,7 @@ public class LocalManager extends AbstractManager {
         }
 
         this.collectionRecord = new CollectionRecord(
-                new TreeMap<Integer, StudyGroup>(),
+                new TreeMap<String, StudyGroup>(),
                 new models.CollectionInfo(LocalDateTime.now(), owner));
         this.collectionRecord.getInfo().setFilePath("file.csv");
 
@@ -39,20 +39,20 @@ public class LocalManager extends AbstractManager {
 
 
     @Override
-    public void insert(int index, StudyGroup group) {
+    public void insert(String index, StudyGroup group) {
         collectionRecord.getCollection().put(index, group);
 
     }
 
     @Override
-    public void update(int index, StudyGroup group) {
+    public void update(String index, StudyGroup group) {
         collectionRecord.getCollection().put(index, group);
 
     }
 
     @Override
     public void removeGreater(StudyGroup greater_group) {
-        ArrayList<Integer> keys = new ArrayList<Integer>();
+        ArrayList<String> keys = new ArrayList<String>();
         collectionRecord.getCollection().forEach((k, v) -> {
             if (v.compareTo(greater_group) > 0)
                 keys.add(k);
@@ -69,7 +69,7 @@ public class LocalManager extends AbstractManager {
 
     @Override
     public void removeLower(StudyGroup lower_group) {
-        ArrayList<Integer> keys = new ArrayList<Integer>();
+        ArrayList<String> keys = new ArrayList<String>();
         collectionRecord.getCollection().forEach((k, v) -> {
             if (v.compareTo(lower_group) < 0)
                 keys.add(k);
@@ -78,7 +78,7 @@ public class LocalManager extends AbstractManager {
     }
 
     @Override
-    public void removeKey(int key) throws GroupNotFound {
+    public void removeKey(String key) throws GroupNotFound {
         if (collectionRecord.getCollection().containsKey(key)) {
             collectionRecord.getCollection().remove(key);
         } else {

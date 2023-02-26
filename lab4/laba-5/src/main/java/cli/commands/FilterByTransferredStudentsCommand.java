@@ -21,8 +21,8 @@ public class FilterByTransferredStudentsCommand extends AbstractCollectionComman
         Checkers.checkInlineParamsCount(1, inlineParams);
         Checkers.checkLong(inlineParams.get(1));
 
-        TreeMap<Integer, StudyGroup> collection = manager.getCollection();
-        for (int v : collection.keySet()) {
+        TreeMap<String, StudyGroup> collection = manager.getCollection();
+        for (String v : collection.keySet()) {
             long transferredStudentsCount = collection.get(v).getTransferredStudents();
             long expectedCount = Long.parseLong(inlineParams.get(1));
             if (transferredStudentsCount == expectedCount) {

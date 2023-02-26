@@ -3,6 +3,7 @@ package cli.commands.checker;
 import java.util.List;
 
 import cli.commands.exceptions.IncorrectInlineParamsCount;
+import cli.commands.exceptions.IncorrectInlineParamsCountGreater;
 import cli.commands.exceptions.IncorrectInteger;
 import cli.commands.exceptions.IncorrectLong;
 import cli.commands.exceptions.IncorrectWord;
@@ -14,6 +15,11 @@ public class Checkers {
             throws IncorrectInlineParamsCount {
         if (inlineParams.size() - 1 != count)
             throw new IncorrectInlineParamsCount(count, inlineParams.size() - 1);
+    };
+    public static void checkInlineParamsCountGreater(int count, List<String> inlineParams)
+            throws IncorrectInlineParamsCountGreater {
+        if (inlineParams.size() - 1 < count)
+            throw new IncorrectInlineParamsCountGreater(count, inlineParams.size() - 1);
     };
 
     public static void checkNull(String value) throws NullParam {

@@ -17,6 +17,6 @@ public class RemoveKeyCommand extends AbstractCollectionCommand {
     @Override
     public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
         Checkers.checkInlineParamsCount(1, inlineParams);
-        manager.removeKey(Integer.parseInt(inlineParams.get(1)));
+        manager.removeKey(inlineParams.get(1));
     }
 }

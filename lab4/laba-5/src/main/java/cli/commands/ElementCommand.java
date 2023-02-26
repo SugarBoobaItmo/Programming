@@ -21,7 +21,7 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
     private String askField(String inputMessage, LineReader input, LineWriter output, boolean allowNull,
             Checker... checkers) {
 
-        boolean errorFlag = false;
+        boolean errorFlag = true;
         while (true) {
             if (allowNull) {
                 output.writeLine("(Enter \"\" to skip this field) ");
@@ -49,8 +49,9 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
         }
     }
 
-    public StudyGroup readElement(String id, LineReader input, LineWriter output) throws ExecuteError {
+    public StudyGroup readElement(LineReader input, LineWriter output) throws ExecuteError {
         Random random = new Random();
+        String id = String.valueOf(random.nextInt(1000000));
 
         String name = askField(
                 "Enter group name: ", input, output,
@@ -121,5 +122,89 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
                 adminName, adminBirthday, adminPassportID, adminHairColor);
 
         return group;
+    }
+
+    public StudyGroup readElement(String[] params, LineReader input, LineWriter output) throws ExecuteError {
+        // name
+        Random random = new Random();
+        String id = String.valueOf(random.nextInt(1000000));
+
+        String name = params[0];
+        Checkers.checkNull(name);
+
+        // x
+        String x = params[1];
+        Checkers.checkNull(x);
+        Checkers.checkInteger(x);
+
+        String y = params[2];
+        Checkers.checkNull(y);
+        Checkers.checkInteger(y);
+
+        String studentsCount = params[3];
+        if (!studentsCount.equals("")){
+
+            Checkers.checkPositive(studentsCount);
+        } else if (studentsCount.equals("")) {
+            studentsCount = "null";
+        }
+
+        String expelledStudents = params[4];
+        Checkers.checkPositive(expelledStudents);
+
+        String transferredStudents = params[5];
+        Checkers.checkPositive(transferredStudents);
+
+        String semester = params[6];
+        if (!semester.equals("")){
+            
+            try {
+                Semester.valueOf(semester);
+            } catch (IllegalArgumentException e) {
+                throw new ExecuteError("Incorrect semester");
+            }
+        } else if (semester.equals("")){
+            semester = "null";
+        }
+        // System.out.println(semester);
+
+
+        String adminName, adminPassportID, adminHairColor, adminBirthday;
+        if (params[7].equals("")) {
+            adminName = "null";
+            adminPassportID = "null";
+            adminHairColor = "null";
+            adminBirthday = "null";
+        } else {
+            adminName = params[7];
+            adminPassportID = params[8];
+            Checkers.checkNull(adminPassportID);
+            // Checkers.checkPassportID(adminPassportID);
+            if (adminPassportID.length() <= 24)
+                throw new ExecuteError("Passport ID must be longer than 24 characters");
+
+            adminHairColor = params[9];
+            try {
+                Color.valueOf(adminHairColor);
+            } catch (IllegalArgumentException e) {
+                throw new ExecuteError("Incorrect hair color");
+            }
+            adminBirthday = LocalDateTime.now().minusYears(random.nextInt(3) - 17).toString();
+            
+            
+        }
+        String creationDate = LocalDateTime.now().toString();
+
+        StudyGroup group = new StudyGroup();
+        group.serialize(
+                id, name, x, y, creationDate,
+                studentsCount, expelledStudents, transferredStudents, semester,
+                adminName, adminBirthday, adminPassportID, adminHairColor);
+
+        return group;
+
+
+
+
     }
 }

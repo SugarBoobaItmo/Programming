@@ -24,4 +24,5 @@ public abstract class AbstractCommand {
     }
 
     public abstract void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError;
+
 }

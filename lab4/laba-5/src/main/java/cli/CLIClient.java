@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -58,6 +59,9 @@ public class CLIClient {
     }
 
     public AbstractCommand resolveCommand(List<String> params) throws CommandNotFound {
+        if (params.size() == 0) {
+            throw new CommandNotFound("");
+        }
         String commandName = params.get(0);
         AbstractCommand command = this.commands.get(commandName);
 
@@ -130,14 +134,49 @@ public class CLIClient {
 
         @Override
         public void execute(List<String> inlineParams, LineReader input, LineWriter output)
-                throws IncorrectInlineParamsCount {
+                throws ExecuteError {
             Checkers.checkInlineParamsCount(1, inlineParams);
             String[] fileLines = scriptReader(inlineParams.get(1));
             if (fileLines != null) {
-                for (String line : fileLines) {
-                    List<String> params = parseParams(line);
+                for (int line = 0; line < fileLines.length; line++) {
+                    List<String> params = parseParams(fileLines[line]);
+
                     try {
                         AbstractCommand command = resolveCommand(params);
+
+                        if (command.getName().equals("Insert") || command.getName().equals("Update") || command.getName().equals("RemoveGreater") || command.getName().equals("RemoveLower")) {
+                            
+                            if (fileLines.length > line + 8 && fileLines[line + 8].matches("\\s+.*")) {
+                                LinkedList<String> insertParams = new LinkedList<String>();
+
+                                if (fileLines[line + 8].matches("\\s+")) {
+                                    for(int i=line+1; i<line+9; i++) insertParams.add(fileLines[i]);
+
+                                    
+                                    for (int elem = 0; elem < insertParams.size(); elem++) {
+                                        if (!insertParams.get(elem).matches("\\s+.*")) {
+                                            throw new ExecuteError("Incorrect command parameter at line " + (line + elem  + 1));
+                                        } else
+                                            insertParams.add(elem,insertParams.get(elem).replaceAll("\\s+", ""));
+                                            insertParams.remove(elem+1);
+                                    }
+                                    line+=8;
+                                } else if (fileLines.length > line + 10 && fileLines[line + 10].matches("\\s+.*")) {
+                                    for(int i=line+1; i<line+11; i++) insertParams.add(fileLines[i]);
+
+                                    for (int elem = 0; elem < insertParams.size(); elem++) {
+                                        if (!insertParams.get(elem).matches("\\s+.*")) {
+                                            throw new ExecuteError("Incorrect command parameter at line " + (line + elem + 1));
+                                        } else
+                                            insertParams.add(elem, insertParams.get(elem).replaceAll("\\s+", ""));
+                                            insertParams.remove(elem+1);
+                                    }
+                                    line+=10;
+                                }
+                                for(int paramsEl=params.size()-1; paramsEl>=0; paramsEl--) insertParams.addFirst(params.get(paramsEl));
+                                params = insertParams;
+                            }
+                        }
                         executeCommand(params, command, scanner::nextLine, System.out::print);
                     } catch (CommandNotFound e) {
                         System.out.println("Command not found: " + e.getMessage());

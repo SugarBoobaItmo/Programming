@@ -14,7 +14,7 @@ public abstract class AbstractManager {
         return this.collectionRecord.getInfo();
     }
 
-    public TreeMap<Integer, StudyGroup> getCollection() {
+    public TreeMap<String, StudyGroup> getCollection() {
         return this.collectionRecord.getCollection();
     }
 
@@ -23,7 +23,7 @@ public abstract class AbstractManager {
     }
 
 
-    public abstract void update(int index, StudyGroup group);
+    public abstract void update(String index, StudyGroup group);
 
     public abstract void removeGreater(StudyGroup greaterGroup);
 
@@ -31,8 +31,8 @@ public abstract class AbstractManager {
 
     public abstract void removeLower(StudyGroup lowerGroup);
 
-    public abstract void removeKey(int key) throws GroupNotFound;
+    public abstract void removeKey(String key) throws GroupNotFound;
 
-    public abstract void insert(int index, StudyGroup group);
+    public abstract void insert(String index, StudyGroup group);
 
 }

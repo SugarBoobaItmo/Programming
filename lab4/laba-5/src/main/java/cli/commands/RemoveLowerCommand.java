@@ -1,5 +1,6 @@
 package cli.commands;
 
+import java.util.Arrays;
 import java.util.List;
 
 import cli.commands.checker.Checkers;
@@ -17,13 +18,16 @@ public class RemoveLowerCommand extends ElementCommand {
 
     @Override
     public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
-        Checkers.checkInlineParamsCount(0, inlineParams);
+        // Checkers.checkInlineParamsCount(0, inlineParams);
 
-        output.writeLine("Enter id of element" + "\n");
 
         StudyGroup studyGroup;
         
-        studyGroup = this.readElement(input.readLine(), input, output);
+        if (inlineParams.size() > 1){
+            studyGroup = this.readElement(Arrays.copyOfRange(inlineParams.toArray(new String[inlineParams.size()]), 1, inlineParams.size()) ,input, output);
+            
+            } else
+            studyGroup = this.readElement(input, output);
        
         if (studyGroup != null) {
             manager.removeLower(studyGroup);

@@ -1,6 +1,6 @@
 package cli.commands;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -19,26 +19,26 @@ public class UpdateCommand extends ElementCommand {
 
     @Override
     public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
-        Checkers.checkInlineParamsCount(1, inlineParams);
+        Checkers.checkInlineParamsCountGreater(1, inlineParams);
         Checkers.checkLong(inlineParams.get(1));
 
-        List<Integer> idList = new ArrayList<>();
-        for (Map.Entry<Integer, StudyGroup> entry : manager.getCollection().entrySet()) {
-            idList.add(entry.getValue().getId());
-        }
-        if (!idList.contains(Integer.parseInt(inlineParams.get(1)))) {
-            output.writeLine("No element with such id" + "\n");
-            return;
-        }
+        for (Map.Entry<String, StudyGroup> entry : manager.getCollection().entrySet()) {
+            if(Integer.parseInt(inlineParams.get(1))==entry.getValue().getId()){
+                StudyGroup studyGroup;
 
-        StudyGroup studyGroup;
-        studyGroup = this.readElement(inlineParams.get(1), input, output);
-       
-        if (studyGroup != null) {
-            manager.insert(Integer.parseInt(inlineParams.get(1)), studyGroup);
-        } else {
-            output.writeLine("Study group not found" + "\n");
-            return;
+                if (inlineParams.size() > 2){
+                    studyGroup = this.readElement(Arrays.copyOfRange(inlineParams.toArray(new String[inlineParams.size()]), 2, inlineParams.size()) ,input, output);
+                    
+                    } else
+                    studyGroup = this.readElement(input, output);
+                if (studyGroup != null) {
+                    manager.update(entry.getKey(), studyGroup);
+                }
+                return;
+            }
         }
+        output.writeLine("Group with id: \"" + inlineParams.get(1)+ "\" not found" + "\n");
+        return;
+
     }
 }
