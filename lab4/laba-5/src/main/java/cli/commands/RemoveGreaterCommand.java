@@ -3,7 +3,6 @@ package cli.commands;
 import java.util.Arrays;
 import java.util.List;
 
-import cli.commands.checker.Checkers;
 import cli.commands.exceptions.ExecuteError;
 import cli.commands.exceptions.GroupNotFound;
 import cli.interfaces.LineReader;
