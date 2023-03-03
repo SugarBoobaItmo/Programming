@@ -4,7 +4,7 @@ import java.io.FileInputStream;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -21,6 +21,7 @@ import cli.interfaces.LineReader;
 import cli.interfaces.LineWriter;
 
 public class CLIClient {
+    private HashMap<String, Integer> scriptExecuteDepth = new HashMap<String, Integer>();
     private boolean debugMode;
     private Scanner scanner = new Scanner(System.in);
     private HashMap<String, AbstractCommand> commands = new HashMap<String, AbstractCommand>();
@@ -128,6 +129,8 @@ public class CLIClient {
     }
 
     public class ExecuteScriptCommand extends AbstractCommand {
+        private int maxDepth = 5;
+
         public ExecuteScriptCommand() {
             super("ExecuteScript", "Execute script from file");
         }
@@ -136,44 +139,75 @@ public class CLIClient {
         public void execute(List<String> inlineParams, LineReader input, LineWriter output)
                 throws ExecuteError {
             Checkers.checkInlineParamsCount(1, inlineParams);
-            String[] fileLines = scriptReader(inlineParams.get(1));
+
+            String filePath = Paths.get(inlineParams.get(1)).normalize().toAbsolutePath().toString();
+            if (scriptExecuteDepth.containsKey(filePath)) {
+                int depth = scriptExecuteDepth.get(filePath);
+                scriptExecuteDepth.put(filePath, depth + 1);
+                if (depth >= maxDepth) {
+                    scriptExecuteDepth.put(filePath, -1);
+                    throw new ExecuteError("Script execution depth is more than 5");
+                }
+            } else {
+                scriptExecuteDepth.put(filePath, 1);
+            }
+
+            // execute_script test_rec
+            String[] fileLines = scriptReader(filePath);
             if (fileLines != null) {
                 for (int line = 0; line < fileLines.length; line++) {
+                    if (scriptExecuteDepth.containsKey(filePath)) {
+                        int depth = scriptExecuteDepth.get(filePath);
+                        if (depth < 0) {
+                            scriptExecuteDepth.put(filePath, depth - 1);
+                            if (depth <= -maxDepth) {
+                                scriptExecuteDepth.remove(filePath);
+                            }
+                            break;
+                        }
+                    }
+
                     List<String> params = parseParams(fileLines[line]);
 
                     try {
                         AbstractCommand command = resolveCommand(params);
 
-                        if (command.getName().equals("Insert") || command.getName().equals("Update") || command.getName().equals("RemoveGreater") || command.getName().equals("RemoveLower")) {
-                            
+                        if (command.getName().equals("Insert") || command.getName().equals("Update")
+                                || command.getName().equals("RemoveGreater")
+                                || command.getName().equals("RemoveLower")) {
+
                             if (fileLines.length > line + 8 && fileLines[line + 8].matches("\\s+.*")) {
                                 LinkedList<String> insertParams = new LinkedList<String>();
 
                                 if (fileLines[line + 8].matches("\\s+")) {
-                                    for(int i=line+1; i<line+9; i++) insertParams.add(fileLines[i]);
-
-                                    
-                                    for (int elem = 0; elem < insertParams.size(); elem++) {
-                                        if (!insertParams.get(elem).matches("\\s+.*")) {
-                                            throw new ExecuteError("Incorrect command parameter at line " + (line + elem  + 1));
-                                        } else
-                                            insertParams.add(elem,insertParams.get(elem).replaceAll("\\s+", ""));
-                                            insertParams.remove(elem+1);
-                                    }
-                                    line+=8;
-                                } else if (fileLines.length > line + 10 && fileLines[line + 10].matches("\\s+.*")) {
-                                    for(int i=line+1; i<line+11; i++) insertParams.add(fileLines[i]);
+                                    for (int i = line + 1; i < line + 9; i++)
+                                        insertParams.add(fileLines[i]);
 
                                     for (int elem = 0; elem < insertParams.size(); elem++) {
                                         if (!insertParams.get(elem).matches("\\s+.*")) {
-                                            throw new ExecuteError("Incorrect command parameter at line " + (line + elem + 1));
+                                            throw new ExecuteError(
+                                                    "Incorrect command parameter at line " + (line + elem + 1));
                                         } else
                                             insertParams.add(elem, insertParams.get(elem).replaceAll("\\s+", ""));
-                                            insertParams.remove(elem+1);
+                                        insertParams.remove(elem + 1);
                                     }
-                                    line+=10;
+                                    line += 8;
+                                } else if (fileLines.length > line + 10 && fileLines[line + 10].matches("\\s+.*")) {
+                                    for (int i = line + 1; i < line + 11; i++)
+                                        insertParams.add(fileLines[i]);
+
+                                    for (int elem = 0; elem < insertParams.size(); elem++) {
+                                        if (!insertParams.get(elem).matches("\\s+.*")) {
+                                            throw new ExecuteError(
+                                                    "Incorrect command parameter at line " + (line + elem + 1));
+                                        } else
+                                            insertParams.add(elem, insertParams.get(elem).replaceAll("\\s+", ""));
+                                        insertParams.remove(elem + 1);
+                                    }
+                                    line += 10;
                                 }
-                                for(int paramsEl=params.size()-1; paramsEl>=0; paramsEl--) insertParams.addFirst(params.get(paramsEl));
+                                for (int paramsEl = params.size() - 1; paramsEl >= 0; paramsEl--)
+                                    insertParams.addFirst(params.get(paramsEl));
                                 params = insertParams;
                             }
                         }

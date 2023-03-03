@@ -22,7 +22,7 @@ import collection_manager.LocalManager;
 
 public class App {
     public static void main(String[] args) throws IOException {
-        AbstractManager manager = new LocalManager("file.csv");
+        AbstractManager manager = new LocalManager(args[0]);
 
         CLIClient cli = new CLIClient(true);
 
