@@ -16,7 +16,8 @@
             "request": "launch",
             "mainClass": "war.App",
             "projectName": "laba-5",
-            "console": "externalTerminal"
+            "console": "externalTerminal",
+            "args": ""
         }
     ]
 }

@@ -1,27 +1,18 @@
 package cli;
 
-import java.io.FileInputStream;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 import cli.commands.AbstractCommand;
-import cli.commands.checker.Checkers;
 import cli.commands.exceptions.ExecuteError;
-import cli.commands.exceptions.IncorrectInlineParamsCount;
 import cli.exceptions.CommandNotFound;
 import cli.interfaces.LineReader;
 import cli.interfaces.LineWriter;
 
 public class CLIClient {
-    private HashMap<String, Integer> scriptExecuteDepth = new HashMap<String, Integer>();
     private boolean debugMode;
     private Scanner scanner = new Scanner(System.in);
     private HashMap<String, AbstractCommand> commands = new HashMap<String, AbstractCommand>();
@@ -29,9 +20,7 @@ public class CLIClient {
 
     public CLIClient(boolean debugMode) {
         this.debugMode = debugMode;
-        this.registerCommand("help", new HelpCommand());
-        this.registerCommand("history", new HistoryCommand());
-        this.registerCommand("execute_script", new ExecuteScriptCommand());
+
     }
 
     public void registerCommand(String commandName, AbstractCommand command) {
@@ -53,9 +42,9 @@ public class CLIClient {
         }
     }
 
-    public List<String> parseParams(String line) {
+    public ArrayList<String> parseParams(String line) {
         String[] s = line.split(" ");
-        List<String> params = Arrays.asList(s);
+        ArrayList<String> params = new ArrayList<>(Arrays.asList(s));
         return params;
     }
 
@@ -75,6 +64,7 @@ public class CLIClient {
     public void executeCommand(List<String> inlineParams, AbstractCommand command, LineReader input,
             LineWriter output) {
         try {
+
             command.execute(inlineParams, input, output);
         } catch (ExecuteError e) {
             output.writeLine("Command execution error:\n\t" + e.getMessage() + "\n");
@@ -87,159 +77,12 @@ public class CLIClient {
         commandsHistory.add(inlineParams.get(0));
     }
 
-    public class HelpCommand extends AbstractCommand {
-        public HelpCommand() {
-            super("help", "Write commands info");
-        }
-
-        @Override
-        public void execute(List<String> inlineParams, LineReader input, LineWriter output)
-                throws IncorrectInlineParamsCount {
-
-            Checkers.checkInlineParamsCount(0, inlineParams);
-
-            commands.forEach((key, value) -> {
-                output.writeLine(key + " - " + value.getDescription() + "\n");
-            });
-        }
+    public HashMap<String, AbstractCommand> getCommands() {
+        return commands;
     }
 
-    public class HistoryCommand extends AbstractCommand {
-        public HistoryCommand() {
-            super("History", "Show history of commands");
-        }
-
-        @Override
-        public void execute(List<String> inlineParams, LineReader input, LineWriter output)
-                throws IncorrectInlineParamsCount {
-
-            Checkers.checkInlineParamsCount(0, inlineParams);
-
-            if (commandsHistory.size() == 0) {
-                output.writeLine("History is empty" + "\n");
-            } else if (commandsHistory.size() < 7) {
-                output.writeLine("History:" + "\n");
-                commandsHistory.forEach(v -> output.writeLine(v + "\n"));
-            } else {
-                output.writeLine("History:" + "\n");
-                List<String> sublist = commandsHistory.subList(commandsHistory.size() - 6, commandsHistory.size());
-                sublist.forEach(v -> output.writeLine(v + "\n"));
-            }
-        }
-    }
-
-    public class ExecuteScriptCommand extends AbstractCommand {
-        private int maxDepth = 5;
-
-        public ExecuteScriptCommand() {
-            super("ExecuteScript", "Execute script from file");
-        }
-
-        @Override
-        public void execute(List<String> inlineParams, LineReader input, LineWriter output)
-                throws ExecuteError {
-            Checkers.checkInlineParamsCount(1, inlineParams);
-
-            String filePath = Paths.get(inlineParams.get(1)).normalize().toAbsolutePath().toString();
-            if (scriptExecuteDepth.containsKey(filePath)) {
-                int depth = scriptExecuteDepth.get(filePath);
-                scriptExecuteDepth.put(filePath, depth + 1);
-                if (depth >= maxDepth) {
-                    scriptExecuteDepth.put(filePath, -1);
-                    throw new ExecuteError("Script execution depth is more than 5");
-                }
-            } else {
-                scriptExecuteDepth.put(filePath, 1);
-            }
-
-            // execute_script test_rec
-            String[] fileLines = scriptReader(filePath);
-            if (fileLines != null) {
-                for (int line = 0; line < fileLines.length; line++) {
-                    if (scriptExecuteDepth.containsKey(filePath)) {
-                        int depth = scriptExecuteDepth.get(filePath);
-                        if (depth < 0) {
-                            scriptExecuteDepth.put(filePath, depth - 1);
-                            if (depth <= -maxDepth) {
-                                scriptExecuteDepth.remove(filePath);
-                            }
-                            break;
-                        }
-                    }
-
-                    List<String> params = parseParams(fileLines[line]);
-
-                    try {
-                        AbstractCommand command = resolveCommand(params);
-
-                        if (command.getName().equals("Insert") || command.getName().equals("Update")
-                                || command.getName().equals("RemoveGreater")
-                                || command.getName().equals("RemoveLower")) {
-
-                            if (fileLines.length > line + 8 && fileLines[line + 8].matches("\\s+.*")) {
-                                LinkedList<String> insertParams = new LinkedList<String>();
-
-                                if (fileLines[line + 8].matches("\\s+")) {
-                                    for (int i = line + 1; i < line + 9; i++)
-                                        insertParams.add(fileLines[i]);
-
-                                    for (int elem = 0; elem < insertParams.size(); elem++) {
-                                        if (!insertParams.get(elem).matches("\\s+.*")) {
-                                            throw new ExecuteError(
-                                                    "Incorrect command parameter at line " + (line + elem + 1));
-                                        } else
-                                            insertParams.add(elem, insertParams.get(elem).replaceAll("\\s+", ""));
-                                        insertParams.remove(elem + 1);
-                                    }
-                                    line += 8;
-                                } else if (fileLines.length > line + 10 && fileLines[line + 10].matches("\\s+.*")) {
-                                    for (int i = line + 1; i < line + 11; i++)
-                                        insertParams.add(fileLines[i]);
-
-                                    for (int elem = 0; elem < insertParams.size(); elem++) {
-                                        if (!insertParams.get(elem).matches("\\s+.*")) {
-                                            throw new ExecuteError(
-                                                    "Incorrect command parameter at line " + (line + elem + 1));
-                                        } else
-                                            insertParams.add(elem, insertParams.get(elem).replaceAll("\\s+", ""));
-                                        insertParams.remove(elem + 1);
-                                    }
-                                    line += 10;
-                                }
-                                for (int paramsEl = params.size() - 1; paramsEl >= 0; paramsEl--)
-                                    insertParams.addFirst(params.get(paramsEl));
-                                params = insertParams;
-                            }
-                        }
-                        executeCommand(params, command, scanner::nextLine, System.out::print);
-                    } catch (CommandNotFound e) {
-                        System.out.println("Command not found: " + e.getMessage());
-                    }
-                }
-            }
-        }
-
-        public String[] scriptReader(String filePath) {
-
-            try (InputStreamReader reader = new InputStreamReader(new FileInputStream(filePath))) {
-                int t;
-                StringBuilder sb = new StringBuilder();
-
-                while ((t = reader.read()) != -1) {
-                    char r = (char) t;
-                    sb.append(r);
-
-                }
-                // String lines = sb.toString().replace("\n", "");
-
-                return sb.toString().split(System.lineSeparator());
-
-            } catch (IOException e) {
-                System.out.println("File \"" + filePath + "\" not found");
-                return null;
-            }
-        }
-
+    public List<String> getCommandsHistory() {
+        return commandsHistory;
     }
 
 }
