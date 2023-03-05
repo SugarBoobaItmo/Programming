@@ -7,7 +7,7 @@ public class TerminalClear extends TerminalCommand {
     }
     @Override
     public void execute() {  
-        System.out.print("\033[H\033[2J");  
+        System.out.print("\033[H\033[2J"); // characters sequence for output cleaning 
         System.out.flush();  
     }  
 }
