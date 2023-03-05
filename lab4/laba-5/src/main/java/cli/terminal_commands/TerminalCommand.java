@@ -1,10 +1,10 @@
 package cli.terminal_commands;
 
-public abstract class TerminalCommands {
+public abstract class TerminalCommand {
     protected String name;
     protected String description;
     
-    public TerminalCommands(String name, String description) {
+    public TerminalCommand(String name, String description) {
         this.name = name;
         this.description = description;
     }

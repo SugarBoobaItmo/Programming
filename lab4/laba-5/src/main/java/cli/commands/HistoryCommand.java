@@ -16,10 +16,10 @@ public class HistoryCommand extends CLISupportedCommand {
     @Override
     public void execute(List<String> inlineParams, LineReader input, LineWriter output)
             throws IncorrectInlineParamsCount {
-
+        
         Checkers.checkInlineParamsCount(0, inlineParams);
         List<String> commandsHistory = cli.getCommandsHistory();
-        
+
         if (commandsHistory.size() == 0) {
             output.writeLine("History is empty" + "\n");
         } else if (commandsHistory.size() < 7) {

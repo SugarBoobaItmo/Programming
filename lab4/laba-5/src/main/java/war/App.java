@@ -17,6 +17,8 @@ import cli.commands.RemoveLowerCommand;
 import cli.commands.SaveCommand;
 import cli.commands.ShowCommand;
 import cli.commands.UpdateCommand;
+import cli.terminal_commands.TerminalClear;
+import cli.terminal_commands.TerminalHelp;
 import collection_manager.AbstractManager;
 import collection_manager.LocalManager;
 
@@ -42,6 +44,9 @@ public class App {
             cli.registerCommand("help", new HelpCommand(cli));
             cli.registerCommand("execute_script", new ExecuteScriptCommand(cli));
             cli.registerCommand("history", new HistoryCommand(cli));
+
+            cli.registerTerminalCommand("\\clear", new TerminalClear());
+            cli.registerTerminalCommand("\\help", new TerminalHelp(cli));
 
             cli.startCLI();
         
