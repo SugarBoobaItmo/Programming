@@ -19,7 +19,6 @@ import cli.interfaces.LineWriter;
 
 public class ExecuteScriptCommand extends CLISupportedCommand {
     private int maxDepth = 5;
-    // private HashMap<String, Integer> scriptExecuteDepth;
     private static HashMap<String, Integer> scriptExecuteDepth = new HashMap<String, Integer>();
 
     private Scanner scanner = new Scanner(System.in);
@@ -38,30 +37,23 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
         if (scriptExecuteDepth.containsKey(filePath)) {
             int depth = scriptExecuteDepth.get(filePath);
             scriptExecuteDepth.put(filePath, depth + 1);
-            if (depth >= maxDepth) {
-                scriptExecuteDepth.put(filePath, -1);
-                throw new ExecuteError("Script execution depth is more than 5");
+            if (depth + 1 >= maxDepth) {
+                scriptExecuteDepth.remove(filePath);
+                throw new ExecuteError("Max depth of script execution reached");
             }
         } else {
             scriptExecuteDepth.put(filePath, 1);
         }
 
         String[] fileLines = scriptReader(filePath);
+        boolean skipDepthReset = false;
         if (fileLines != null) {
             for (int line = 0; line < fileLines.length; line++) {
-                if (scriptExecuteDepth.containsKey(filePath)) {
-                    int depth = scriptExecuteDepth.get(filePath);
-                    if (depth < 0) {
-                        scriptExecuteDepth.put(filePath, depth - 1);
-                        if (depth <= -maxDepth) {
-                            scriptExecuteDepth.remove(filePath);
-                        }
-                        break;
-                    }
+                if (scriptExecuteDepth.get(filePath) >= maxDepth) {
+                    skipDepthReset = true;
+                    break;
                 }
-
                 ArrayList<String> params = cli.parseParams(fileLines[line]);
-
                 try {
                     AbstractCommand command = cli.resolveCommand(params);
 
@@ -71,7 +63,7 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
                         try {
                             ArrayList<String> insertParams = checkInsertFields(fileLines, line);
                             insertParams.forEach(v -> params.add(v));
-                            line+=insertParams.size();
+                            line += insertParams.size();
                         } catch (ScriptGroupIncorrectParams e) {
                             System.out.println(e.getMessage());
                             break;
@@ -79,14 +71,16 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
                             System.out.println("Script group uncorrect params");
                             break;
                         }
-
                     }
-
                     cli.executeCommand(params, command, scanner::nextLine, System.out::print);
                 } catch (CommandNotFound e) {
                     System.out.println("Command not found: " + e.getMessage());
                 }
             }
+        }
+
+        if (!skipDepthReset && scriptExecuteDepth.containsKey(filePath)) {
+            scriptExecuteDepth.remove(filePath);
         }
     }
 
