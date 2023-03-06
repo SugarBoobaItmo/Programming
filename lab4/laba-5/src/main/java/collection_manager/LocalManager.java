@@ -17,34 +17,50 @@ public class LocalManager extends AbstractManager {
     public LocalManager(String[] args) {
         if (args.length > 0) {
             String filePath = args[0];
-            while (!(filePath.matches(".*\\.csv"))) {
-                System.out.println("Incorrect file format, please enter path to .csv file");
-                System.out.print(">> ");
-                filePath = System.console().readLine();
-            }
+            filePath = checkFilePath(filePath);
 
             collectionRecord = CsvUtils.csvToRecord(filePath);
+            while (collectionRecord == null) {
+                System.out.print("Please choose another file or skip to create new collection: ");
+                filePath = System.console().readLine();
+                if (filePath.equals("")) {
+                    createNewCollection();
+                    return;
+                }
+                collectionRecord = CsvUtils.csvToRecord(filePath);
+            }
             collectionRecord.getInfo().setFilePath(filePath);
 
         } else {
-
-            String owner;
-            try {
-                owner = Inet4Address.getLocalHost().getHostAddress();
-            } catch (UnknownHostException e) {
-                owner = "Unknown";
-            }
-
-            this.collectionRecord = new CollectionRecord(
-                    new TreeMap<String, StudyGroup>(),
-                    new models.CollectionInfo(LocalDateTime.now(), owner));
-            String filePath = "file" + new Random().nextInt(1000) + ".csv";
-            this.collectionRecord.getInfo().setFilePath(filePath);
-
-            System.out.println("New collection was created in file: " + filePath);
-
+            createNewCollection();
         }
 
+    }
+
+    public String checkFilePath(String filePath) {
+        while (!(filePath.matches(".*\\.csv"))) {
+            System.out.println("Incorrect file format, please enter path to .csv file");
+            System.out.print(">> ");
+            filePath = System.console().readLine();
+        }
+        return filePath;
+    }
+
+    public void createNewCollection() {
+        String owner;
+        try {
+            owner = Inet4Address.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            owner = "Unknown";
+        }
+
+        this.collectionRecord = new CollectionRecord(
+                new TreeMap<String, StudyGroup>(),
+                new models.CollectionInfo(LocalDateTime.now(), owner));
+        String filePath = "file" + new Random().nextInt(1000) + ".csv";
+        this.collectionRecord.getInfo().setFilePath(filePath);
+
+        System.out.println("New collection was created in file: " + filePath);
     }
 
     @Override

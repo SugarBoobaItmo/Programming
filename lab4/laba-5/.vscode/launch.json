@@ -17,7 +17,7 @@
             "mainClass": "war.App",
             "projectName": "laba-5",
             "console": "externalTerminal",
-            "args": ""
+            "args": "file.csv"
         }
     ]
 }
