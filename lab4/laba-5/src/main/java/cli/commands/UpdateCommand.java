@@ -1,51 +1,44 @@
 package cli.commands;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
 
-import cli.commands.checker.Checker;
+import cli.commands.checker.Checkers;
+import cli.commands.exceptions.ExecuteError;
+import cli.interfaces.LineReader;
+import cli.interfaces.LineWriter;
 import collection_manager.AbstractManager;
-import models.Color;
-import models.Semester;
 import models.StudyGroup;
 
 public class UpdateCommand extends ElementCommand {
 
-    public UpdateCommand(String name, String description, AbstractManager manager) {
-        super(name, description, manager);
+    public UpdateCommand(AbstractManager manager) {
+        super("Update", "Update element of collection by ID", manager);
     }
 
     @Override
-    public void execute(List<String> inlineParams) {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+        Checkers.checkInlineParamsCountGreater(1, inlineParams);
+        Checkers.checkLong(inlineParams.get(1));
 
-        if ((inlineParams.size() == 2 && Checker.numbChecker(inlineParams.get(1)))) {
+        for (Map.Entry<String, StudyGroup> entry : manager.getCollection().entrySet()) {
+            if(Integer.parseInt(inlineParams.get(1))==entry.getValue().getId()){
+                StudyGroup studyGroup;
 
-            List<Integer> idList = new ArrayList<>();
-            for (Map.Entry<Integer, StudyGroup> entry : manager.getCollection().entrySet()) {
-                idList.add(entry.getValue().getId());
-            }
-            if (!idList.contains(Integer.parseInt(inlineParams.get(1)))) {
-                System.out.println("No element with such id");
+                if (inlineParams.size() > 2){
+                    studyGroup = this.readElement(Arrays.copyOfRange(inlineParams.toArray(new String[inlineParams.size()]), 2, inlineParams.size()) ,input, output);
+                    
+                    } else
+                    studyGroup = this.readElement(input, output);
+                if (studyGroup != null) {
+                    manager.update(entry.getKey(), studyGroup);
+                }
                 return;
             }
-
-            StudyGroup studyGroup = readElement(inlineParams.get(1));
-            if (studyGroup != null) {
-                manager.insert(Integer.parseInt(inlineParams.get(1)), studyGroup);
-            } else {
-                System.out.println("Incorrect command, please write it with correct parameters");
-                return;
-            }
-
-        } else {
-            System.out.println("Incorrect command, please write it with correct parameters");
-            return;
         }
+        output.writeLine("Group with id: \"" + inlineParams.get(1)+ "\" not found" + "\n");
+        return;
 
     }
-
 }

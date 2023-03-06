@@ -1,13 +1,8 @@
 package models;
 
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
-
-// @XmlRootElement(name = "Coordinates")
-// @XmlType(propOrder = { "x", "y" })
-public class Coordinates implements Comparable<Coordinates>{
+public class Coordinates implements Comparable<Coordinates> {
     private Integer x; // Значение поля должно быть больше -620
     private Integer y; // Максимальное значение поля: 762
 
@@ -41,13 +36,12 @@ public class Coordinates implements Comparable<Coordinates>{
 
     @Override
     public String toString() {
-        return 
-                "("+x +
-                 ","+ y+")";
-                
+        return "(" + x +
+                "," + y + ")";
+
     }
 
-    @Override  
+    @Override
     public int compareTo(Coordinates coordinates) {
         // return 0;
         if (this.x > coordinates.x) {

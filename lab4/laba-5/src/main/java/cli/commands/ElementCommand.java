@@ -1,371 +1,210 @@
 package cli.commands;
 
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.Random;
-import java.util.Scanner;
 
 import cli.commands.checker.Checker;
+import cli.commands.checker.Checkers;
+import cli.commands.exceptions.ExecuteError;
+import cli.interfaces.LineReader;
+import cli.interfaces.LineWriter;
 import collection_manager.AbstractManager;
-import models.Semester;
 import models.Color;
-
+import models.Semester;
 import models.StudyGroup;
 
 public abstract class ElementCommand extends AbstractCollectionCommand {
-
     public ElementCommand(String name, String description, AbstractManager manager) {
         super(name, description, manager);
     }
 
-    public StudyGroup readElement(String id) {
-        if (!Checker.correctChecker(id, true, true, true) || !Checker.intChecker(id)) {
-            // System.out.println("Incorrect id, please try again");
-            return null;
-        }
+    private String askField(String inputMessage, LineReader input, LineWriter output, boolean allowNull,
+            Checker... checkers) {
 
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-
-        String[] sererializingFields = new String[13];
-
-        sererializingFields[0] = id;
-
+        boolean errorFlag = true;
         while (true) {
+            if (allowNull) {
+                output.writeLine("(Enter \"\" to skip this field) ");
+            }
+            output.writeLine(inputMessage);
 
-            System.out.print("Enter group name: ");
-            sererializingFields[1] = scanner.nextLine();
-            if (Checker.nullChecker(sererializingFields[1])) {
-                System.out.println("Incorrect name, please try again");
-            } else
-                break;
-        }
+            String value = input.readLine();
+            if (allowNull && value.equals(""))
+                return "null";
 
-        while (true) {
-
-            System.out.print("Enter coordinates x: ");
-            sererializingFields[2] = scanner.nextLine();
-
-            if (!Checker.correctChecker(sererializingFields[2], true, true, false)
-                    || !Checker.intChecker(sererializingFields[2])) {
-                System.out.println("Incorrect x, please try again");
-            } else
-                break;
-        }
-
-        while (true) {
-
-            System.out.print("Enter coordinates y: ");
-            sererializingFields[3] = scanner.nextLine();
-
-            if (!Checker.correctChecker(sererializingFields[3], true, true, false)
-                    || !Checker.intChecker(sererializingFields[3])) {
-                System.out.println("Incorrect y, please try again");
-            } else
-                break;
-        }
-
-        sererializingFields[4] = LocalDateTime.now().plusDays(random.nextInt(10 - 5 + 1) + 5).toString();
-
-        while (true) {
-
-            System.out.print("Enter group students count: ");
-            sererializingFields[5] = scanner.nextLine();
-
-            if (!Checker.correctChecker(sererializingFields[5], false, true, true)) {
-                System.out.println("Incorrect students count, please try again");
-            } else
-                break;
-        }
-
-        while (true) {
-
-            System.out.print("Enter number of expelled students: ");
-            sererializingFields[6] = scanner.nextLine();
-
-            if (!Checker.correctChecker(sererializingFields[6], true, true, true)) {
-                System.out.println("Incorrect number of expelled students, please try again");
-            } else
-                break;
-        }
-
-        while (true) {
-
-            System.out.print("Enter number of transfered students: ");
-            sererializingFields[7] = scanner.nextLine();
-
-            if (!Checker.correctChecker(sererializingFields[7], true, true, true)) {
-                System.out.println("Incorrect number of transfered students, please try again");
-            } else
-                break;
-        }
-
-        System.out.println("Enter semester: ");
-        ArrayList<String> semesters = new ArrayList<>();
-
-        for (Semester semester : Semester.values()) {
-            System.out.println("- " + semester);
-            semesters.add(semester.toString());
-        }
-        while (true) {
-            System.out.print("Enter semester: ");
-            sererializingFields[8] = scanner.nextLine();
-            if (!Checker.nullChecker(sererializingFields[8])) {
-
-                if (!semesters.contains(sererializingFields[8])) {
-                    System.out.println("Incorrect semester, please try again");
-                } else
+            errorFlag = false;
+            for (Checker checker : checkers) {
+                try {
+                    checker.check(value);
+                } catch (ExecuteError e) {
+                    output.writeLine(e.getMessage() + "\n");
+                    errorFlag = true;
                     break;
-            } else
-                break;
+                }
+            }
+            if (errorFlag) {
+                continue;
+            }
+            return value;
         }
-
-        System.out.println("If your group doesn't have admin, please enter");
-        if (Checker.nullChecker(scanner.nextLine())) {
-            sererializingFields[9] = "null";
-            sererializingFields[10] = "null";
-            sererializingFields[11] = "null";
-            sererializingFields[12] = "null";
-            StudyGroup group = new StudyGroup();
-            group.serialize(sererializingFields);
-            return group;
-            // manager.insert(Integer.parseInt(inlineParams.get(1)), group);
-            // return;
-        }
-
-        while (true) {
-            System.out.print("Enter group admin name: ");
-            sererializingFields[9] = scanner.nextLine();
-            if (Checker.nullChecker(sererializingFields[9])) {
-                System.out.println("Incorrect name, please try again");
-            } else
-                break;
-        }
-
-        sererializingFields[10] = LocalDateTime.now().plusDays(random.nextInt(10 - 5 + 1) + 5).toString();
-
-        while (true) {
-
-            System.out.print("Enter group admin passport id: ");
-            sererializingFields[11] = scanner.nextLine();
-            if (Checker.nullChecker(sererializingFields[11]) || sererializingFields[11].length() > 24) {
-                System.out.println("Incorrect passport id, please try again");
-            } else
-                break;
-        }
-
-        System.out.println("Enter hair color: ");
-        ArrayList<String> hairColor = new ArrayList<>();
-
-        for (Color color : Color.values()) {
-            System.out.println("- " + color);
-            hairColor.add(color.toString());
-        }
-
-        while (true) {
-            System.out.print("Enter group admin hair color: ");
-            sererializingFields[12] = scanner.nextLine();
-            if (!hairColor.contains(sererializingFields[12])) {
-                System.out.println("Incorrect hair color, please try again");
-            } else
-                break;
-        }
-
-        StudyGroup group = new StudyGroup();
-        group.serialize(sererializingFields);
-        return group;
-        // manager.insert(Integer.parseInt(inlineParams.get(1)), group);
     }
 
-    public StudyGroup readFileElement(String id, String filePath) {
-        if (!Checker.correctChecker(id, true, true, true) || !Checker.intChecker(id)) {
-            return null;
+    public StudyGroup readElement(LineReader input, LineWriter output) throws ExecuteError {
+        Random random = new Random();
+        String id = String.valueOf(random.nextInt(1000000));
+
+        String name = askField(
+                "Enter group name: ", input, output,
+                false, Checkers::checkNull);
+
+        String x = askField(
+                "Enter coordinates x: ", input, output,
+                false, Checkers::checkNull, Checkers::checkInteger);
+
+        String y = askField(
+                "Enter coordinates y: ", input, output,
+                false, Checkers::checkNull, Checkers::checkInteger);
+
+        String studentsCount = askField(
+                "Enter group students count: ", input, output,
+                true, Checkers::checkPositive);
+
+        String expelledStudents = askField(
+                "Enter number of expelled students: ", input, output,
+                false, Checkers::checkPositive);
+
+        String transferredStudents = askField(
+                "Enter number of transferred students: ", input, output,
+                false, Checkers::checkPositive);
+
+        String semester = askField(
+                "Enter semester (FIFTH, SIXTH, SEVENTH, EIGHTH): ", input, output, true,
+                (value) -> {
+                    try {
+                        Semester.valueOf(value);
+                    } catch (IllegalArgumentException e) {
+                        throw new ExecuteError("Incorrect semester");
+                    }
+                });
+
+        String adminName = askField("Enter admin name: ", input, output, true);
+
+        String adminPassportID = "null";
+        String adminHairColor = "null";
+        String adminBirthday = "null";
+        if (adminName != "null") {
+            adminPassportID = askField(
+                    "Enter admin passport ID: ", input, output, false,
+                    Checkers::checkNull,
+                    (value) -> {
+                        if (value.length() <= 24)
+                            throw new ExecuteError("Passport ID must be longer than 24 characters");
+                    });
+
+            adminHairColor = askField(
+                    "Enter admin hair color (BLUE, YELLOW, WHITE): ", input, output, false,
+                    Checkers::checkNull,
+                    (value) -> {
+                        try {
+                            Color.valueOf(value);
+                        } catch (IllegalArgumentException e) {
+                            throw new ExecuteError("Incorrect hair color");
+                        }
+                    });
+            adminBirthday = LocalDateTime.now().minusYears(random.nextInt(3) - 17).toString();
+        }
+        String creationDate = LocalDateTime.now().toString();
+
+        StudyGroup group = new StudyGroup();
+        group.serialize(
+                id, name, x, y, creationDate,
+                studentsCount, expelledStudents, transferredStudents, semester,
+                adminName, adminBirthday, adminPassportID, adminHairColor);
+
+        return group;
+    }
+
+    public StudyGroup readElement(String[] params, LineReader input, LineWriter output) throws ExecuteError {
+        // name
+        Random random = new Random();
+        String id = String.valueOf(random.nextInt(1000000));
+
+        String name = params[0];
+        Checkers.checkNull(name);
+
+        // x
+        String x = params[1];
+        Checkers.checkNull(x);
+        Checkers.checkInteger(x);
+
+        String y = params[2];
+        Checkers.checkNull(y);
+        Checkers.checkInteger(y);
+
+        String studentsCount = params[3];
+        if (!studentsCount.equals("")){
+
+            Checkers.checkPositive(studentsCount);
+        } else if (studentsCount.equals("")) {
+            studentsCount = "null";
         }
 
-        try {
+        String expelledStudents = params[4];
+        Checkers.checkPositive(expelledStudents);
+
+        String transferredStudents = params[5];
+        Checkers.checkPositive(transferredStudents);
+
+        String semester = params[6];
+        if (!semester.equals("")){
             
-            Scanner scanner = new Scanner(System.in);
-            Random random = new Random();
-    
-            // FileInputStream file = new FileInputStream(filePath);
-            // InputStreamReader reader = new InputStreamReader(file);
-
-            // ArrayList<String[]> elems = new ArrayList<String[]>();
-    
-            // int t;
-            // StringBuilder sb = new StringBuilder();
-            // while((t=reader.read())!= -1)
-            // {
-            //     char r = (char)t;
-            //     sb.append(r);
-    
-            // }
-
-            // if (sb.length() == 0) {
-
-            // }
-
-            // String elemsString = sb.toString();
-            // elemsString = elemsString.replaceAll("\"", "");
-            // String[] lines = elemsString.split("\n");
-            
-
-            String[] sererializingFields = new String[13];
-    
-            sererializingFields[0] = id;
-    
-            while (true) {
-    
-                System.out.print("Enter group name: ");
-                sererializingFields[1] = scanner.nextLine();
-                if (Checker.nullChecker(sererializingFields[1])) {
-                    System.out.println("Incorrect name, please try again");
-                } else
-                    break;
+            try {
+                Semester.valueOf(semester);
+            } catch (IllegalArgumentException e) {
+                throw new ExecuteError("Incorrect semester");
             }
-    
-            while (true) {
-    
-                System.out.print("Enter coordinates x: ");
-                sererializingFields[2] = scanner.nextLine();
-    
-                if (!Checker.correctChecker(sererializingFields[2], true, true, false)
-                        || !Checker.intChecker(sererializingFields[2])) {
-                    System.out.println("Incorrect x, please try again");
-                } else
-                    break;
-            }
-    
-            while (true) {
-    
-                System.out.print("Enter coordinates y: ");
-                sererializingFields[3] = scanner.nextLine();
-    
-                if (!Checker.correctChecker(sererializingFields[3], true, true, false)
-                        || !Checker.intChecker(sererializingFields[3])) {
-                    System.out.println("Incorrect y, please try again");
-                } else
-                    break;
-            }
-    
-            sererializingFields[4] = LocalDateTime.now().plusDays(random.nextInt(10 - 5 + 1) + 5).toString();
-    
-            while (true) {
-    
-                System.out.print("Enter group students count: ");
-                sererializingFields[5] = scanner.nextLine();
-    
-                if (!Checker.correctChecker(sererializingFields[5], false, true, true)) {
-                    System.out.println("Incorrect students count, please try again");
-                } else
-                    break;
-            }
-    
-            while (true) {
-    
-                System.out.print("Enter number of expelled students: ");
-                sererializingFields[6] = scanner.nextLine();
-    
-                if (!Checker.correctChecker(sererializingFields[6], true, true, true)) {
-                    System.out.println("Incorrect number of expelled students, please try again");
-                } else
-                    break;
-            }
-    
-            while (true) {
-    
-                System.out.print("Enter number of transfered students: ");
-                sererializingFields[7] = scanner.nextLine();
-    
-                if (!Checker.correctChecker(sererializingFields[7], true, true, true)) {
-                    System.out.println("Incorrect number of transfered students, please try again");
-                } else
-                    break;
-            }
-    
-            System.out.println("Enter semester: ");
-            ArrayList<String> semesters = new ArrayList<>();
-    
-            for (Semester semester : Semester.values()) {
-                System.out.println("- " + semester);
-                semesters.add(semester.toString());
-            }
-            while (true) {
-                System.out.print("Enter semester: ");
-                sererializingFields[8] = scanner.nextLine();
-                if (!Checker.nullChecker(sererializingFields[8])) {
-    
-                    if (!semesters.contains(sererializingFields[8])) {
-                        System.out.println("Incorrect semester, please try again");
-                    } else
-                        break;
-                } else
-                    break;
-            }
-    
-            System.out.println("If your group doesn't have admin, please enter");
-            if (Checker.nullChecker(scanner.nextLine())) {
-                sererializingFields[9] = "null";
-                sererializingFields[10] = "null";
-                sererializingFields[11] = "null";
-                sererializingFields[12] = "null";
-                StudyGroup group = new StudyGroup();
-                group.serialize(sererializingFields);
-                return group;
-                // manager.insert(Integer.parseInt(inlineParams.get(1)), group);
-                // return;
-            }
-    
-            while (true) {
-                System.out.print("Enter group admin name: ");
-                sererializingFields[9] = scanner.nextLine();
-                if (Checker.nullChecker(sererializingFields[9])) {
-                    System.out.println("Incorrect name, please try again");
-                } else
-                    break;
-            }
-    
-            sererializingFields[10] = LocalDateTime.now().plusDays(random.nextInt(10 - 5 + 1) + 5).toString();
-    
-            while (true) {
-    
-                System.out.print("Enter group admin passport id: ");
-                sererializingFields[11] = scanner.nextLine();
-                if (Checker.nullChecker(sererializingFields[11]) || sererializingFields[11].length() > 24) {
-                    System.out.println("Incorrect passport id, please try again");
-                } else
-                    break;
-            }
-    
-            System.out.println("Enter hair color: ");
-            ArrayList<String> hairColor = new ArrayList<>();
-    
-            for (Color color : Color.values()) {
-                System.out.println("- " + color);
-                hairColor.add(color.toString());
-            }
-    
-            while (true) {
-                System.out.print("Enter group admin hair color: ");
-                sererializingFields[12] = scanner.nextLine();
-                if (!hairColor.contains(sererializingFields[12])) {
-                    System.out.println("Incorrect hair color, please try again");
-                } else
-                    break;
-            }
-    
-            StudyGroup group = new StudyGroup();
-            group.serialize(sererializingFields);
-            return group;
-        } catch (Exception e) {
-            System.out.println("Incorrect file");
-
+        } else if (semester.equals("")){
+            semester = "null";
         }
-        return null;
-        // manager.insert(Integer.parseInt(inlineParams.get(1)), group);
+        // System.out.println(semester);
+
+
+        String adminName, adminPassportID, adminHairColor, adminBirthday;
+        if (params[7].equals("")) {
+            adminName = "null";
+            adminPassportID = "null";
+            adminHairColor = "null";
+            adminBirthday = "null";
+        } else {
+            adminName = params[7];
+            adminPassportID = params[8];
+            Checkers.checkNull(adminPassportID);
+            // Checkers.checkPassportID(adminPassportID);
+            if (adminPassportID.length() <= 24)
+                throw new ExecuteError("Passport ID must be longer than 24 characters");
+
+            adminHairColor = params[9];
+            try {
+                Color.valueOf(adminHairColor);
+            } catch (IllegalArgumentException e) {
+                throw new ExecuteError("Incorrect hair color");
+            }
+            adminBirthday = LocalDateTime.now().minusYears(random.nextInt(3) - 17).toString();
+            
+            
+        }
+        String creationDate = LocalDateTime.now().toString();
+
+        StudyGroup group = new StudyGroup();
+        group.serialize(
+                id, name, x, y, creationDate,
+                studentsCount, expelledStudents, transferredStudents, semester,
+                adminName, adminBirthday, adminPassportID, adminHairColor);
+
+        return group;
+
+
+
+
     }
 }

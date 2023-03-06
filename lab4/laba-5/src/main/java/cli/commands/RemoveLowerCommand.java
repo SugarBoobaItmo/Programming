@@ -1,45 +1,38 @@
 package cli.commands;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
 
-import cli.commands.checker.Checker;
+import cli.commands.exceptions.ExecuteError;
+import cli.interfaces.LineReader;
+import cli.interfaces.LineWriter;
 import collection_manager.AbstractManager;
-import models.Semester;
-import models.Color;
 
 import models.StudyGroup;
 
 public class RemoveLowerCommand extends ElementCommand {
-
-    public RemoveLowerCommand(String name, String description, AbstractManager manager) {
-        super(name, description, manager);
+    public RemoveLowerCommand(AbstractManager manager) {
+        super("RemoveLower", "Remove elements which are lower than given", manager);
     }
 
     @Override
-    public void execute(List<String> inlineParams) {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+        // Checkers.checkInlineParamsCount(0, inlineParams);
 
-        if ((inlineParams.size() == 1)) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter id of element");
-            StudyGroup studyGroup = readElement(scanner.nextLine());
-            if (studyGroup != null) {
-                manager.removeLower(studyGroup);
-                // manager.insert(Integer.parseInt(inlineParams.get(1)) ,studyGroup);
-            } else {
-                System.out.println("Incorrect command, please write it with correct parameters");
-                return;
-            }
 
+        StudyGroup studyGroup;
+        
+        if (inlineParams.size() > 1){
+            studyGroup = this.readElement(Arrays.copyOfRange(inlineParams.toArray(new String[inlineParams.size()]), 1, inlineParams.size()) ,input, output);
+            
+            } else
+            studyGroup = this.readElement(input, output);
+       
+        if (studyGroup != null) {
+            manager.removeLower(studyGroup);
         } else {
-            System.out.println("Incorrect command, please write it with correct parameters");
+            output.writeLine("Incorrect command, please write it with correct parameters" + "\n");
             return;
         }
-
     }
-
 }

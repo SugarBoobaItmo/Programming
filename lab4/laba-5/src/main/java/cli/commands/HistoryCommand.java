@@ -2,26 +2,33 @@ package cli.commands;
 
 import java.util.List;
 
-import collection_manager.AbstractManager;
+import cli.CLIClient;
+import cli.commands.checker.Checkers;
+import cli.commands.exceptions.IncorrectInlineParamsCount;
+import cli.interfaces.LineReader;
+import cli.interfaces.LineWriter;
 
-public class HistoryCommand extends AbstractCommand {
-
-    public HistoryCommand(String name, String description) {
-        super(name, description);
-        // TODO Auto-generated constructor stub
+public class HistoryCommand extends CLISupportedCommand {
+    public HistoryCommand(CLIClient cli) {
+        super("History", "Show history of commands", cli);
     }
 
     @Override
-    public void execute(List<String> inlineParams) {
-        if (inlineParams.size() == 0) {
-            System.out.println("History is empty");
-        } else if (inlineParams.size() < 7) {
-            System.out.println("History:");
-            inlineParams.forEach(System.out::println);
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output)
+            throws IncorrectInlineParamsCount {
+        
+        Checkers.checkInlineParamsCount(0, inlineParams);
+        List<String> commandsHistory = cli.getCommandsHistory();
+
+        if (commandsHistory.size() == 0) {
+            output.writeLine("History is empty" + "\n");
+        } else if (commandsHistory.size() < 7) {
+            output.writeLine("History:" + "\n");
+            commandsHistory.forEach(v -> output.writeLine(v + "\n"));
         } else {
-            System.out.println("History:");
-            List<String> sublist = inlineParams.subList(inlineParams.size() - 6, inlineParams.size());
-            sublist.forEach(System.out::println);
+            output.writeLine("History:" + "\n");
+            List<String> sublist = commandsHistory.subList(commandsHistory.size() - 6, commandsHistory.size());
+            sublist.forEach(v -> output.writeLine(v + "\n"));
         }
     }
 }

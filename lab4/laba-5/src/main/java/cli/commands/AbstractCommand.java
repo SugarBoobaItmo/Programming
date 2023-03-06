@@ -2,7 +2,9 @@ package cli.commands;
 
 import java.util.List;
 
-import collection_manager.AbstractManager;
+import cli.commands.exceptions.ExecuteError;
+import cli.interfaces.LineReader;
+import cli.interfaces.LineWriter;
 
 public abstract class AbstractCommand {
     private String name;
@@ -21,5 +23,6 @@ public abstract class AbstractCommand {
         return description;
     }
 
-    public abstract void execute(List<String> inlineParams);
+    public abstract void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError;
+
 }

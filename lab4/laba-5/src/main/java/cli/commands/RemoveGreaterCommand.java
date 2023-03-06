@@ -1,45 +1,38 @@
 package cli.commands;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
 
-import cli.commands.checker.Checker;
+import cli.commands.exceptions.ExecuteError;
+import cli.commands.exceptions.GroupNotFound;
+import cli.interfaces.LineReader;
+import cli.interfaces.LineWriter;
 import collection_manager.AbstractManager;
-import models.Semester;
-import models.Color;
 
 import models.StudyGroup;
 
 public class RemoveGreaterCommand extends ElementCommand {
-
-    public RemoveGreaterCommand(String name, String description, AbstractManager manager) {
-        super(name, description, manager);
+    public RemoveGreaterCommand(AbstractManager manager) {
+        super("RemoveGreater", "Remove elements which are greater than given", manager);
     }
 
     @Override
-    public void execute(List<String> inlineParams) {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+        // Checkers.checkInlineParamsCount(0, inlineParams);
 
-        if ((inlineParams.size() == 1)) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Enter id of element");
-            StudyGroup studyGroup = readElement(scanner.nextLine());
-            if (studyGroup != null) {
-                manager.removeGreater(studyGroup);
-                // manager.insert(Integer.parseInt(inlineParams.get(1)) ,studyGroup);
-            } else {
-                System.out.println("Incorrect command, please write it with correct parameters");
-                return;
-            }
-
+        
+        StudyGroup studyGroup;
+        
+        if (inlineParams.size() > 1){
+            studyGroup = this.readElement(Arrays.copyOfRange(inlineParams.toArray(new String[inlineParams.size()]), 1, inlineParams.size()) ,input, output);
+            
+            } else
+            studyGroup = this.readElement(input, output);
+        
+        if (studyGroup != null) {
+            manager.removeGreater(studyGroup);
         } else {
-            System.out.println("Incorrect command, please write it with correct parameters");
-            return;
+            throw new GroupNotFound();
         }
-
     }
-
 }
