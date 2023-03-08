@@ -55,7 +55,7 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
 
         String name = askField(
                 "Enter group name: ", input, output,
-                false, Checkers::checkNull);
+                false, Checkers::checkNull, Checkers::checkSymbols);
 
         String x = askField(
                 "Enter coordinates x: ", input, output,
@@ -87,19 +87,19 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
                     }
                 });
 
-        String adminName = askField("Enter admin name: ", input, output, true);
+        String adminName = askField("Enter admin name: ", input, output, true, Checkers::checkSymbols);
 
         String adminPassportID = "null";
         String adminHairColor = "null";
         String adminBirthday = "null";
-        if (adminName != "null") {
+        if (adminName != "null" ) {
             adminPassportID = askField(
                     "Enter admin passport ID: ", input, output, false,
                     Checkers::checkNull,
                     (value) -> {
                         if (value.length() <= 24)
                             throw new ExecuteError("Passport ID must be longer than 24 characters");
-                    });
+                    }, Checkers::checkSymbols);
 
             adminHairColor = askField(
                     "Enter admin hair color (BLUE, YELLOW, WHITE): ", input, output, false,

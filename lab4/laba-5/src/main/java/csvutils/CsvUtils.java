@@ -51,7 +51,7 @@ public class CsvUtils {
             writer.write("\"".getBytes());
 
         } catch (IOException ex) {
-            System.out.println("Incorrect file path");
+            System.out.println("No permission to write in file");
         }
 
     }
@@ -87,8 +87,11 @@ public class CsvUtils {
             return new CollectionRecord(collection, new CollectionInfo(
                     LocalDateTime.parse(lines[lines.length - 1].split(",")[1]), lines[lines.length - 1].split(",")[0]));
 
+        } catch (IOException ex) {
+            System.out.println("No such file or no permission to read it");
         } catch (Exception e) {
             System.out.println("Incorrect file");
+
         }
         return null;
 

@@ -68,7 +68,7 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
                             System.out.println(e.getMessage());
                             break;
                         } catch (ArrayIndexOutOfBoundsException e) {
-                            System.out.println("Script group uncorrect params");
+                            System.out.println("Script group incorrect params");
                             break;
                         }
                     }
@@ -122,7 +122,7 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
             return sb.toString().split(System.lineSeparator());
 
         } catch (IOException e) {
-            System.out.println("File \"" + filePath + "\" not found");
+            System.out.println("File not found or no permission to read it");
             return null;
         }
     }

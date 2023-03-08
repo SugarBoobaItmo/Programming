@@ -9,6 +9,7 @@ import cli.commands.exceptions.IncorrectLong;
 import cli.commands.exceptions.IncorrectWord;
 import cli.commands.exceptions.NotPositive;
 import cli.commands.exceptions.NullParam;
+import cli.commands.exceptions.UnallowedSymbol;
 
 public class Checkers {
     public static void checkInlineParamsCount(int count, List<String> inlineParams)
@@ -56,5 +57,10 @@ public class Checkers {
         } catch (NumberFormatException e) {
             throw new IncorrectLong(value);
         }
+    }
+
+    public static void checkSymbols(String value) throws UnallowedSymbol {
+        if (value.contains("\"") || value.contains(","))
+            throw new UnallowedSymbol(value);
     }
 }

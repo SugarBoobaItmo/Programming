@@ -36,7 +36,7 @@ public class CLIClient {
     }
 
     public void startCLI() {
-        System.out.println("Press Ctrl+Z and enter to skip command execution.");
+        System.out.println("Press Ctrl+D and enter to skip command execution.");
         while (true) {
             System.out.print(">> ");
             if (!scanner.hasNextLine()) {
