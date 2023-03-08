@@ -57,9 +57,12 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
                 try {
                     AbstractCommand command = cli.resolveCommand(params);
 
-                    if ((command.getName().equals("Insert") || command.getName().equals("Update")
+                    if ((command.getName().equals("Insert") 
+                            || command.getName().equals("Update")
                             || command.getName().equals("RemoveGreater")
-                            || command.getName().equals("RemoveLower")) && fileLines[line + 1].matches("\\s+.*")) {
+                            || command.getName().equals("RemoveLower")) 
+                            && line + 1 < fileLines.length
+                            && fileLines[line + 1].matches("\\s+.*")) {
                         try {
                             ArrayList<String> insertParams = checkInsertFields(fileLines, line);
                             insertParams.forEach(v -> params.add(v));
