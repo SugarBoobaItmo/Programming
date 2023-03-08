@@ -21,8 +21,6 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
     private int maxDepth = 5;
     private static HashMap<String, Integer> scriptExecuteDepth = new HashMap<String, Integer>();
 
-    private Scanner scanner = new Scanner(System.in);
-
     public ExecuteScriptCommand(CLIClient cli) {
         super("ExecuteScript", "Execute script from file", cli);
 
@@ -75,7 +73,7 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
                             break;
                         }
                     }
-                    cli.executeCommand(params, command, scanner::nextLine, System.out::print);
+                    cli.executeCommand(params, command, input, output);
                 } catch (CommandNotFound e) {
                     System.out.println("Command not found: " + e.getMessage());
                 }

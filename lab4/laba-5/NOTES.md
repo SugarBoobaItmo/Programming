@@ -12,4 +12,4 @@
 5. Test app on gelious (file permissions can appear there)      -->
 
 6. After using Ctrl+Z script not working
-7. echo insert 123  > file destroys code
+<!-- 7. echo insert 123  > file destroys code -->

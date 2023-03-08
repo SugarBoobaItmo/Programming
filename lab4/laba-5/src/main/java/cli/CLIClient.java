@@ -50,8 +50,7 @@ public class CLIClient {
                 try {
                     executeCommand(params, command, scanner::nextLine, System.out::print);
                 } catch (NoSuchElementException e) {
-                scanner = new Scanner(System.in);
-
+                    scanner = new Scanner(System.in);
                     System.out.println("Command execution skipped.");
                 }
             } catch (CommandNotFound e) {
@@ -100,7 +99,6 @@ public class CLIClient {
     public void executeCommand(List<String> inlineParams, AbstractCommand command, LineReader input,
             LineWriter output) {
         try {
-
             command.execute(inlineParams, input, output);
         } catch (ExecuteError e) {
             output.writeLine("Command execution error:\n\t" + e.getMessage() + "\n");
@@ -116,12 +114,13 @@ public class CLIClient {
     public HashMap<String, AbstractCommand> getCommands() {
         return commands;
     }
+
     public HashMap<String, TerminalCommand> getTerminalCommands() {
         return terminal_commands;
     }
+
     public List<String> getCommandsHistory() {
         return commandsHistory;
     }
-
 
 }
