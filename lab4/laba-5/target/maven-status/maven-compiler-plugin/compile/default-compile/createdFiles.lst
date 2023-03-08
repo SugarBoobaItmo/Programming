@@ -47,5 +47,6 @@ models\Color.class
 models\StudyGroup.class
 cli\commands\exceptions\IncorrectInlineParamsCount.class
 collection_manager\AbstractManager.class
+cli\commands\exceptions\UnallowedSymbol.class
 models\Semester.class
 cli\commands\AbstractCommand.class

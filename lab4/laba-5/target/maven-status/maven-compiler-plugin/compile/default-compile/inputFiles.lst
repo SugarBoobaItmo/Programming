@@ -45,6 +45,7 @@ C:\Users\habne\Desktop\ITMO\Programming\lab4\laba-5\src\main\java\models\Collect
 C:\Users\habne\Desktop\ITMO\Programming\lab4\laba-5\src\main\java\cli\commands\ShowCommand.java
 C:\Users\habne\Desktop\ITMO\Programming\lab4\laba-5\src\main\java\cli\commands\HistoryCommand.java
 C:\Users\habne\Desktop\ITMO\Programming\lab4\laba-5\src\main\java\cli\interfaces\LineWriter.java
+C:\Users\habne\Desktop\ITMO\Programming\lab4\laba-5\src\main\java\cli\commands\exceptions\UnallowedSymbol.java
 C:\Users\habne\Desktop\ITMO\Programming\lab4\laba-5\src\main\java\cli\commands\UpdateCommand.java
 C:\Users\habne\Desktop\ITMO\Programming\lab4\laba-5\src\main\java\collection_manager\AbstractManager.java
 C:\Users\habne\Desktop\ITMO\Programming\lab4\laba-5\src\main\java\cli\exceptions\CommandNotFound.java
