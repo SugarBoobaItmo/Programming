@@ -7,22 +7,37 @@ import cli.commands.exceptions.ExecuteError;
 import cli.interfaces.LineReader;
 import cli.interfaces.LineWriter;
 import collection_manager.AbstractManager;
-import csvutils.CsvUtils;
-import models.CollectionRecord;
 
+/**
+ * 
+ * SaveCommand is a class that represents a command to save the current
+ * collection to a file in CSV format.
+ * 
+ */
 public class SaveCommand extends AbstractCollectionCommand {
 
+    /**
+     * 
+     * Constructor for the SaveCommand class.
+     * 
+     * @param manager An instance of the AbstractManager class.
+     */
     public SaveCommand(AbstractManager manager) {
-        super("Save", "Save collection to file",  manager);
+        super("Save", "Save collection to file", manager);
     }
 
-    public void save(CollectionRecord collectionRecord, String filePath) {
-
-    }
-
+    /**
+     * 
+     * Executes the command to save the collection to a file.
+     * 
+     * @param inlineParams The list of parameters provided with the command.
+     * @param input        The LineReader to read input from.
+     * @param output       The LineWriter to write output to.
+     * @throws ExecuteError If there is an error executing the command.
+     */
     @Override
     public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
         Checkers.checkInlineParamsCount(0, inlineParams);
-        CsvUtils.recordToCsv(manager.getCollectionRecord(), manager.getInfo().getFilePath());
+        manager.save();
     }
 }

@@ -7,13 +7,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 
 import cli.CLIClient;
 import cli.commands.checker.Checkers;
 import cli.commands.exceptions.ExecuteError;
+import cli.commands.exceptions.ScriptGroupIncorrectParams;
 import cli.exceptions.CommandNotFound;
-import cli.exceptions.ScriptGroupIncorrectParams;
 import cli.interfaces.LineReader;
 import cli.interfaces.LineWriter;
 
