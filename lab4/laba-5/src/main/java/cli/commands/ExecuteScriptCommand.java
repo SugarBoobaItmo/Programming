@@ -16,10 +16,24 @@ import cli.exceptions.CommandNotFound;
 import cli.interfaces.LineReader;
 import cli.interfaces.LineWriter;
 
+/**
+ * 
+ * The ExecuteScriptCommand class represents a command that executes a script
+ * from a file.
+ * 
+ */
 public class ExecuteScriptCommand extends CLISupportedCommand {
+    // max depth of script execution (for recursion)
     private int maxDepth = 5;
+    // map of script file paths and their execution depth
     private static HashMap<String, Integer> scriptExecuteDepth = new HashMap<String, Integer>();
 
+    /**
+     * 
+     * Constructs a new ExecuteScriptCommand with the specified CLI client.
+     * 
+     * @param cli the CLI client to be used
+     */
     public ExecuteScriptCommand(CLIClient cli) {
         super("ExecuteScript", "Execute script from file", cli);
 
@@ -30,7 +44,9 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
             throws ExecuteError {
         Checkers.checkInlineParamsCount(1, inlineParams);
 
+        // get absolute path of script file
         String filePath = Paths.get(inlineParams.get(1)).normalize().toAbsolutePath().toString();
+        // set or increase recursion depth and check for max depth
         if (scriptExecuteDepth.containsKey(filePath)) {
             int depth = scriptExecuteDepth.get(filePath);
             scriptExecuteDepth.put(filePath, depth + 1);
@@ -41,28 +57,34 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
         } else {
             scriptExecuteDepth.put(filePath, 1);
         }
-
+        // read script file
         String[] fileLines = scriptReader(filePath);
         boolean skipDepthReset = false;
         if (fileLines != null) {
             for (int line = 0; line < fileLines.length; line++) {
+                // checking for max depth of script execution (if during execution of script
+                // same script was invoked)
                 if (scriptExecuteDepth.get(filePath) >= maxDepth) {
                     skipDepthReset = true;
                     break;
                 }
+                // parse script file lines
                 ArrayList<String> params = cli.parseParams(fileLines[line]);
                 try {
                     AbstractCommand command = cli.resolveCommand(params);
-
-                    if ((command.getName().equals("Insert") 
+                    // check for script group manipulation commands
+                    if ((command.getName().equals("Insert")
                             || command.getName().equals("Update")
                             || command.getName().equals("RemoveGreater")
-                            || command.getName().equals("RemoveLower")) 
+                            || command.getName().equals("RemoveLower"))
                             && line + 1 < fileLines.length
                             && fileLines[line + 1].matches("\\s+.*")) {
                         try {
+                            // checking Insert fields for script group manipulation commands
                             ArrayList<String> insertParams = checkInsertFields(fileLines, line);
+                            // add Insert fields to params list
                             insertParams.forEach(v -> params.add(v));
+                            // skip next line (Insert fields)
                             line += insertParams.size();
                         } catch (ScriptGroupIncorrectParams e) {
                             System.out.println(e.getMessage());
@@ -78,14 +100,27 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
                 }
             }
         }
-
+        // if script exceeded recursion depth, don't reset depth
+        // so in next script invocation it will be checked and exception will be thrown
         if (!skipDepthReset && scriptExecuteDepth.containsKey(filePath)) {
             scriptExecuteDepth.remove(filePath);
         }
     }
 
+    /**
+     * 
+     * Checks Insert fields for script group manipulation commands.
+     * 
+     * @param fileLines the script file lines
+     * @param line      the line number
+     * @return the list of Insert fields
+     * @throws ScriptGroupIncorrectParams if the script group is incorrect
+     */
     public ArrayList<String> checkInsertFields(String[] fileLines, int line) throws ScriptGroupIncorrectParams {
         ArrayList<String> insertFields = new ArrayList<>();
+        // checking for 8 fields
+        // if field with admin name is empty insert next 8 fields(checking if they
+        // correspond to "\tab+word" format)
         if (fileLines[line + 8].matches("\\s+")) {
             for (int elem = line + 1; elem < line + 9; elem++) {
                 if (fileLines[elem].matches("\\s+.+")) {
@@ -95,6 +130,7 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
             }
             return insertFields;
         }
+        // checking for 10 fields
         for (int i = line + 1; i < line + 11; i++) {
 
             if (fileLines[i].matches("\\s+.+")) {
@@ -107,8 +143,15 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
 
     }
 
+    /**
+     * 
+     * Reads a script file.
+     * 
+     * @param filePath the path to the script file
+     * @return the script String array file lines
+     */
     public String[] scriptReader(String filePath) {
-
+        // read script file using InputStreamReader
         try (InputStreamReader reader = new InputStreamReader(new FileInputStream(filePath))) {
             int t;
             StringBuilder sb = new StringBuilder();

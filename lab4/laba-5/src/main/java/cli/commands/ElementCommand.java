@@ -13,16 +13,44 @@ import models.Color;
 import models.Semester;
 import models.StudyGroup;
 
+/**
+ * 
+ * This abstract is abstract class for all commands that need to fetch Group
+ * object fields data from user.
+ * 
+ * It contains method that asks user for field data, checks it and then build
+ * Group object.
+ */
 public abstract class ElementCommand extends AbstractCollectionCommand {
+
+    /**
+     * 
+     * Constructs a new ElementCommand with the specified collection manager.
+     * 
+     * @param name        the name of the command
+     * @param description the description of the command
+     * @param manager     the collection manager to be used
+     */
     public ElementCommand(String name, String description, AbstractManager manager) {
         super(name, description, manager);
     }
 
+    /**
+     * 
+     * Asks for field data, checks it.
+     * 
+     * @param input  the LineReader used to read input from the console
+     * @param output the LineWriter used to write output to the console
+     * @return checked value
+     * @throws ExecuteError if an error occurs while executing the command
+     */
     private String askField(String inputMessage, LineReader input, LineWriter output, boolean allowNull,
             Checker... checkers) {
 
+        // for stopping asking for field data if it is correct
         boolean errorFlag = true;
         while (true) {
+            // if field is not required and user wants to skip it
             if (allowNull) {
                 output.writeLine("(Enter \"\" to skip this field) ");
             }
@@ -33,6 +61,7 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
                 return "null";
 
             errorFlag = false;
+            // check field data
             for (Checker checker : checkers) {
                 try {
                     checker.check(value);
@@ -49,6 +78,15 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
         }
     }
 
+    /**
+     * 
+     * Asks for field data, checks it and then build Group object.
+     * 
+     * @param input  the LineReader used to read input from the console
+     * @param output the LineWriter used to write output to the console
+     * @return StudyGroup object
+     * @throws ExecuteError if an error occurs while executing the command
+     */
     public StudyGroup readElement(LineReader input, LineWriter output) throws ExecuteError {
         Random random = new Random();
         String id = String.valueOf(random.nextInt(1000000));
@@ -92,7 +130,8 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
         String adminPassportID = "null";
         String adminHairColor = "null";
         String adminBirthday = "null";
-        if (adminName != "null" ) {
+        // if admin name is not null then ask for other admin fields
+        if (adminName != "null") {
             adminPassportID = askField(
                     "Enter admin passport ID: ", input, output, false,
                     Checkers::checkNull,
@@ -124,6 +163,16 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
         return group;
     }
 
+    /**
+     * 
+     * Asks for script field data, checks it and then build Group object.
+     * 
+     * @param params the array of parameters
+     * @param input  the LineReader used to read input from the console
+     * @param output the LineWriter used to write output to the console
+     * @return StudyGroup object
+     * @throws ExecuteError if an error occurs while executing the command
+     */
     public StudyGroup readElement(String[] params, LineReader input, LineWriter output) throws ExecuteError {
         // name
         Random random = new Random();
@@ -142,7 +191,7 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
         Checkers.checkInteger(y);
 
         String studentsCount = params[3];
-        if (!studentsCount.equals("")){
+        if (!studentsCount.equals("")) {
 
             Checkers.checkPositive(studentsCount);
         } else if (studentsCount.equals("")) {
@@ -156,18 +205,16 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
         Checkers.checkPositive(transferredStudents);
 
         String semester = params[6];
-        if (!semester.equals("")){
-            
+        if (!semester.equals("")) {
+
             try {
                 Semester.valueOf(semester);
             } catch (IllegalArgumentException e) {
                 throw new ExecuteError("Incorrect semester");
             }
-        } else if (semester.equals("")){
+        } else if (semester.equals("")) {
             semester = "null";
         }
-        // System.out.println(semester);
-
 
         String adminName, adminPassportID, adminHairColor, adminBirthday;
         if (params[7].equals("")) {
@@ -179,7 +226,6 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
             adminName = params[7];
             adminPassportID = params[8];
             Checkers.checkNull(adminPassportID);
-            // Checkers.checkPassportID(adminPassportID);
             if (adminPassportID.length() <= 24)
                 throw new ExecuteError("Passport ID must be longer than 24 characters");
 
@@ -190,8 +236,7 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
                 throw new ExecuteError("Incorrect hair color");
             }
             adminBirthday = LocalDateTime.now().minusYears(random.nextInt(3) - 17).toString();
-            
-            
+
         }
         String creationDate = LocalDateTime.now().toString();
 
@@ -202,9 +247,6 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
                 adminName, adminBirthday, adminPassportID, adminHairColor);
 
         return group;
-
-
-
 
     }
 }

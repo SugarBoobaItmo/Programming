@@ -8,11 +8,35 @@ import cli.commands.exceptions.IncorrectInlineParamsCount;
 import cli.interfaces.LineReader;
 import cli.interfaces.LineWriter;
 
+/**
+ * 
+ * The HistoryCommand class represents a command that shows the history of
+ * commands.
+ * 
+ */
 public class HistoryCommand extends CLISupportedCommand {
+    
+    /**
+     * 
+     * Constructs a new HistoryCommand with the specified CLI client.
+     * 
+     * @param cli the CLI client to be used
+     */
     public HistoryCommand(CLIClient cli) {
         super("History", "Show history of commands", cli);
     }
 
+    /**
+     * 
+     * Executes the HistoryCommand by showing the history of commands.
+     * 
+     * @param inlineParams the list of parameters passed inline with the command
+     * @param input        the LineReader used to read input from the console (not
+     *                     used in this method)
+     * @param output       the LineWriter used to write output to the console
+     * @throws IncorrectInlineParamsCount if the number of inline parameters is
+     *                                    incorrect
+     */
     @Override
     public void execute(List<String> inlineParams, LineReader input, LineWriter output)
             throws IncorrectInlineParamsCount {
@@ -20,12 +44,14 @@ public class HistoryCommand extends CLISupportedCommand {
         Checkers.checkInlineParamsCount(0, inlineParams);
         List<String> commandsHistory = cli.getCommandsHistory();
 
+        // in case of empty history 
         if (commandsHistory.size() == 0) {
             output.writeLine("History is empty" + "\n");
         } else if (commandsHistory.size() < 7) {
             output.writeLine("History:" + "\n");
             commandsHistory.forEach(v -> output.writeLine(v + "\n"));
         } else {
+            // in case of history with more than 6 commands write only last 6 commands
             output.writeLine("History:" + "\n");
             List<String> sublist = commandsHistory.subList(commandsHistory.size() - 6, commandsHistory.size());
             sublist.forEach(v -> output.writeLine(v + "\n"));

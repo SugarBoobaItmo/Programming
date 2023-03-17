@@ -3,6 +3,11 @@ package models;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+/**
+ * 
+ * The StudyGroup class represents a study group.
+ * 
+ */
 public class StudyGroup implements Comparable<StudyGroup> {
 
     private Integer id; // Поле не может быть null, Значение поля должно быть больше 0, Значение этого
@@ -18,6 +23,23 @@ public class StudyGroup implements Comparable<StudyGroup> {
     private Semester semesterEnum; // Поле может быть null
     private Person groupAdmin; // Поле может быть null
 
+    /**
+     * 
+     * Constructs a StudyGroup object with a given id, name, coordinates,
+     * creationDate,
+     * studentsCount, expelledStudents, transferredStudents, semesterEnum, and
+     * groupAdmin.
+     * 
+     * @param id                  the id of the study group.
+     * @param name                the name of the study group.
+     * @param coordinates         the coordinates of the study group.
+     * @param creationDate        the creationDate of the study group.
+     * @param studentsCount       the studentsCount of the study group.
+     * @param expelledStudents    the expelledStudents of the study group.
+     * @param transferredStudents the transferredStudents of the study group.
+     * @param semesterEnum        the semesterEnum of the study group.
+     * @param groupAdmin          the groupAdmin of the study group.
+     */
     public StudyGroup(Integer id, String name, Coordinates coordinates, LocalDateTime creationDate,
             long studentsCount, Long expelledStudents, long transferredStudents, Semester semesterEnum,
             Person groupAdmin) {
@@ -32,6 +54,11 @@ public class StudyGroup implements Comparable<StudyGroup> {
         this.groupAdmin = groupAdmin;
     }
 
+    /**
+     * 
+     * Constructs a StudyGroup object without information about it.
+     * 
+     */
     public StudyGroup() {
         this.id = null;
         this.name = null;
@@ -44,79 +71,193 @@ public class StudyGroup implements Comparable<StudyGroup> {
         this.groupAdmin = null;
     }
 
+    /**
+     * 
+     * Returns the id of the study group.
+     * 
+     * @return the id of the study group.
+     */
     public Integer getId() {
         return id;
     }
 
+    /**
+     * 
+     * Returns the name of the study group.
+     * 
+     * @return the name of the study group.
+     */
     public String getName() {
         return name;
 
     }
 
+    /**
+     * 
+     * Returns the coordinates of the study group.
+     * 
+     * @return the coordinates of the study group.
+     */
     public Coordinates getCoordinates() {
         return coordinates;
     }
 
+    /**
+     * 
+     * Returns the creationDate of the study group.
+     * 
+     * @return the creationDate of the study group.
+     */
     public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
+    /**
+     * 
+     * Returns the studentsCount of the study group.
+     * 
+     * @return the studentsCount of the study group.
+     */
     public long getStudentsCount() {
         return studentsCount;
     }
 
+    /**
+     * 
+     * Returns the expelledStudents of the study group.
+     * 
+     * @return the expelledStudents of the study group.
+     */
     public long getExpelledStudents() {
         return expelledStudents;
     }
 
+    /**
+     * 
+     * Returns the transferredStudents of the study group.
+     * 
+     * @return the transferredStudents of the study group.
+     */
     public long getTransferredStudents() {
         return transferredStudents;
     }
 
+    /**
+     * 
+     * Returns the semesterEnum of the study group.
+     * 
+     * @return the semesterEnum of the study group.
+     */
     public Semester getSemesterEnum() {
         return semesterEnum;
     }
 
+    /**
+     * 
+     * Returns the groupAdmin of the study group.
+     * 
+     * @return the groupAdmin of the study group.
+     */
     public Person getGroupAdmin() {
         return groupAdmin;
     }
 
+    /**
+     * 
+     * Sets the id of the study group.
+     * 
+     * @param id the id of the study group.
+     */
     public void setId(Integer id) {
         this.id = id;
     }
 
+    /**
+     * 
+     * Sets the name of the study group.
+     * 
+     * @param name the name of the study group.
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * 
+     * Sets the coordinates of the study group.
+     * 
+     * @param coordinates the coordinates of the study group.
+     */
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 
+    /**
+     * 
+     * Sets the creationDate of the study group.
+     * 
+     * @param creationDate the creationDate of the study group.
+     */
     public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
+    /**
+     * 
+     * Sets the studentsCount of the study group.
+     * 
+     * @param studentsCount the studentsCount of the study group.
+     */
     public void setStudentsCount(long studentsCount) {
         this.studentsCount = studentsCount;
     }
 
+    /**
+     * 
+     * Sets the expelledStudents of the study group.
+     * 
+     * @param expelledStudents the expelledStudents of the study group.
+     */
     public void setExpelledStudents(long expelledStudents) {
         this.expelledStudents = expelledStudents;
     }
 
+    /**
+     * 
+     * Sets the transferredStudents of the study group.
+     * 
+     * @param transferredStudents the transferredStudents of the study group.
+     */
     public void setTransferredStudents(long transferredStudents) {
         this.transferredStudents = transferredStudents;
     }
 
+    /**
+     * 
+     * Sets the semesterEnum of the study group.
+     * 
+     * @param semesterEnum the semesterEnum of the study group.
+     */
     public void setSemesterEnum(Semester semesterEnum) {
         this.semesterEnum = semesterEnum;
     }
 
+    /**
+     * 
+     * Sets the groupAdmin of the study group.
+     * 
+     * @param groupAdmin the groupAdmin of the study group.
+     */
     public void setGroupAdmin(Person groupAdmin) {
         this.groupAdmin = groupAdmin;
     }
 
+    /**
+     * 
+     * Returns a string representation of the study group.
+     * 
+     * @return a string representation of the study group.
+     */
     public void serialize(String... o) {
 
         this.id = Integer.parseInt(o[0]);
@@ -140,6 +281,12 @@ public class StudyGroup implements Comparable<StudyGroup> {
 
     }
 
+    /**
+     * 
+     * Returns a string array representation of the study group.
+     * 
+     * @return a string array representation of the study group.
+     */
     public String[] deserialize() {
         String[] o = new String[13];
         o[0] = this.id.toString();
@@ -171,6 +318,12 @@ public class StudyGroup implements Comparable<StudyGroup> {
         return o;
     }
 
+    /**
+     * 
+     * Returns a string representation of the study group.
+     * 
+     * @return a string representation of the study group.
+     */
     @Override
     public String toString() {
         return "StudyGroup " +
@@ -185,6 +338,11 @@ public class StudyGroup implements Comparable<StudyGroup> {
                 ", groupAdmin=" + groupAdmin;
     }
 
+    /** 
+     * Indicates whether some other object is "equal to" this one.
+     * @param o the reference object with which to compare.
+     * @return true if this object is the same as the obj argument; false otherwise.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -203,15 +361,24 @@ public class StudyGroup implements Comparable<StudyGroup> {
                 groupAdmin.equals(that.groupAdmin);
     }
 
+
+    /**
+     * Returns a hash code value for the object.
+     * @return a hash code value for this object.
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id, name, coordinates, creationDate, studentsCount, expelledStudents, transferredStudents,
                 semesterEnum, groupAdmin);
     }
 
+    /**
+     * Compares this object with the specified object for order.
+     * @param o the object to be compared.
+     * @return a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object.
+     */
     @Override
     public int compareTo(StudyGroup o) {
-        // return this.name.compareTo(o.name);
         int comparingResult = Integer.compare(this.id, o.id);
 
         if (comparingResult == 0)
