@@ -338,8 +338,9 @@ public class StudyGroup implements Comparable<StudyGroup> {
                 ", groupAdmin=" + groupAdmin;
     }
 
-    /** 
+    /**
      * Indicates whether some other object is "equal to" this one.
+     * 
      * @param o the reference object with which to compare.
      * @return true if this object is the same as the obj argument; false otherwise.
      */
@@ -361,9 +362,9 @@ public class StudyGroup implements Comparable<StudyGroup> {
                 groupAdmin.equals(that.groupAdmin);
     }
 
-
     /**
      * Returns a hash code value for the object.
+     * 
      * @return a hash code value for this object.
      */
     @Override
@@ -374,53 +375,37 @@ public class StudyGroup implements Comparable<StudyGroup> {
 
     /**
      * Compares this object with the specified object for order.
+     * 
      * @param o the object to be compared.
-     * @return a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object.
+     * @return a negative integer, zero, or a positive integer as this object is
+     *         less than, equal to, or greater than the specified object.
      */
     @Override
     public int compareTo(StudyGroup o) {
-        int comparingResult = Integer.compare(this.id, o.id);
+        // compare all fields
+        int result = this.name.compareTo(o.getName());
+        if (result != 0)
+            return result;
+        result = this.coordinates.compareTo(o.getCoordinates());
+        if (result != 0)
+            return result;
+        result = this.creationDate.compareTo(o.getCreationDate());
+        if (result != 0)
+            return result;
+        result = this.studentsCount.compareTo(o.getStudentsCount());
+        if (result != 0)
+            return result;
+        result = this.expelledStudents.compareTo(o.getExpelledStudents());
+        if (result != 0)
+            return result;
+        result = this.transferredStudents.compareTo(o.getTransferredStudents());
+        if (result != 0)
+            return result;
+        result = this.semesterEnum.compareTo(o.getSemesterEnum());
+        if (result != 0)
+            return result;
+        return this.groupAdmin.compareTo(o.getGroupAdmin());
 
-        if (comparingResult == 0)
-            comparingResult = this.name.compareTo(o.name);
-        if (comparingResult == 0)
-            comparingResult = this.coordinates.compareTo(o.coordinates);
-        if (comparingResult == 0)
-            comparingResult = this.creationDate.compareTo(o.creationDate);
-        if (comparingResult == 0) {
-            if (this.studentsCount == null) {
-                if (o.studentsCount == null)
-                    comparingResult = 0;
-                else
-                    comparingResult = -1;
-            } else
-                comparingResult = Long.compare(this.studentsCount, o.studentsCount);
-        }
-        if (comparingResult == 0)
-            comparingResult = Long.compare(this.expelledStudents, o.expelledStudents);
-        if (comparingResult == 0)
-            comparingResult = Long.compare(this.transferredStudents, o.transferredStudents);
-        if (comparingResult == 0) {
-            if (this.semesterEnum == null) {
-                if (o.semesterEnum == null)
-                    comparingResult = 0;
-                else
-                    comparingResult = -1;
-            } else
-                comparingResult = this.semesterEnum.compareTo(o.semesterEnum);
-        }
-
-        if (comparingResult == 0) {
-            if (this.groupAdmin == null) {
-                if (o.groupAdmin == null)
-                    comparingResult = 0;
-                else
-                    comparingResult = -1;
-            } else
-                comparingResult = this.groupAdmin.compareTo(o.groupAdmin);
-        }
-
-        return comparingResult;
     }
 
 }
