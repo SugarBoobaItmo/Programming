@@ -40,7 +40,7 @@ public class ShowCommand extends AbstractCollectionCommand {
         if (manager.getCollection().size() == 0) {
             output.writeLine("Collection is empty" + "\n");
         } else {
-            manager.getCollection().forEach((k, v) -> output.writeLine("-" + v + "\n"));
+            manager.getCollection().forEach((k, v) -> output.writeLine(k + ": " + v + "\n\n"));
         }
     }
 }
