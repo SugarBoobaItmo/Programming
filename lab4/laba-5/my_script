@@ -1,5 +1,5 @@
 insert 2122
-history
+    history
     1
     1
     1
@@ -19,3 +19,6 @@ remove_lower
     
     
 show
+insert 2
+remove_greater
+    1

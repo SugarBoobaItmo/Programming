@@ -154,8 +154,8 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
         }
         String creationDate = LocalDateTime.now().toString();
 
-        StudyGroup group = new StudyGroup();
-        group.serialize(
+        StudyGroup group;
+        group = StudyGroup.deserialize(
                 id, name, x, y, creationDate,
                 studentsCount, expelledStudents, transferredStudents, semester,
                 adminName, adminBirthday, adminPassportID, adminHairColor);
@@ -240,8 +240,8 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
         }
         String creationDate = LocalDateTime.now().toString();
 
-        StudyGroup group = new StudyGroup();
-        group.serialize(
+        StudyGroup group;
+        group = StudyGroup.deserialize(
                 id, name, x, y, creationDate,
                 studentsCount, expelledStudents, transferredStudents, semester,
                 adminName, adminBirthday, adminPassportID, adminHairColor);

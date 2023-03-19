@@ -37,7 +37,7 @@ public class CsvUtils {
 
         // put all values in a values4converting map
         collectionRecord.getCollection().forEach((k, v) -> {
-            values4converting.put(k, v.deserialize());
+            values4converting.put(k, v.serialize());
         });
 
         // write to file using a buffered output stream
@@ -107,10 +107,10 @@ public class CsvUtils {
 
             // convert string array to collection record
             for (int i = 0; i < lines.length - 1; i++) {
-                StudyGroup studyGroup = new StudyGroup();
+                StudyGroup studyGroup;
                 String[] values = lines[i].split(",");
 
-                studyGroup.serialize(Arrays.copyOfRange(values, 1, values.length));
+                studyGroup = StudyGroup.deserialize(Arrays.copyOfRange(values, 1, values.length));
 
                 collection.put(values[0], studyGroup);
             }
