@@ -17,4 +17,16 @@ public class IncorrectInlineParamsCountLower extends ExecuteError {
                 "Unexpected inline parameters count: expected less than %d but %d taken",
                 expected, taken));
     }
+
+    /**
+     * Constructs an IncorrectInlineParamsCountLower exception with the given
+     * expected number of inline parameters.
+     * 
+     * @param expected the expected number of inline parameters
+     */
+    public IncorrectInlineParamsCountLower(int expected) {
+        super(String.format(
+                "Unexpected inline parameters count: expected less than %d",
+                expected));
+    }
 }
