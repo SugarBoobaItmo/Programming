@@ -40,16 +40,38 @@ public class StudyGroup implements Comparable<StudyGroup> {
      * @param semesterEnum        the semesterEnum of the study group.
      * @param groupAdmin          the groupAdmin of the study group.
      */
-    public StudyGroup(Integer id, String name, Coordinates coordinates, LocalDateTime creationDate,
-            long studentsCount, Long expelledStudents, long transferredStudents, Semester semesterEnum,
+    private StudyGroup(Integer id, String name, Coordinates coordinates, LocalDateTime creationDate,
+            Long studentsCount, Long expelledStudents, Long transferredStudents, Semester semesterEnum,
             Person groupAdmin) {
+        
+        if (id <= 0)
+            throw new IllegalArgumentException("Id must be greater than 0.");
         this.id = id;
+        
+        if (name == null || name.isEmpty())
+            throw new IllegalArgumentException("Name cannot be empty.");
         this.name = name;
+
+        if (coordinates == null)
+            throw new IllegalArgumentException("Coordinates cannot be null.");
         this.coordinates = coordinates;
+
+        if (creationDate == null)
+            throw new IllegalArgumentException("Creation date cannot be null.");
         this.creationDate = creationDate;
+
+        if (studentsCount != null && studentsCount <= 0)
+            throw new IllegalArgumentException("Students count must be greater than 0.");
         this.studentsCount = studentsCount;
+
+        if (expelledStudents <= 0)
+            throw new IllegalArgumentException("Expelled students must be greater than 0.");
         this.expelledStudents = expelledStudents;
+
+        if (transferredStudents <= 0)
+            throw new IllegalArgumentException("Transferred students must be greater than 0.");
         this.transferredStudents = transferredStudents;
+
         this.semesterEnum = semesterEnum;
         this.groupAdmin = groupAdmin;
     }
@@ -59,7 +81,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
      * Constructs a StudyGroup object without information about it.
      * 
      */
-    public StudyGroup() {
+    private StudyGroup() {
         this.id = null;
         this.name = null;
         this.coordinates = null;
@@ -254,31 +276,37 @@ public class StudyGroup implements Comparable<StudyGroup> {
 
     /**
      * 
-     * Returns a string representation of the study group.
-     * 
-     * @return a string representation of the study group.
+     * Static method that returns a study group from input values.
+     *
+     * @return a study group.
      */
-    public void serialize(String... o) {
+    public static StudyGroup deserialize(String... o) {
 
-        this.id = Integer.parseInt(o[0]);
-        this.name = o[1];
-        this.coordinates = new Coordinates(Integer.parseInt(o[2]), Integer.parseInt(o[3]));
-        this.creationDate = LocalDateTime.parse(o[4]);
+        int id = Integer.parseInt(o[0]);
+        String name = o[1];
+        Coordinates coordinates = new Coordinates(Integer.parseInt(o[2]), Integer.parseInt(o[3]));
+        LocalDateTime creationDate = LocalDateTime.parse(o[4]);
+        Long studentsCount;
         if (o[5].equals("null"))
-            this.studentsCount = null;
+            studentsCount = null;
         else
-            this.studentsCount = Long.parseLong(o[5]);
-        this.expelledStudents = Long.parseLong(o[6]);
-        this.transferredStudents = Long.parseLong(o[7]);
+            studentsCount = Long.parseLong(o[5]);
+        
+        Long expelledStudents = Long.parseLong(o[6]);
+        Long transferredStudents = Long.parseLong(o[7]);
+        Semester semesterEnum;
         if (o[8].equals("null"))
-            this.semesterEnum = null;
+            semesterEnum = null;
         else
-            this.semesterEnum = Semester.valueOf(o[8]);
+            semesterEnum = Semester.valueOf(o[8]);
+        Person groupAdmin;
         if (o[9].equals("null") && o[10].equals("null") && o[11].equals("null") && o[12].equals("null"))
-            this.groupAdmin = null;
+            groupAdmin = null;
         else
-            this.groupAdmin = new Person(o[9], LocalDateTime.parse(o[10]), o[11], Color.valueOf(o[12]));
-
+            groupAdmin = new Person(o[9], LocalDateTime.parse(o[10]), o[11], Color.valueOf(o[12]));
+            
+        return new StudyGroup(id, name, coordinates, creationDate, studentsCount, expelledStudents, transferredStudents,
+                semesterEnum, groupAdmin);
     }
 
     /**
@@ -287,7 +315,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
      * 
      * @return a string array representation of the study group.
      */
-    public String[] deserialize() {
+    public String[] serialize() {
         String[] o = new String[13];
         o[0] = this.id.toString();
         o[1] = this.name;
