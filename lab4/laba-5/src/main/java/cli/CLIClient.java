@@ -74,6 +74,7 @@ public class CLIClient {
      * Starts the CLI client and waits for input from the user.
      * The user input is parsed and resolved to a command, which is then executed.
      * If the user enters Ctrl+D, the command execution is skipped.
+     * @throws Exception
      */
 
     public void startCLI() {
@@ -93,6 +94,9 @@ public class CLIClient {
             try {
                 AbstractCommand command = resolveCommand(params);
                 try {
+                    if (line.matches(params.get(0) + "\\s+.*\\s+.*")) {
+                        System.out.println("Incorrect command syntax.");
+                        continue;}
                     executeCommand(params, command, scanner::nextLine, System.out::print);
                 } catch (NoSuchElementException e) {
                     scanner = new Scanner(System.in);
