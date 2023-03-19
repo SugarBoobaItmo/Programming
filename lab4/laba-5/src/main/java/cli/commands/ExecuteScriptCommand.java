@@ -11,6 +11,7 @@ import java.util.List;
 import cli.CLIClient;
 import cli.commands.checker.Checkers;
 import cli.commands.exceptions.ExecuteError;
+import cli.commands.exceptions.IncorrectInlineParamsCountLower;
 import cli.commands.exceptions.ScriptGroupIncorrectParams;
 import cli.exceptions.CommandNotFound;
 import cli.interfaces.LineReader;
@@ -72,6 +73,9 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
                 ArrayList<String> params = cli.parseParams(fileLines[line]);
                 try {
                     AbstractCommand command = cli.resolveCommand(params);
+                    if (fileLines[line].matches(params.get(0) + "\\s+.*\\s+.*")) {
+                        throw new IncorrectInlineParamsCountLower(1);
+                        }
                     // check for script group manipulation commands
                     if ((command.getName().equals("Insert")
                             || command.getName().equals("Update")
