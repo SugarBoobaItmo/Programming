@@ -1,142 +1,360 @@
 package models;
 
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+/**
+ * 
+ * The StudyGroup class represents a study group.
+ * 
+ */
+public class StudyGroup implements Comparable<StudyGroup> {
 
-// @XmlRootElement(name = "StudyGroup")
-@XmlType(propOrder = { "id", "name", "coordinates", "creationDate", "studentsCount", "expelledStudents",
-        "transferredStudents", "semesterEnum", "groupAdmin" })
-public class StudyGroup {
-
-    private Long id; // Поле не может быть null, Значение поля должно быть больше 0, Значение этого
-                     // поля должно быть уникальным, Значение этого поля должно генерироваться
-                     // автоматически
+    private Integer id; // Поле не может быть null, Значение поля должно быть больше 0, Значение этого
+                        // поля должно быть уникальным, Значение этого поля должно генерироваться
+                        // автоматически
     private String name; // Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; // Поле не может быть null
-    private ZonedDateTime creationDate; // Поле не может быть null, Значение этого поля должно генерироваться
+    private java.time.LocalDateTime creationDate; // Поле не может быть null, Значение этого поля должно генерироваться
                                                   // автоматически
-    private long studentsCount; // Значение поля должно быть больше 0
-    private long expelledStudents; // Значение поля должно быть больше 0
-    private long transferredStudents; // Значение поля должно быть больше 0
+    private Long studentsCount; // Значение поля должно быть больше 0, Поле может быть null
+    private Long expelledStudents; // Значение поля должно быть больше 0, Поле не может быть null
+    private Long transferredStudents; // Значение поля должно быть больше 0, Поле не может быть null
     private Semester semesterEnum; // Поле может быть null
-    private Person groupAdmin; // Поле не может быть null
+    private Person groupAdmin; // Поле может быть null
 
-    public StudyGroup(Long id, String name, Coordinates coordinates, ZonedDateTime creationDate,
-            long studentsCount, long transferredStudents, Semester semesterEnum, Person groupAdmin) {
+    /**
+     * 
+     * Constructs a StudyGroup object with a given id, name, coordinates,
+     * creationDate,
+     * studentsCount, expelledStudents, transferredStudents, semesterEnum, and
+     * groupAdmin.
+     * 
+     * @param id                  the id of the study group.
+     * @param name                the name of the study group.
+     * @param coordinates         the coordinates of the study group.
+     * @param creationDate        the creationDate of the study group.
+     * @param studentsCount       the studentsCount of the study group.
+     * @param expelledStudents    the expelledStudents of the study group.
+     * @param transferredStudents the transferredStudents of the study group.
+     * @param semesterEnum        the semesterEnum of the study group.
+     * @param groupAdmin          the groupAdmin of the study group.
+     */
+    private StudyGroup(Integer id, String name, Coordinates coordinates, LocalDateTime creationDate,
+            Long studentsCount, Long expelledStudents, Long transferredStudents, Semester semesterEnum,
+            Person groupAdmin) {
+        
+        if (id <= 0)
+            throw new IllegalArgumentException("Id must be greater than 0.");
         this.id = id;
+        
+        if (name == null || name.isEmpty())
+            throw new IllegalArgumentException("Name cannot be empty.");
         this.name = name;
+
+        if (coordinates == null)
+            throw new IllegalArgumentException("Coordinates cannot be null.");
         this.coordinates = coordinates;
+
+        if (creationDate == null)
+            throw new IllegalArgumentException("Creation date cannot be null.");
         this.creationDate = creationDate;
+
+        if (studentsCount != null && studentsCount <= 0)
+            throw new IllegalArgumentException("Students count must be greater than 0.");
         this.studentsCount = studentsCount;
+
+        if (expelledStudents <= 0)
+            throw new IllegalArgumentException("Expelled students must be greater than 0.");
         this.expelledStudents = expelledStudents;
+
+        if (transferredStudents <= 0)
+            throw new IllegalArgumentException("Transferred students must be greater than 0.");
         this.transferredStudents = transferredStudents;
+
         this.semesterEnum = semesterEnum;
         this.groupAdmin = groupAdmin;
     }
 
-    public StudyGroup() {
+    /**
+     * 
+     * Constructs a StudyGroup object without information about it.
+     * 
+     */
+    private StudyGroup() {
         this.id = null;
         this.name = null;
         this.coordinates = null;
         this.creationDate = null;
-        this.studentsCount = 0;
-        this.expelledStudents = 0;
-        this.transferredStudents = 0;
+        this.studentsCount = 0l;
+        this.expelledStudents = 0l;
+        this.transferredStudents = 0l;
         this.semesterEnum = null;
         this.groupAdmin = null;
     }
 
-    public Long getId() {
+    /**
+     * 
+     * Returns the id of the study group.
+     * 
+     * @return the id of the study group.
+     */
+    public Integer getId() {
         return id;
     }
 
+    /**
+     * 
+     * Returns the name of the study group.
+     * 
+     * @return the name of the study group.
+     */
     public String getName() {
         return name;
 
     }
 
+    /**
+     * 
+     * Returns the coordinates of the study group.
+     * 
+     * @return the coordinates of the study group.
+     */
     public Coordinates getCoordinates() {
         return coordinates;
     }
 
-    
-    public ZonedDateTime getCreationDate() {
+    /**
+     * 
+     * Returns the creationDate of the study group.
+     * 
+     * @return the creationDate of the study group.
+     */
+    public LocalDateTime getCreationDate() {
         return creationDate;
     }
 
+    /**
+     * 
+     * Returns the studentsCount of the study group.
+     * 
+     * @return the studentsCount of the study group.
+     */
     public long getStudentsCount() {
         return studentsCount;
     }
 
+    /**
+     * 
+     * Returns the expelledStudents of the study group.
+     * 
+     * @return the expelledStudents of the study group.
+     */
     public long getExpelledStudents() {
         return expelledStudents;
     }
 
+    /**
+     * 
+     * Returns the transferredStudents of the study group.
+     * 
+     * @return the transferredStudents of the study group.
+     */
     public long getTransferredStudents() {
         return transferredStudents;
     }
 
+    /**
+     * 
+     * Returns the semesterEnum of the study group.
+     * 
+     * @return the semesterEnum of the study group.
+     */
     public Semester getSemesterEnum() {
         return semesterEnum;
     }
 
+    /**
+     * 
+     * Returns the groupAdmin of the study group.
+     * 
+     * @return the groupAdmin of the study group.
+     */
     public Person getGroupAdmin() {
         return groupAdmin;
     }
 
-    @XmlAttribute
-    public void setId(Long id) {
+    /**
+     * 
+     * Sets the id of the study group.
+     * 
+     * @param id the id of the study group.
+     */
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    @XmlElement
+    /**
+     * 
+     * Sets the name of the study group.
+     * 
+     * @param name the name of the study group.
+     */
     public void setName(String name) {
         this.name = name;
     }
 
-    @XmlElement
+    /**
+     * 
+     * Sets the coordinates of the study group.
+     * 
+     * @param coordinates the coordinates of the study group.
+     */
     public void setCoordinates(Coordinates coordinates) {
         this.coordinates = coordinates;
     }
 
-    @XmlElement
-    public void setCreationDate(ZonedDateTime creationDate) {
+    /**
+     * 
+     * Sets the creationDate of the study group.
+     * 
+     * @param creationDate the creationDate of the study group.
+     */
+    public void setCreationDate(LocalDateTime creationDate) {
         this.creationDate = creationDate;
     }
 
-    @XmlElement
+    /**
+     * 
+     * Sets the studentsCount of the study group.
+     * 
+     * @param studentsCount the studentsCount of the study group.
+     */
     public void setStudentsCount(long studentsCount) {
         this.studentsCount = studentsCount;
     }
 
-    @XmlElement
+    /**
+     * 
+     * Sets the expelledStudents of the study group.
+     * 
+     * @param expelledStudents the expelledStudents of the study group.
+     */
     public void setExpelledStudents(long expelledStudents) {
         this.expelledStudents = expelledStudents;
     }
 
-    @XmlElement
+    /**
+     * 
+     * Sets the transferredStudents of the study group.
+     * 
+     * @param transferredStudents the transferredStudents of the study group.
+     */
     public void setTransferredStudents(long transferredStudents) {
         this.transferredStudents = transferredStudents;
     }
 
-    @XmlElement
+    /**
+     * 
+     * Sets the semesterEnum of the study group.
+     * 
+     * @param semesterEnum the semesterEnum of the study group.
+     */
     public void setSemesterEnum(Semester semesterEnum) {
         this.semesterEnum = semesterEnum;
     }
 
-    @XmlElement
+    /**
+     * 
+     * Sets the groupAdmin of the study group.
+     * 
+     * @param groupAdmin the groupAdmin of the study group.
+     */
     public void setGroupAdmin(Person groupAdmin) {
         this.groupAdmin = groupAdmin;
     }
 
+    /**
+     * 
+     * Static method that returns a study group from input values.
+     * @param o the input values.
+     * @return a study group.
+     */
+    public static StudyGroup deserialize(String... o) {
+
+        int id = Integer.parseInt(o[0]);
+        String name = o[1];
+        Coordinates coordinates = new Coordinates(Integer.parseInt(o[2]), Integer.parseInt(o[3]));
+        LocalDateTime creationDate = LocalDateTime.parse(o[4]);
+        Long studentsCount;
+        if (o[5].equals("null"))
+            studentsCount = null;
+        else
+            studentsCount = Long.parseLong(o[5]);
+        
+        Long expelledStudents = Long.parseLong(o[6]);
+        Long transferredStudents = Long.parseLong(o[7]);
+        Semester semesterEnum;
+        if (o[8].equals("null"))
+            semesterEnum = null;
+        else
+            semesterEnum = Semester.valueOf(o[8]);
+        Person groupAdmin;
+        if (o[9].equals("null") && o[10].equals("null") && o[11].equals("null") && o[12].equals("null"))
+            groupAdmin = null;
+        else
+            groupAdmin = new Person(o[9], LocalDateTime.parse(o[10]), o[11], Color.valueOf(o[12]));
+            
+        return new StudyGroup(id, name, coordinates, creationDate, studentsCount, expelledStudents, transferredStudents,
+                semesterEnum, groupAdmin);
+    }
+
+    /**
+     * 
+     * Returns a string array representation of the study group.
+     * 
+     * @return a string array representation of the study group.
+     */
+    public String[] serialize() {
+        String[] o = new String[13];
+        o[0] = this.id.toString();
+        o[1] = this.name;
+        o[2] = this.coordinates.getX().toString();
+        o[3] = this.coordinates.getY().toString();
+        o[4] = this.creationDate.toString();
+        if (o[5] == null)
+            o[5] = "null";
+        else
+            o[5] = this.studentsCount.toString();
+        o[6] = this.expelledStudents.toString();
+        o[7] = this.transferredStudents.toString();
+        if (this.semesterEnum == null)
+            o[8] = "null";
+        else
+            o[8] = this.semesterEnum.toString();
+        if (this.groupAdmin == null) {
+            o[9] = "null";
+            o[10] = "null";
+            o[11] = "null";
+            o[12] = "null";
+            return o;
+        }
+        o[9] = this.groupAdmin.getName().toString();
+        o[10] = this.groupAdmin.getBirthday().toString();
+        o[11] = this.groupAdmin.getPassportID();
+        o[12] = this.groupAdmin.getHairColor().toString();
+        return o;
+    }
+
+    /**
+     * 
+     * Returns a string representation of the study group.
+     * 
+     * @return a string representation of the study group.
+     */
     @Override
     public String toString() {
-        return "StudyGroup{" +
+        return "StudyGroup " +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", coordinates=" + coordinates +
@@ -144,11 +362,16 @@ public class StudyGroup {
                 ", studentsCount=" + studentsCount +
                 ", expelledStudents=" + expelledStudents +
                 ", transferredStudents=" + transferredStudents +
-                ", semesterEnum=" + semesterEnum +
-                ", groupAdmin=" + groupAdmin +
-                '}';
+                ", semesterEnum=" + (semesterEnum != null ? semesterEnum.getSemester() : semesterEnum) +
+                ", groupAdmin=" + groupAdmin;
     }
 
+    /**
+     * Indicates whether some other object is "equal to" this one.
+     * 
+     * @param o the reference object with which to compare.
+     * @return true if this object is the same as the obj argument; false otherwise.
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -160,16 +383,57 @@ public class StudyGroup {
                 name.equals(that.name) &&
                 coordinates.equals(that.coordinates) &&
                 creationDate.equals(that.creationDate) &&
-                studentsCount == that.studentsCount &&
-                expelledStudents == that.expelledStudents &&
-                transferredStudents == that.transferredStudents &&
+                studentsCount.equals(that.studentsCount) &&
+                expelledStudents.equals(that.expelledStudents) &&
+                transferredStudents.equals(that.transferredStudents) &&
                 semesterEnum == that.semesterEnum &&
                 groupAdmin.equals(that.groupAdmin);
     }
 
+    /**
+     * Returns a hash code value for the object.
+     * 
+     * @return a hash code value for this object.
+     */
     @Override
     public int hashCode() {
         return Objects.hash(id, name, coordinates, creationDate, studentsCount, expelledStudents, transferredStudents,
                 semesterEnum, groupAdmin);
     }
+
+    /**
+     * Compares this object with the specified object for order.
+     * 
+     * @param o the object to be compared.
+     * @return a negative integer, zero, or a positive integer as this object is
+     *         less than, equal to, or greater than the specified object.
+     */
+    @Override
+    public int compareTo(StudyGroup o) {
+        // compare all fields
+        int result = this.name.compareTo(o.getName());
+        if (result != 0)
+            return result;
+        result = this.coordinates.compareTo(o.getCoordinates());
+        if (result != 0)
+            return result;
+        result = this.creationDate.compareTo(o.getCreationDate());
+        if (result != 0)
+            return result;
+        result = this.studentsCount.compareTo(o.getStudentsCount());
+        if (result != 0)
+            return result;
+        result = this.expelledStudents.compareTo(o.getExpelledStudents());
+        if (result != 0)
+            return result;
+        result = this.transferredStudents.compareTo(o.getTransferredStudents());
+        if (result != 0)
+            return result;
+        result = this.semesterEnum.compareTo(o.getSemesterEnum());
+        if (result != 0)
+            return result;
+        return this.groupAdmin.compareTo(o.getGroupAdmin());
+
+    }
+
 }

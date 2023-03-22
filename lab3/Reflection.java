@@ -7,6 +7,7 @@ import java.lang.reflect.Method;
 import java.net.SocketImpl;
 import java.util.Arrays;
 
+import javafx.scene.control.TableColumn.SortType;
 import src.abs.Creature;
 import src.classes.Point;
 import src.classes.Puh;
@@ -21,7 +22,7 @@ public class Reflection {
             @Override
             public void relax(int duration) {
                 // TODO Auto-generated method stub
-                
+                    
             }
 
             @Override
@@ -126,7 +127,9 @@ public class Reflection {
         System.out.println(integer.getSuperclass());
         System.out.println(integer.getTypeName());
         System.out.println(integer.isPrimitive());
-       
+
+    
+    
     }
 
 }
