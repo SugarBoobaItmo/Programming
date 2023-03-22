@@ -22,7 +22,7 @@ public class RemoveKeyCommand extends AbstractCollectionCommand {
      * @param manager the collection manager to be used
      */
     public RemoveKeyCommand(AbstractManager manager) {
-        super("RemoveKey", "Remove element by key", manager);
+        super("RemoveKey", "Remove element by key -null", manager);
     }
 
     /**

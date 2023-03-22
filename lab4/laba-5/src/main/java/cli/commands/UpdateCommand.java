@@ -25,7 +25,7 @@ public class UpdateCommand extends ElementCommand {
      * @param manager the collection manager.
      */
     public UpdateCommand(AbstractManager manager) {
-        super("Update", "Update element of collection by ID", manager);
+        super("Update", "Update element of collection by ID -id {element}", manager);
     }
 
     /**

@@ -25,7 +25,7 @@ public class FilterStartsWithNameCommand extends AbstractCollectionCommand {
      * @param manager the collection manager to be used
      */
     public FilterStartsWithNameCommand(AbstractManager manager) {
-        super("FilterStartsWithName", "Filter by name", manager);
+        super("FilterStartsWithName", "Filter by name -name", manager);
     }
 
     /**

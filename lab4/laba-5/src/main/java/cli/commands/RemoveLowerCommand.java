@@ -25,7 +25,7 @@ public class RemoveLowerCommand extends ElementCommand {
      * @param manager the AbstractManager object to manage the collection
      */
     public RemoveLowerCommand(AbstractManager manager) {
-        super("RemoveLower", "Remove elements which are lower than given", manager);
+        super("RemoveLower", "Remove elements which are lower than given -{element}", manager);
     }
 
     /**

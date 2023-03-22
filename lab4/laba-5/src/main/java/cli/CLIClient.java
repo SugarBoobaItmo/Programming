@@ -74,7 +74,6 @@ public class CLIClient {
      * Starts the CLI client and waits for input from the user.
      * The user input is parsed and resolved to a command, which is then executed.
      * If the user enters Ctrl+D, the command execution is skipped.
-     * @throws Exception
      */
 
     public void startCLI() {
@@ -129,8 +128,7 @@ public class CLIClient {
     /**
      * 
      * Resolves the command with the specified name.
-     * 
-     * @param commandName the name of the command to resolve
+     * @param params the name of the command to resolve
      * @return the resolved command
      * @throws CommandNotFound if the command with the specified name is not found
      */
@@ -151,11 +149,9 @@ public class CLIClient {
      * 
      * Resolves the terminal command with the specified name.
      * 
-     * @param commandName the name of the terminal command to resolve
+     * @param params the name of the terminal command to resolve
      * @return the resolved terminal command
-     * @throws CommandNotFound if the terminal command with the specified name is
-     *                         not
-     *                         found
+     * @throws CommandNotFound if the terminal command with the specified name is not found
      */
     public TerminalCommand resolveTerminalCommand(List<String> params) throws CommandNotFound {
         if (params.size() == 0) {
@@ -174,7 +170,7 @@ public class CLIClient {
      * 
      * Executes the specified command with the specified parameters.
      * 
-     * @param params  the parameters to pass to the command
+     * @param inlineParams  the parameters to pass to the command
      * @param command the command to execute
      * @param input   the input function to use
      * @param output  the output function to use

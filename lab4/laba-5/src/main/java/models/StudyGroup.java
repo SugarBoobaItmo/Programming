@@ -277,7 +277,7 @@ public class StudyGroup implements Comparable<StudyGroup> {
     /**
      * 
      * Static method that returns a study group from input values.
-     *
+     * @param o the input values.
      * @return a study group.
      */
     public static StudyGroup deserialize(String... o) {

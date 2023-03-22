@@ -65,7 +65,7 @@ public abstract class AbstractManager {
      * 
      * Removes a study group from the collection.
      * 
-     * @param index the index of the study group to remove.
+     * @param greaterGroup the study group to compare to.
      */
     public abstract void removeGreater(StudyGroup greaterGroup);
 

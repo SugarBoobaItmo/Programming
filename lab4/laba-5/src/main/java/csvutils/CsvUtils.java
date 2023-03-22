@@ -29,7 +29,6 @@ public class CsvUtils {
      * 
      * @param collectionRecord The CollectionRecord to be converted to CSV.
      * @param filePath         The path of the file to write the CSV data to.
-     * @throws IOException if an I/O error occurs.
      */
     public static void recordToCsv(CollectionRecord collectionRecord, String filePath) {
         // convert record to csv
@@ -42,7 +41,7 @@ public class CsvUtils {
 
         // write to file using a buffered output stream
         try (BufferedOutputStream writer = new BufferedOutputStream(new FileOutputStream(filePath))) {
-
+            
             for (String key : values4converting.keySet()) {
                 // write key of a value
                 writer.write("\"".getBytes());
@@ -82,7 +81,6 @@ public class CsvUtils {
      * 
      * @return the CollectionRecord object representing the CSV data, or null if the
      *         file could not be read or parsed correctly
-     * @throws IOException if an I/O error occurs.
      */
     public static CollectionRecord csvToRecord(String filePath) {
 

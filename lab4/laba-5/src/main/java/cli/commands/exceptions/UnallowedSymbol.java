@@ -8,6 +8,7 @@ public class UnallowedSymbol extends ExecuteError {
     /**
      * 
      * Constructs an UnallowedSymbol exception with a default message.
+     * @param message the message to set
      */
     public UnallowedSymbol(String message) {
         super("String with unallowed symbol");

@@ -144,7 +144,7 @@ public class Person implements Comparable<Person> {
      * if the argument is not null and is a Person object that represents the same
      * person as this object.
      * 
-     * @param o the object to compare this Person against.
+     * @param groupAdmin the person to compare this Person against.
      * @return true if the given object represents a Person equivalent to this
      *         person, false otherwise.
      */

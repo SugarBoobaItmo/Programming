@@ -36,9 +36,14 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
      * @param cli the CLI client to be used
      */
     public ExecuteScriptCommand(CLIClient cli) {
-        super("ExecuteScript", "Execute script from file", cli);
+        super("ExecuteScript", "Execute script from file -file_name", cli);
 
     }
+
+    // if (depth + 1 >= maxDepth) {
+    //     scriptExecuteDepth.put(filePath, 0);
+    //     throw new ExecuteError("Max depth of script execution reached");
+    // }
 
     @Override
     public void execute(List<String> inlineParams, LineReader input, LineWriter output)
@@ -47,17 +52,15 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
 
         // get absolute path of script file
         String filePath = Paths.get(inlineParams.get(1)).normalize().toAbsolutePath().toString();
+
         // set or increase recursion depth and check for max depth
-        if (scriptExecuteDepth.containsKey(filePath)) {
-            int depth = scriptExecuteDepth.get(filePath);
-            scriptExecuteDepth.put(filePath, depth + 1);
-            if (depth + 1 >= maxDepth) {
-                scriptExecuteDepth.remove(filePath);
-                throw new ExecuteError("Max depth of script execution reached");
-            }
-        } else {
-            scriptExecuteDepth.put(filePath, 1);
-        }
+        int depth = scriptExecuteDepth.containsKey(filePath) ? scriptExecuteDepth.get(filePath) : 0;
+        scriptExecuteDepth.put(filePath, depth + 1);
+        if (depth + 1 >= maxDepth) {
+            scriptExecuteDepth.remove(filePath);
+            throw new ExecuteError("Max depth of script execution reached");
+        }                 
+     
         // read script file
         String[] fileLines = scriptReader(filePath);
         boolean skipDepthReset = false;
@@ -65,7 +68,7 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
             for (int line = 0; line < fileLines.length; line++) {
                 // checking for max depth of script execution (if during execution of script
                 // same script was invoked)
-                if (scriptExecuteDepth.get(filePath) >= maxDepth) {
+                if (!scriptExecuteDepth.containsKey(filePath) || scriptExecuteDepth.get(filePath) >= maxDepth) {
                     skipDepthReset = true;
                     break;
                 }
@@ -75,7 +78,7 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
                     AbstractCommand command = cli.resolveCommand(params);
                     if (fileLines[line].matches(params.get(0) + "\\s+.*\\s+.*")) {
                         throw new IncorrectInlineParamsCountLower(1);
-                        }
+                    }
                     // check for script group manipulation commands
                     if ((command.getName().equals("Insert")
                             || command.getName().equals("Update")
@@ -106,8 +109,11 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
         }
         // if script exceeded recursion depth, don't reset depth
         // so in next script invocation it will be checked and exception will be thrown
-        if (!skipDepthReset && scriptExecuteDepth.containsKey(filePath)) {
-            scriptExecuteDepth.remove(filePath);
+        if (!skipDepthReset) {
+            if (scriptExecuteDepth.containsKey(filePath)) {
+                depth = scriptExecuteDepth.get(filePath);
+                scriptExecuteDepth.put(filePath, depth - 1);
+            }
         }
     }
 

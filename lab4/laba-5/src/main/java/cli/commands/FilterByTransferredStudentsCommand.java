@@ -26,7 +26,7 @@ public class FilterByTransferredStudentsCommand extends AbstractCollectionComman
      * @param manager the collection manager to be used
      */
     public FilterByTransferredStudentsCommand(AbstractManager manager) {
-        super("Filter_by_transferred_students" ,"Filter by number of transferred students", manager);
+        super("Filter_by_transferred_students" ,"Filter by number of transferred students -transferredStudents", manager);
     }
 
     /**

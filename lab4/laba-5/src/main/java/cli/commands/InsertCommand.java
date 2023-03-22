@@ -26,7 +26,7 @@ public class InsertCommand extends ElementCommand {
      * @param manager the AbstractManager object to manage the collection
      */
     public InsertCommand(AbstractManager manager) {
-        super("Insert", "Insert element to collection", manager);
+        super("Insert", "Insert element to collection null -{element}", manager);
     }
 
     /**
