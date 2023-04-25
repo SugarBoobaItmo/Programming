@@ -1,5 +1,6 @@
 package cli.commands;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cli.commands.checker.Checkers;
@@ -22,7 +23,7 @@ public class ClearCommand extends AbstractCollectionCommand {
      * @param manager the manager that manages the collection to be cleared
      */
     public ClearCommand(AbstractManager manager) {
-        super("Clear", "Clear collection", manager);
+        super("Clear", "Clear collection", new ArrayList<String>(), manager);
     }
 
     /**
@@ -36,8 +37,9 @@ public class ClearCommand extends AbstractCollectionCommand {
      * @throws ExecuteError if the command execution fails
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(0, inlineParams);
         this.manager.clear();
+        output.writeLine("Collection was cleared" + "\n");
     }
 }

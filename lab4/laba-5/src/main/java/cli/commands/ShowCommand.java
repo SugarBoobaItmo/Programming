@@ -1,5 +1,6 @@
 package cli.commands;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cli.commands.checker.Checkers;
@@ -21,7 +22,7 @@ public class ShowCommand extends AbstractCollectionCommand {
      * @param manager the collection manager to be used
      */
     public ShowCommand(AbstractManager manager) {
-        super("Show", "Show collection", manager);
+        super("Show", "Show collection", new ArrayList<String>(), manager);
     }
 
     /**
@@ -35,7 +36,7 @@ public class ShowCommand extends AbstractCollectionCommand {
      * @throws ExecuteError if an error occurs while executing the command
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(0, inlineParams);
         if (manager.getCollection().size() == 0) {
             output.writeLine("Collection is empty" + "\n");

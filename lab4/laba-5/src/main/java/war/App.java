@@ -6,6 +6,7 @@ import cli.commands.ExecuteScriptCommand;
 import cli.commands.ExitCommand;
 import cli.commands.FilterByTransferredStudentsCommand;
 import cli.commands.FilterStartsWithNameCommand;
+import cli.commands.GenerateGroupCommand;
 import cli.commands.HelpCommand;
 import cli.commands.HistoryCommand;
 import cli.commands.InfoCommand;
@@ -17,6 +18,8 @@ import cli.commands.RemoveLowerCommand;
 import cli.commands.SaveCommand;
 import cli.commands.ShowCommand;
 import cli.commands.UpdateCommand;
+import cli.terminal_commands.FuzzyCommand;
+import cli.terminal_commands.LoadFileCommand;
 import cli.terminal_commands.TerminalClear;
 import cli.terminal_commands.TerminalHelp;
 import collection_manager.AbstractManager;
@@ -44,9 +47,13 @@ public class App {
             cli.registerCommand("help", new HelpCommand(cli));
             cli.registerCommand("execute_script", new ExecuteScriptCommand(cli));
             cli.registerCommand("history", new HistoryCommand(cli));
+            cli.registerCommand("generate_group", new GenerateGroupCommand(manager));
 
-            cli.registerTerminalCommand("\\clear", new TerminalClear());
-            cli.registerTerminalCommand("\\help", new TerminalHelp(cli));
+            cli.registerTerminalCommand("/clear", new TerminalClear());
+            cli.registerTerminalCommand("/help", new TerminalHelp(cli));
+            cli.registerTerminalCommand("/fuzzyMode", new FuzzyCommand(cli));
+            cli.registerTerminalCommand("/load", new LoadFileCommand(manager));
+
 
             cli.startCLI();
         

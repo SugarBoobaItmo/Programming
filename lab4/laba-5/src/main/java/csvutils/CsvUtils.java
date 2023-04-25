@@ -6,15 +6,20 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import java.io.OutputStreamWriter;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.TreeMap;
 
+import com.opencsv.CSVReader;
+import com.opencsv.CSVWriter;
+import com.opencsv.exceptions.CsvMalformedLineException;
+
 import models.CollectionInfo;
 import models.CollectionRecord;
 import models.StudyGroup;
+import utils.ColorText;
 
 /**
  * 
@@ -27,7 +32,7 @@ public class CsvUtils {
      * 
      * Writes a CollectionRecord to a CSV file.
      * 
-     * @param collectionRecord The CollectionRecord to be converted to CSV.
+     * @param collectionRecord The CollectionRecord to write to the CSV file.
      * @param filePath         The path of the file to write the CSV data to.
      */
     public static void recordToCsv(CollectionRecord collectionRecord, String filePath) {
@@ -41,86 +46,81 @@ public class CsvUtils {
 
         // write to file using a buffered output stream
         try (BufferedOutputStream writer = new BufferedOutputStream(new FileOutputStream(filePath))) {
+
+            CSVWriter csvWriter = new CSVWriter(new OutputStreamWriter(writer));
             
-            for (String key : values4converting.keySet()) {
-                // write key of a value
-                writer.write("\"".getBytes());
-                writer.write(key.getBytes());
-                writer.write("\"".getBytes());
-                // write values of a value
-                for (int i = 0; i < values4converting.get(key).length; i++) {
-                    writer.write(",".getBytes());
-                    writer.write("\"".getBytes());
-                    writer.write(values4converting.get(key)[i].getBytes());
-                    writer.write("\"".getBytes());
+            csvWriter.writeNext(new String[] { "key", "groupId", "groupName", "coordinateX", "coordinateY", "creationDate", "studentsCount", "expelledStudents", "transferredStudents",
+                    "semesterEnum", "groupAdminName", "birthDay", "passportId", "hairColor"});   
+
+            values4converting.forEach((k, v) -> {
+                String[] row = new String[v.length + 1];
+                row[0] = k;
+                for (int i = 0; i < v.length; i++) {
+                    row[i + 1] = v[i];
                 }
-                writer.write("\n".getBytes());
+                csvWriter.writeNext(row);
+            });
 
-            }
-            // write collection info
-            writer.write("\"".getBytes());
-            writer.write(collectionRecord.getInfo().getOwner().getBytes());
-            writer.write("\"".getBytes());
-            writer.write(",".getBytes());
-            writer.write("\"".getBytes());
-            writer.write(collectionRecord.getInfo().getCreationTime().toString().getBytes());
-            writer.write("\"".getBytes());
-
+            csvWriter.writeNext(new String[] { "owner", "creationTime" });
+            csvWriter.writeNext(new String[] { collectionRecord.getInfo().getOwner(),
+                    collectionRecord.getInfo().getCreationTime().toString() });
+            csvWriter.close();
         } catch (IOException ex) {
-            System.out.println("No permission to write in file");
+            System.out.println(ColorText.colorText("No permission to write in file", "red"));
         }
 
     }
 
     /**
      * 
-     * Converts a CSV file to a CollectionRecord object.
+     * Reads a CollectionRecord from a CSV file.
      * 
-     * @param filePath the file path of the CSV file to be converted to a
-     *                 CollectionRecord
-     * 
-     * @return the CollectionRecord object representing the CSV data, or null if the
-     *         file could not be read or parsed correctly
+     * @param filePath The path of the file to read the CSV data from.
+     * @return The CollectionRecord read from the CSV file.
      */
     public static CollectionRecord csvToRecord(String filePath) {
 
         TreeMap<String, StudyGroup> collection = new TreeMap<>();
+        CollectionInfo info = new CollectionInfo(LocalDateTime.now(), "Unknown");
+        int rowNumber = 0;
+
         // read from file using an input stream reader
         try (InputStreamReader reader = new InputStreamReader(new FileInputStream(filePath))) {
-            // read file and convert to string
-            int t;
-            StringBuilder sb = new StringBuilder();
-            while ((t = reader.read()) != -1) {
-                char r = (char) t;
-                sb.append(r);
-            }
-            // if file is empty return only collection info
-            if (sb.length() == 0) {
-                return new CollectionRecord(collection, new CollectionInfo(LocalDateTime.now(), "Unknown"));
-            }
-            // split string by new line and convert to string array
-            String elemsString = sb.toString();
-            elemsString = elemsString.replaceAll("\"", "");
-            String[] lines = elemsString.split("\n");
 
-            // convert string array to collection record
-            for (int i = 0; i < lines.length - 1; i++) {
-                StudyGroup studyGroup;
-                String[] values = lines[i].split(",");
+            CSVReader csvReader = new CSVReader(reader);
+            while (true) {
+                rowNumber++;
+                String[] row = csvReader.readNext();
+                // if (row == null) {
+                //     break;
+                // }
+                if (row.length == 1) {
+                    continue;
+                }
+                if (row[0].equals("key")) {
+                    continue;
+                }
+                if (row[0].equals("owner")) {
+                    row = csvReader.readNext();
+                    info = new CollectionInfo(LocalDateTime.parse(row[1]), row[0]);
+                    break;
+                }
+                StudyGroup studyGroup = StudyGroup.deserialize(Arrays.copyOfRange(row, 1, row.length));
+                collection.put(row[0], studyGroup);
+            }   
 
-                studyGroup = StudyGroup.deserialize(Arrays.copyOfRange(values, 1, values.length));
-
-                collection.put(values[0], studyGroup);
-            }
-
-            return new CollectionRecord(collection, new CollectionInfo(
-                    LocalDateTime.parse(lines[lines.length - 1].split(",")[1]), lines[lines.length - 1].split(",")[0]));
-
-        } catch (IOException ex) {
-            System.out.println("No such file or no permission to read it");
+            csvReader.close();
+            return new CollectionRecord(collection, info);
+        } catch (CsvMalformedLineException e) {
+            System.out.println(ColorText.colorText("Incorrect csv format for reading in line: "+rowNumber, "red"));
+        } catch (IOException e) {
+            System.out.println(ColorText.colorText("No such file or no permission to read it", "red"));
+        
+        } catch (IllegalArgumentException e) {
+            System.out.println(ColorText.colorText("Incorrect line: "+rowNumber, "red"));
+        
         } catch (Exception e) {
-            System.out.println("Incorrect file");
-
+            System.out.println(ColorText.colorText("Incorrect file", "red"));
         }
         return null;
 

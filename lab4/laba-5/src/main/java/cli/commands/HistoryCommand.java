@@ -1,5 +1,6 @@
 package cli.commands;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cli.CLIClient;
@@ -23,7 +24,7 @@ public class HistoryCommand extends CLISupportedCommand {
      * @param cli the CLI client to be used
      */
     public HistoryCommand(CLIClient cli) {
-        super("History", "Show history of commands", cli);
+        super("History", "Show history of commands", new ArrayList<String>(), cli);
     }
 
     /**
@@ -38,7 +39,7 @@ public class HistoryCommand extends CLISupportedCommand {
      *                                    incorrect
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output)
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts)
             throws IncorrectInlineParamsCount {
         
         Checkers.checkInlineParamsCount(0, inlineParams);

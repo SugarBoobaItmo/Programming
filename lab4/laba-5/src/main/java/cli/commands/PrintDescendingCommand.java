@@ -1,5 +1,6 @@
 package cli.commands;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class PrintDescendingCommand extends AbstractCollectionCommand {
      * @param manager An instance of the AbstractManager class.
      */
     public PrintDescendingCommand(AbstractManager manager) {
-        super("Print_descending", "Print collection in descending order", manager);
+        super("Print_descending", "Print collection in descending order", new ArrayList<String>(), manager);
     }
 
     /**
@@ -34,7 +35,7 @@ public class PrintDescendingCommand extends AbstractCollectionCommand {
      * @throws ExecuteError If there is an error executing the command.
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(0, inlineParams);
         manager.getCollection()
                 .values()

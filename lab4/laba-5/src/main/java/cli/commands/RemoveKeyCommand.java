@@ -1,5 +1,7 @@
 package cli.commands;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import cli.commands.checker.Checkers;
@@ -22,7 +24,7 @@ public class RemoveKeyCommand extends AbstractCollectionCommand {
      * @param manager the collection manager to be used
      */
     public RemoveKeyCommand(AbstractManager manager) {
-        super("RemoveKey", "Remove element by key -null", manager);
+        super("RemoveKey", "Remove element by key", new ArrayList<String>(Arrays.asList("null")), manager);
     }
 
     /**
@@ -37,7 +39,7 @@ public class RemoveKeyCommand extends AbstractCollectionCommand {
      * @throws ExecuteError if an error occurs while executing the command
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(1, inlineParams);
         manager.removeKey(inlineParams.get(1));
     }

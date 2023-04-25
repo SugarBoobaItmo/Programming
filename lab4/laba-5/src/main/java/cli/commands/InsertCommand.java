@@ -1,5 +1,6 @@
 package cli.commands;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,7 +18,7 @@ import models.StudyGroup;
  * collection.
  * 
  */
-public class InsertCommand extends ElementCommand {
+public class InsertCommand extends AbstractCollectionCommand {
 
     /**
      * 
@@ -26,7 +27,7 @@ public class InsertCommand extends ElementCommand {
      * @param manager the AbstractManager object to manage the collection
      */
     public InsertCommand(AbstractManager manager) {
-        super("Insert", "Insert element to collection null -{element}", manager);
+        super("Insert", "Insert element to collection null", new ArrayList<String>(Arrays.asList("{element}")), manager);
     }
 
     /**
@@ -42,8 +43,9 @@ public class InsertCommand extends ElementCommand {
      * @throws ExecuteError if there was an error executing the command
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
-        Checkers.checkInlineParamsCountGreater(1, inlineParams);
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts)
+            throws ExecuteError {
+        Checkers.checkInlineParamsCount(1, inlineParams);
 
         // check if key already exists
         if (manager.getCollection().containsKey(inlineParams.get(1))) {
@@ -52,13 +54,12 @@ public class InsertCommand extends ElementCommand {
         }
         // logic for reading insertion from script
         StudyGroup studyGroup;
-        if (inlineParams.size() > 2) {
-            studyGroup = this.readElement(
-                    Arrays.copyOfRange(inlineParams.toArray(new String[inlineParams.size()]), 2, inlineParams.size()),
-                    input, output);
+        if (disableAttempts) {
+            studyGroup = ElementCommand.readScriptElement(input, output);
 
-        } else
-            studyGroup = this.readElement(input, output);
+        } else {
+            studyGroup = ElementCommand.readElement(input, output);
+        }
 
         if (studyGroup != null) {
             manager.insert(inlineParams.get(1), studyGroup);

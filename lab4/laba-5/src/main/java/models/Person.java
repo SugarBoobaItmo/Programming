@@ -2,6 +2,8 @@ package models;
 
 import java.time.LocalDateTime;
 
+import utils.ColorText;
+
 /**
  * 
  * The Person class represents a person.
@@ -132,10 +134,13 @@ public class Person implements Comparable<Person> {
      */
     @Override
     public String toString() {
-        return "name='" + name + '\'' +
-                ", birthday=" + birthday +
-                ", passportID='" + passportID + '\'' +
-                ", hairColor=" + hairColor.getColor();
+        return  
+                ColorText.colorText("· name=", "yellow") + ColorText.colorText(name, "green") + "\n" +
+
+                ColorText.colorText("· birthday=", "yellow") + ColorText.colorText(birthday, "green") + "\n" +
+                ColorText.colorText("· passportID=", "yellow") + ColorText.colorText(passportID, "green") + "\n" +
+                ColorText.colorText("· hairColor=", "yellow") + ColorText.colorText(hairColor.getColor(), "green") + "\n";
+        
     }
 
     /**

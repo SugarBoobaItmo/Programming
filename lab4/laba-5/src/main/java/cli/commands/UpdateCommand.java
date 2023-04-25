@@ -1,5 +1,6 @@
 package cli.commands;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +17,7 @@ import models.StudyGroup;
  * The UpdateCommand class is a subclass of ElementCommand, which updates an
  * element of the collection by ID.
  */
-public class UpdateCommand extends ElementCommand {
+public class UpdateCommand extends AbstractCollectionCommand {
 
     /**
      * 
@@ -25,7 +26,7 @@ public class UpdateCommand extends ElementCommand {
      * @param manager the collection manager.
      */
     public UpdateCommand(AbstractManager manager) {
-        super("Update", "Update element of collection by ID -id {element}", manager);
+        super("Update", "Update element of collection by ID", new ArrayList<String>(Arrays.asList("id", "{element}")) ,manager);
     }
 
     /**
@@ -41,9 +42,9 @@ public class UpdateCommand extends ElementCommand {
      * @throws ExecuteError If there is an error executing the command.
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         // Check that the inline parameters are valid.
-        Checkers.checkInlineParamsCountGreater(1, inlineParams);
+        Checkers.checkInlineParamsCount(1, inlineParams);
         Checkers.checkLong(inlineParams.get(1));
 
         // Find the element to update.
@@ -51,13 +52,11 @@ public class UpdateCommand extends ElementCommand {
             if (Integer.parseInt(inlineParams.get(1)) == entry.getValue().getId()) {
                 StudyGroup studyGroup;
 
-                if (inlineParams.size() > 2) {
-                    studyGroup = this.readElement(Arrays
-                            .copyOfRange(inlineParams.toArray(new String[inlineParams.size()]), 2, inlineParams.size()),
-                            input, output);
-
-                } else
-                    studyGroup = this.readElement(input, output);
+                if (disableAttempts) {
+                    studyGroup = ElementCommand.readScriptElement(input, output);
+                } else {
+                    studyGroup = ElementCommand.readElement(input, output);
+                }
                 // Update the element.
                 if (studyGroup != null) {
                     manager.update(entry.getKey(), studyGroup);

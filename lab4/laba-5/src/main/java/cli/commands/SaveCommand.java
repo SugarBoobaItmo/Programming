@@ -1,5 +1,6 @@
 package cli.commands;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import cli.commands.checker.Checkers;
@@ -23,7 +24,7 @@ public class SaveCommand extends AbstractCollectionCommand {
      * @param manager An instance of the AbstractManager class.
      */
     public SaveCommand(AbstractManager manager) {
-        super("Save", "Save collection to file", manager);
+        super("Save", "Save collection to file", new ArrayList<String>(), manager);
     }
 
     /**
@@ -36,8 +37,9 @@ public class SaveCommand extends AbstractCollectionCommand {
      * @throws ExecuteError If there is an error executing the command.
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(0, inlineParams);
         manager.save();
+        System.out.println("Collection saved to file");
     }
 }

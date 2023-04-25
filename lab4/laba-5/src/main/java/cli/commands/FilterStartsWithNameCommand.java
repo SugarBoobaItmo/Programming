@@ -1,5 +1,7 @@
 package cli.commands;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import cli.commands.checker.Checkers;
@@ -25,7 +27,7 @@ public class FilterStartsWithNameCommand extends AbstractCollectionCommand {
      * @param manager the collection manager to be used
      */
     public FilterStartsWithNameCommand(AbstractManager manager) {
-        super("FilterStartsWithName", "Filter by name -name", manager);
+        super("FilterStartsWithName", "Filter by name", new ArrayList<String>(Arrays.asList("name")), manager);
     }
 
     /**
@@ -40,7 +42,7 @@ public class FilterStartsWithNameCommand extends AbstractCollectionCommand {
      * @throws ExecuteError if an error occurs while executing the command
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(1, inlineParams);
 
         // given name

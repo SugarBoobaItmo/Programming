@@ -1,8 +1,10 @@
 package cli.commands;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import cli.commands.checker.Checkers;
 import cli.commands.exceptions.ExecuteError;
 import cli.commands.exceptions.GroupNotFound;
 import cli.interfaces.LineReader;
@@ -18,7 +20,7 @@ import models.StudyGroup;
  * 
  * specified element.
  */
-public class RemoveGreaterCommand extends ElementCommand {
+public class RemoveGreaterCommand extends AbstractCollectionCommand {
     /**
      * 
      * Constructs a RemoveGreaterCommand object with the specified manager.
@@ -26,7 +28,7 @@ public class RemoveGreaterCommand extends ElementCommand {
      * @param manager the AbstractManager object to manage the collection
      */
     public RemoveGreaterCommand(AbstractManager manager) {
-        super("RemoveGreater", "Remove elements which are greater than given -{element}", manager);
+        super("RemoveGreater", "Remove elements which are greater than given", new ArrayList<String>(Arrays.asList("{element}")), manager);
     }
 
     /**
@@ -44,20 +46,20 @@ public class RemoveGreaterCommand extends ElementCommand {
      * @throws ExecuteError if there was an error executing the command
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
+        Checkers.checkInlineParamsCount(0, inlineParams);
 
         StudyGroup studyGroup;
 
-        if (inlineParams.size() > 2) {
-            studyGroup = this.readElement(
-                    Arrays.copyOfRange(inlineParams.toArray(new String[inlineParams.size()]), 1, inlineParams.size()),
-                    input, output);
-
-        } else
-            studyGroup = this.readElement(input, output);
+        if (disableAttempts) {
+            studyGroup = ElementCommand.readScriptElement(input, output);
+        } else {
+            studyGroup = ElementCommand.readElement(input, output);
+        }
 
         if (studyGroup != null) {
             manager.removeGreater(studyGroup);
+            output.writeLine("Greater elements were removed"+ "\n");
         } else {
             throw new GroupNotFound();
         }

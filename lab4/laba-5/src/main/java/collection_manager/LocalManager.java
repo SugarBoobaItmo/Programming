@@ -197,4 +197,24 @@ public class LocalManager extends AbstractManager {
         CsvUtils.recordToCsv(collectionRecord, this.filePath);
     }
 
+    /**
+     * 
+     * Saves the collection from the specified file path.
+     * 
+     * @param filePath the file path to save from the collection.
+     */
+    @Override
+    public void setCollectionRecord(String filePath) {
+        
+        CollectionRecord new_record = CsvUtils.csvToRecord(filePath);
+        if (new_record != null) {
+            this.collectionRecord = new_record;
+            this.filePath = filePath;
+            this.collectionRecord.getInfo().setFilePath(this.filePath);
+        }
+    }
+
+
+
+
 }

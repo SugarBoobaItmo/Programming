@@ -3,6 +3,8 @@ package models;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
+import utils.ColorText;
+
 /**
  * 
  * The StudyGroup class represents a study group.
@@ -355,15 +357,17 @@ public class StudyGroup implements Comparable<StudyGroup> {
     @Override
     public String toString() {
         return "StudyGroup " +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", coordinates=" + coordinates +
-                ", creationDate=" + creationDate +
-                ", studentsCount=" + studentsCount +
-                ", expelledStudents=" + expelledStudents +
-                ", transferredStudents=" + transferredStudents +
-                ", semesterEnum=" + (semesterEnum != null ? semesterEnum.getSemester() : semesterEnum) +
-                ", groupAdmin=" + groupAdmin;
+                "id="+ id + "\n" +
+                ColorText.colorText("· name=", "yellow") + ColorText.colorText(name, "green") + "\n" +
+                ColorText.colorText("· coordinates=", "yellow") + ColorText.colorText(coordinates, "green") + "\n" +
+                ColorText.colorText("· creationDate=", "yellow") + ColorText.colorText(creationDate, "green") + "\n" +
+                ColorText.colorText("· studentsCount=", "yellow") + ColorText.colorText(studentsCount, "green") + "\n" +
+                ColorText.colorText("· expelledStudents=", "yellow") + ColorText.colorText(expelledStudents, "green") + "\n" +
+                ColorText.colorText("· transferredStudents=", "yellow") + ColorText.colorText(transferredStudents, "green") + "\n" +
+                ColorText.colorText("· semesterEnum=", "yellow") + ColorText.colorText((semesterEnum != null ? semesterEnum.getSemester(): null), "green") + "\n" +
+                ColorText.colorText("· groupAdmin=", "yellow") + ColorText.colorText(groupAdmin, "green");
+
+
     }
 
     /**

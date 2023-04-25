@@ -1,9 +1,15 @@
 package cli;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -13,6 +19,8 @@ import cli.exceptions.CommandNotFound;
 import cli.interfaces.LineReader;
 import cli.interfaces.LineWriter;
 import cli.terminal_commands.TerminalCommand;
+import utils.ColorText;
+import utils.LevenshteinDistance;
 
 /**
  * 
@@ -22,6 +30,7 @@ import cli.terminal_commands.TerminalCommand;
  * prompt.
  */
 public class CLIClient {
+    private boolean fuzzyMode = false;
 
     // debug mode flag shows exceptions via catching an Exception and printing it
     private boolean debugMode;
@@ -77,15 +86,34 @@ public class CLIClient {
      */
 
     public void startCLI() {
-        System.out.println("Press Ctrl+D and enter to skip command execution.");
-        //
+        // randomly open files from folder "resources" and print them to console
+        File folder = new File("src/main/java/resources/ascii_picts");
+        File[] listOfFiles = folder.listFiles();
+        int randomFileIndex = (int) (Math.random() * listOfFiles.length);
+        File file = listOfFiles[randomFileIndex];
+            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+                String line;
+                System.out.println();
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+                System.out.println();
+            
+            } catch (IOException e2) {
+                System.out.println(ColorText.colorText("Welcoming file not found.", "red"));
+            }
         while (true) {
-            // Catching an exception is necessary to skip command execution
+            // Catching an exception is necessary to skip command execution (for Ctrl+D)
+            // write file from folder "resources" to folder "output"
             System.out.print(">> ");
             if (!scanner.hasNextLine()) {
                 scanner = new Scanner(System.in);
-                continue;
-            }
+                // continue;
+                System.out.println("Goodbye!");
+                break;
+
+
+            } 
 
             String line = scanner.nextLine();
             List<String> params = parseParams(line);
@@ -93,20 +121,21 @@ public class CLIClient {
             try {
                 AbstractCommand command = resolveCommand(params);
                 try {
-                    if (line.matches(params.get(0) + "\\s+.*\\s+.*")) {
-                        System.out.println("Incorrect command syntax.");
-                        continue;}
-                    executeCommand(params, command, scanner::nextLine, System.out::print);
+
+                    executeCommand(params, command, scanner::nextLine, System.out::print, false);
                 } catch (NoSuchElementException e) {
                     scanner = new Scanner(System.in);
-                    System.out.println("Command execution skipped.");
+                    System.out.println(ColorText.colorText("Command execution skipped.", "red"));
                 }
             } catch (CommandNotFound e) {
                 try {
                     TerminalCommand command = resolveTerminalCommand(params);
-                    command.execute();
+                    command.execute(params);
                 } catch (CommandNotFound e1) {
-                    System.out.println("Command not found: " + e1.getMessage());
+                    System.out.println(ColorText.colorText("Command not found: " + e1.getMessage(), "red"));
+                    
+                } catch (ExecuteError e1) {
+                    System.out.println(ColorText.colorText("Error executing command: " + e1.getMessage(), "red"));
                 }
             }
         }
@@ -137,6 +166,26 @@ public class CLIClient {
             throw new CommandNotFound("");
         }
         String commandName = params.get(0);
+
+        if (fuzzyMode) {
+            // commandName = commandName.toLowerCase();
+            Map<String, Integer> distances = new HashMap<>();
+            ArrayList<String> commands_array = new ArrayList<>(commands.keySet());
+            terminal_commands.forEach((k, v) -> commands_array.add(k));
+
+            for (String command : commands_array) {
+                
+                int distance = LevenshteinDistance.levenshteinDistance(commandName, command);
+                distances.put(command, distance);
+            }
+        
+            List<Map.Entry<String, Integer>> sortedEntries = new ArrayList<>(distances.entrySet());
+            Collections.sort(sortedEntries, (e1, e2) -> e2.getValue().compareTo(e1.getValue()));
+            // System.out.println(Arrays.toString(sortedEntries.toArray()));
+            commandName = sortedEntries.get(0).getKey();
+
+
+        }
         AbstractCommand command = this.commands.get(commandName);
 
         if (command == null) {
@@ -176,16 +225,16 @@ public class CLIClient {
      * @param output  the output function to use
      */
     public void executeCommand(List<String> inlineParams, AbstractCommand command, LineReader input,
-            LineWriter output) {
+            LineWriter output, boolean disableAttempts) {
         try {
-            command.execute(inlineParams, input, output);
+            command.execute(inlineParams, input, output, disableAttempts);
         } catch (ExecuteError e) {
-            output.writeLine("Command execution error:\n\t" + e.getMessage() + "\n");
+            output.writeLine(ColorText.colorText("Command execution error:\n\t" + e.getMessage() + "\n", "red"));
         } catch (Exception e) {
             if (debugMode) {
                 throw e;
             }
-            output.writeLine("Unexpected error:\n\t" + e.toString() + "\n");
+            output.writeLine(ColorText.colorText("Unexpected error:\n\t" + e.toString() + "\n", "red"));
         }
         commandsHistory.add(inlineParams.get(0));
     }
@@ -212,6 +261,22 @@ public class CLIClient {
      */
     public List<String> getCommandsHistory() {
         return commandsHistory;
+    }
+
+    /**
+     * 
+     * @return the fuzzyMode
+     */
+    public boolean getFuzzyMode() {
+        return fuzzyMode;
+    }
+
+    /**
+     * 
+     * @param fuzzyMode the fuzzyMode to set
+     */
+    public void setFuzzyMode(boolean fuzzyMode) {
+        this.fuzzyMode = fuzzyMode;
     }
 
 }

@@ -8,10 +8,10 @@ import cli.commands.checker.Checkers;
 import cli.commands.exceptions.ExecuteError;
 import cli.interfaces.LineReader;
 import cli.interfaces.LineWriter;
-import collection_manager.AbstractManager;
 import models.Color;
 import models.Semester;
 import models.StudyGroup;
+import utils.ColorText;
 
 /**
  * 
@@ -21,7 +21,7 @@ import models.StudyGroup;
  * It contains method that asks user for field data, checks it and then build
  * Group object.
  */
-public abstract class ElementCommand extends AbstractCollectionCommand {
+public class ElementCommand{
 
     /**
      * 
@@ -31,9 +31,9 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
      * @param description the description of the command
      * @param manager     the collection manager to be used
      */
-    public ElementCommand(String name, String description, AbstractManager manager) {
-        super(name, description, manager);
-    }
+    // public ElementCommand(String name, String description, ArrayList<String> inlineParams, AbstractManager manager) {
+    //     super(name, description, inlineParams, manager);
+    // }
 
     /**
      * 
@@ -44,9 +44,8 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
      * @return checked value
      * @throws ExecuteError if an error occurs while executing the command
      */
-    private String askField(String inputMessage, LineReader input, LineWriter output, boolean allowNull,
+    private static String askField(String inputMessage, LineReader input, LineWriter output, boolean allowNull,
             Checker... checkers) {
-
         // for stopping asking for field data if it is correct
         boolean errorFlag = true;
         while (true) {
@@ -66,7 +65,7 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
                 try {
                     checker.check(value);
                 } catch (ExecuteError e) {
-                    output.writeLine(e.getMessage() + "\n");
+                    output.writeLine(ColorText.colorText(e.getMessage() + "\n", "red"));
                     errorFlag = true;
                     break;
                 }
@@ -87,7 +86,7 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
      * @return StudyGroup object
      * @throws ExecuteError if an error occurs while executing the command
      */
-    public StudyGroup readElement(LineReader input, LineWriter output) throws ExecuteError {
+    public static StudyGroup readElement(LineReader input, LineWriter output) throws ExecuteError {
         Random random = new Random();
         String id = String.valueOf(random.nextInt(1000000));
 
@@ -173,8 +172,98 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
      * @return StudyGroup object
      * @throws ExecuteError if an error occurs while executing the command
      */
-    public StudyGroup readElement(String[] params, LineReader input, LineWriter output) throws ExecuteError {
+    public static StudyGroup readScriptElement(LineReader input, LineWriter output) throws ExecuteError {
         // name
+        Random random = new Random();
+        String id = String.valueOf(random.nextInt(1000000));
+
+        String name = input.readLine();
+        output.writeLine("Enter group name: " + name + "\n");
+        Checkers.checkNull(name);
+
+        // x
+        String x = input.readLine();
+        output.writeLine("Enter coordinates x: " + x + "\n");
+        Checkers.checkNull(x);
+        Checkers.checkInteger(x);
+
+        String y = input.readLine();
+        output.writeLine("Enter coordinates y: " + y + "\n");
+        Checkers.checkNull(y);
+        Checkers.checkInteger(y);
+
+        String studentsCount = input.readLine();
+        output.writeLine("Enter group students count: " + studentsCount + "\n");
+        if (!studentsCount.equals("")) {
+
+            Checkers.checkPositive(studentsCount);
+        } else if (studentsCount.equals("")) {
+            studentsCount = "null";
+        }
+
+        String expelledStudents = input.readLine();
+        output.writeLine("Enter number of expelled students: " + expelledStudents + "\n");
+        Checkers.checkPositive(expelledStudents);
+
+        String transferredStudents = input.readLine();
+        output.writeLine("Enter number of transferred students: " + transferredStudents + "\n");
+        Checkers.checkPositive(transferredStudents);
+
+        String semester = input.readLine();
+        output.writeLine("Enter semester (FIFTH, SIXTH, SEVENTH, EIGHTH): " + semester + "\n");
+        if (!semester.equals("")) {
+
+            try {
+                Semester.valueOf(semester);
+            } catch (IllegalArgumentException e) {
+                throw new ExecuteError("Incorrect semester");
+            }
+        } else if (semester.equals("")) {
+            semester = "null";
+        }
+
+        String admin_field = input.readLine();
+        output.writeLine("Enter admin name: " + admin_field + "\n");
+        String adminName, adminPassportID, adminHairColor, adminBirthday;
+        if (admin_field.equals("")) {
+            adminName = "null";
+            adminPassportID = "null";
+            adminHairColor = "null";
+            adminBirthday = "null";
+        } else {
+            adminName = admin_field;
+            adminPassportID = input.readLine();
+            output.writeLine("Enter admin passport ID: " + adminPassportID + "\n");
+            Checkers.checkNull(adminPassportID);
+            if (adminPassportID.length() <= 24)
+                throw new ExecuteError("Passport ID must be longer than 24 characters");
+
+            adminHairColor = input.readLine();
+            output.writeLine("Enter admin hair color (BLUE, YELLOW, WHITE): " + adminHairColor + "\n");
+            try {
+                Color.valueOf(adminHairColor);
+            } catch (IllegalArgumentException e) {
+                throw new ExecuteError("Incorrect hair color");
+            }
+            adminBirthday = LocalDateTime.now().minusYears(random.nextInt(3) - 17).toString();
+
+        }
+        String creationDate = LocalDateTime.now().toString();
+
+        StudyGroup group;
+        group = StudyGroup.deserialize(
+                id, name, x, y, creationDate,
+                studentsCount, expelledStudents, transferredStudents, semester,
+                adminName, adminBirthday, adminPassportID, adminHairColor);
+
+        return group;
+
+    }
+
+    public static StudyGroup readArrayElement(String[] params) throws ExecuteError {
+        if (params.length != 10) {
+            throw new ExecuteError("Incorrect number of parameters");
+        }
         Random random = new Random();
         String id = String.valueOf(random.nextInt(1000000));
 
@@ -216,14 +305,15 @@ public abstract class ElementCommand extends AbstractCollectionCommand {
             semester = "null";
         }
 
+        String admin_field = params[7];
         String adminName, adminPassportID, adminHairColor, adminBirthday;
-        if (params[7].equals("")) {
+        if (admin_field.equals("")) {
             adminName = "null";
             adminPassportID = "null";
             adminHairColor = "null";
             adminBirthday = "null";
         } else {
-            adminName = params[7];
+            adminName = admin_field;
             adminPassportID = params[8];
             Checkers.checkNull(adminPassportID);
             if (adminPassportID.length() <= 24)

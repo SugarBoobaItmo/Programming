@@ -1,5 +1,7 @@
 package cli.commands;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -26,7 +28,7 @@ public class FilterByTransferredStudentsCommand extends AbstractCollectionComman
      * @param manager the collection manager to be used
      */
     public FilterByTransferredStudentsCommand(AbstractManager manager) {
-        super("Filter_by_transferred_students" ,"Filter by number of transferred students -transferredStudents", manager);
+        super("Filter_by_transferred_students" ,"Filter by number of transferred students", new ArrayList<String>(Arrays.asList("transferredStudents ")), manager);
     }
 
     /**
@@ -41,7 +43,7 @@ public class FilterByTransferredStudentsCommand extends AbstractCollectionComman
      * @throws ExecuteError if an error occurs while executing the command
      */
     @Override
-    public void execute(List<String> inlineParams, LineReader input, LineWriter output) throws ExecuteError {
+    public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(1, inlineParams);
         Checkers.checkLong(inlineParams.get(1));
 

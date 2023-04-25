@@ -1,0 +1,3958 @@
+апр 22, 2023 2:29:25 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:59564
+апр 22, 2023 2:29:25 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 22, 2023 2:29:25 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7a3d45bd}
+апр 22, 2023 2:29:25 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 22, 2023 2:30:03 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:59575
+апр 22, 2023 2:30:03 AM utils.logger.MyLogger log
+INFO: Request: clear
+апр 22, 2023 2:30:03 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: Collection cleared successfully data: null
+апр 22, 2023 2:30:03 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 22, 2023 2:30:03 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:59576
+апр 22, 2023 2:30:03 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 22, 2023 2:30:03 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@31206beb}
+апр 22, 2023 2:30:03 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 22, 2023 2:30:53 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:59607
+апр 22, 2023 2:30:53 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 22, 2023 2:30:53 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 22, 2023 2:30:53 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 22, 2023 2:30:53 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:59608
+апр 22, 2023 2:30:53 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 22, 2023 2:30:53 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@21a947fe}
+апр 22, 2023 2:30:53 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 22, 2023 2:30:54 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:59609
+апр 22, 2023 2:30:54 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 22, 2023 2:30:54 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 22, 2023 2:30:54 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 22, 2023 2:30:54 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:59610
+апр 22, 2023 2:30:54 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 22, 2023 2:30:54 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3d3fcdb0}
+апр 22, 2023 2:30:54 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 22, 2023 2:31:01 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:59614
+апр 22, 2023 2:31:01 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 22, 2023 2:31:01 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 22, 2023 2:31:01 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 22, 2023 2:31:01 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:59615
+апр 22, 2023 2:31:02 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 22, 2023 2:31:02 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@551bdc27}
+апр 22, 2023 2:31:02 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 24, 2023 3:06:26 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:64943
+апр 24, 2023 3:06:27 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 24, 2023 3:06:27 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@612fc6eb}
+апр 24, 2023 3:06:27 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 24, 2023 3:08:27 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:64970
+апр 24, 2023 3:08:32 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 24, 2023 3:08:32 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@548ad73b}
+апр 24, 2023 3:08:32 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 24, 2023 3:13:05 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:65068
+апр 24, 2023 3:13:07 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 24, 2023 3:13:07 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3b94d659}
+апр 24, 2023 3:13:07 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 24, 2023 3:14:22 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:65112
+апр 24, 2023 3:14:22 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 24, 2023 3:14:22 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@612fc6eb}
+апр 24, 2023 3:14:22 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:12 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53463
+апр 25, 2023 1:59:12 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:12 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@612fc6eb}
+апр 25, 2023 1:59:12 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:33 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53469
+апр 25, 2023 1:59:33 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:33 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:33 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:33 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53470
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@52525845}
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53471
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53472
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@51b279c9}
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53473
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53474
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@17776a8}
+апр 25, 2023 1:59:34 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53475
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53476
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6385cb26}
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53477
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53478
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@18a70f16}
+апр 25, 2023 1:59:35 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53479
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53480
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@240237d2}
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53481
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53482
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1198b989}
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:36 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53483
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53484
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4e91d63f}
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53485
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53486
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@72a7c7e0}
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53487
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:37 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53488
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@52e6fdee}
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53489
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53490
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@689604d9}
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53491
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:38 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53492
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@489115ef}
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53493
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53494
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3c0be339}
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53495
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:39 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53496
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@69e1dd28}
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53497
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53498
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@21e360a}
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53499
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53500
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1530c739}
+апр 25, 2023 1:59:40 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53501
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53502
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5b799640}
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53503
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53504
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@64b0598}
+апр 25, 2023 1:59:41 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53505
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53506
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4bd31064}
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53507
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53508
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3b8f0a79}
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:42 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53509
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53510
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3adcc812}
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53511
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53512
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@34a875b3}
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53513
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:43 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53514
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@59252cb6}
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53515
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53516
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5286c33a}
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53517
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:44 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53519
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@75c9e76b}
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53520
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53521
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4bf3798b}
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53522
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:45 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53523
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4985cbcb}
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53524
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53525
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@21362712}
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53526
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53527
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@60afd40d}
+апр 25, 2023 1:59:46 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53528
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53529
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7a9c84a5}
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53530
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53531
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3c443976}
+апр 25, 2023 1:59:47 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53532
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53533
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@773bd77b}
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53534
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53535
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4d23015c}
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:48 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53536
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53537
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@576c5536}
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53538
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53539
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@26722665}
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53540
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:49 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53541
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5176d279}
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53542
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53543
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2d9f64c9}
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53544
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:50 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53545
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@684b31de}
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53546
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53547
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@895416d}
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53548
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53549
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:51 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7b4a0aef}
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53550
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53551
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@42fb8c87}
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53552
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53553
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@59c70ceb}
+апр 25, 2023 1:59:52 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53554
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53555
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@10c47c79}
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53556
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53557
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2b916808}
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:53 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53558
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53559
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@67770b37}
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53560
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53561
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@31e739bf}
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53562
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:54 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53563
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@35eee641}
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53564
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53565
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@13250132}
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53566
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:55 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53567
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@75e80a97}
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53568
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53569
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@71789580}
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53570
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:56 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53571
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5323999f}
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53572
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53573
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@18026052}
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53574
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:57 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53575
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4f8659d0}
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53576
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53577
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@36238b12}
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53578
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53579
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4404a6b}
+апр 25, 2023 1:59:58 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53580
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53581
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1f6c4ae}
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53582
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53583
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5e1d1524}
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 1:59:59 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53584
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53585
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2c3679e5}
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53586
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53587
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2270f58d}
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53588
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:00 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53589
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@52efb338}
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53590
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53591
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7ae0a26}
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53592
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:01 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53593
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6e7fa4b0}
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53594
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53595
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7ae6927}
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53596
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:02 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53597
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@768e40af}
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53598
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53599
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@608c2042}
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53600
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53601
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2148b47e}
+апр 25, 2023 2:00:03 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53602
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53603
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1c97c3bb}
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53604
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53605
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1728d307}
+апр 25, 2023 2:00:04 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53606
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53607
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1fc4b8d6}
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53608
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53609
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5345552f}
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:05 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53610
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53611
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@54c697c}
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53612
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53613
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@42e32feb}
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53614
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:06 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53615
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@23b02f37}
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53616
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53617
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@178f5b5b}
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53618
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:07 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53619
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@34fde3a3}
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53620
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53621
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@158f0af4}
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53622
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:08 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53623
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@542aba71}
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53624
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53625
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@23182d4d}
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53626
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53627
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@751eb9a9}
+апр 25, 2023 2:00:09 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53628
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53629
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@76b5b1e2}
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53630
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53631
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2603a76d}
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:10 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53632
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53633
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@21cb907d}
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53634
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53635
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@35645453}
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53636
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:11 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53637
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4bcb45e4}
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53638
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53639
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7a0619a8}
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:12 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53640
+апр 25, 2023 2:00:16 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53644
+апр 25, 2023 2:00:16 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:00:16 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@eba003e}
+апр 25, 2023 2:00:16 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:00:35 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53647
+апр 25, 2023 2:00:35 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:03:04 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53678
+апр 25, 2023 2:03:04 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:03:04 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:03:05 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:03:19 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53683
+апр 25, 2023 2:03:19 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:03:19 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:03:19 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:03:33 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53689
+апр 25, 2023 2:03:33 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:03:33 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:03:33 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:03:41 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53693
+апр 25, 2023 2:03:41 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:03:41 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:03:41 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:04:40 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53707
+апр 25, 2023 2:04:40 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:04:40 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:04:40 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:04:53 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53713
+апр 25, 2023 2:04:53 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:04:53 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:04:53 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:05:08 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53718
+апр 25, 2023 2:05:08 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:05:08 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:05:08 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:05:40 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53724
+апр 25, 2023 2:05:40 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:05:40 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:05:40 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:06:16 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53735
+апр 25, 2023 2:06:16 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:06:16 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:06:16 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:06:57 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53752
+апр 25, 2023 2:06:58 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:06:58 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:06:58 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:07:37 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53766
+апр 25, 2023 2:07:37 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:07:37 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:07:37 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:07:45 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53770
+апр 25, 2023 2:07:45 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:07:45 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:07:45 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:08:11 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53776
+апр 25, 2023 2:08:11 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:08:11 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:08:11 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:09:14 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53800
+апр 25, 2023 2:09:14 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:09:14 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:09:14 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:10:14 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53809
+апр 25, 2023 2:10:14 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:10:14 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:10:14 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:10:35 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53827
+апр 25, 2023 2:10:35 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:10:35 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6a1aab78}
+апр 25, 2023 2:10:35 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:10:57 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:53832
+апр 25, 2023 2:10:57 AM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 2:38:00 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:54177
+апр 25, 2023 2:38:08 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:54182
+апр 25, 2023 2:38:30 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:54190
+апр 25, 2023 2:38:30 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:38:30 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 2:38:30 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:38:47 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:54208
+апр 25, 2023 2:38:47 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:38:47 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6a1aab78}
+апр 25, 2023 2:38:47 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 2:41:07 AM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:54257
+апр 25, 2023 2:41:07 AM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 2:41:07 AM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6a1aab78}
+апр 25, 2023 2:41:07 AM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 4:21:08 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:58661
+апр 25, 2023 4:22:00 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:58685
+апр 25, 2023 4:22:25 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:58700
+апр 25, 2023 4:22:55 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:58709
+апр 25, 2023 4:23:02 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:58718
+апр 25, 2023 4:26:59 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:58770
+апр 25, 2023 5:20:02 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:59884
+апр 25, 2023 5:20:03 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:20:03 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@16022d9d}
+апр 25, 2023 5:20:03 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:27:08 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60017
+апр 25, 2023 5:27:09 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:27:09 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@22fcf7ab}
+апр 25, 2023 5:27:09 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:27:22 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60028
+апр 25, 2023 5:27:23 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:27:23 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 5:27:23 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:27:55 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60043
+апр 25, 2023 5:27:55 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:27:55 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 5:27:55 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:28:05 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60050
+апр 25, 2023 5:28:05 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:28:05 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=null}
+апр 25, 2023 5:28:05 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:45:55 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60402
+апр 25, 2023 5:45:55 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:45:55 PM utils.logger.MyLogger log
+INFO: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 5:45:55 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:49:07 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60451
+апр 25, 2023 5:49:07 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:49:07 PM utils.logger.MyLogger log
+INFO: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 5:49:07 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:49:47 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60468
+апр 25, 2023 5:49:47 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:49:47 PM utils.logger.MyLogger log
+INFO: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 5:49:47 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:50:58 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60494
+апр 25, 2023 5:50:58 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:50:58 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6a1aab78}
+апр 25, 2023 5:50:59 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:51:20 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60505
+апр 25, 2023 5:51:20 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:51:20 PM utils.logger.MyLogger log
+INFO: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 5:51:20 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:52:58 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60525
+апр 25, 2023 5:52:58 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:52:58 PM utils.logger.MyLogger log
+INFO: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 5:52:58 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:53:17 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60538
+апр 25, 2023 5:53:18 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:53:18 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@217ed35e}
+апр 25, 2023 5:53:18 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:53:33 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60553
+апр 25, 2023 5:53:33 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:53:33 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4d14b6c2}
+апр 25, 2023 5:53:33 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:53:38 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60559
+апр 25, 2023 5:53:39 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:53:39 PM utils.logger.MyLogger log
+INFO: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 5:53:39 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:57:13 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60628
+апр 25, 2023 5:57:13 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:57:13 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6a1aab78}
+апр 25, 2023 5:57:13 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:57:35 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60633
+апр 25, 2023 5:57:35 PM utils.logger.MyLogger log
+INFO: Request: remove_lower
+апр 25, 2023 5:57:35 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroups removed successfully data: null
+апр 25, 2023 5:57:35 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 5:57:36 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60634
+апр 25, 2023 5:57:36 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 5:57:36 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@682b2fa}
+апр 25, 2023 5:57:36 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:00:02 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60660
+апр 25, 2023 6:00:02 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:00:02 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3feb2dda}
+апр 25, 2023 6:00:02 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:00:54 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60664
+апр 25, 2023 6:00:54 PM utils.logger.MyLogger log
+INFO: Request: clear
+апр 25, 2023 6:00:54 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: Collection cleared successfully data: null
+апр 25, 2023 6:00:54 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:00:54 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60665
+апр 25, 2023 6:00:55 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:00:55 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4b79ac84}
+апр 25, 2023 6:00:55 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:20 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60669
+апр 25, 2023 6:01:20 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:20 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:20 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:20 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60670
+апр 25, 2023 6:01:20 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:20 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@b7c4869}
+апр 25, 2023 6:01:20 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:20 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60671
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60672
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@ee86bcb}
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60673
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60674
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@53fd0d10}
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60675
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:21 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60676
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6995bf68}
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60677
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60678
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1a760689}
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60679
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:22 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60680
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@130dca52}
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60681
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60682
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2a640157}
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60683
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:23 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60684
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@fade1fc}
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60685
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60686
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@77a7cf58}
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60687
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60688
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:24 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2f05be7f}
+апр 25, 2023 6:01:25 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:49 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60690
+апр 25, 2023 6:01:49 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:01:49 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:01:49 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:01:49 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60691
+апр 25, 2023 6:01:50 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:01:50 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2ccca26f}
+апр 25, 2023 6:01:50 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:04:34 PM utils.logger.MyLogger log
+INFO: Logger initialized at time: 1682435074131
+апр 25, 2023 6:04:42 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60738
+апр 25, 2023 6:04:42 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:04:42 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6a1aab78}
+апр 25, 2023 6:04:42 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:05:59 PM utils.logger.MyLogger log
+INFO: Logger initialized at time: 2023-04-25T18:05:59.725
+апр 25, 2023 6:06:09 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60766
+апр 25, 2023 6:06:09 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:06:09 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:06:09 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:06:09 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60767
+апр 25, 2023 6:06:09 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:06:09 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@12c8a2c0}
+апр 25, 2023 6:06:09 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:06:32 PM utils.logger.MyLogger log
+INFO: Logger initialized at time: 2023-04-25T18:06:32.226
+апр 25, 2023 6:06:39 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60782
+апр 25, 2023 6:06:39 PM utils.logger.MyLogger log
+INFO: Request: insert
+апр 25, 2023 6:06:39 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 6:06:39 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:06:39 PM utils.logger.MyLogger log
+INFO: Client connected: /127.0.0.1:60783
+апр 25, 2023 6:06:39 PM utils.logger.MyLogger log
+INFO: Request: get_collection_record
+апр 25, 2023 6:06:39 PM utils.logger.MyLogger log
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@12c8a2c0}
+апр 25, 2023 6:06:39 PM utils.logger.MyLogger log
+INFO: Response sent
+апр 25, 2023 6:29:18 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T18:29:18.336
+апр 25, 2023 6:29:48 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61068
+апр 25, 2023 6:29:48 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 6:29:48 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6a1aab78}
+апр 25, 2023 6:29:48 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 6:30:35 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61078
+апр 25, 2023 6:30:35 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 6:30:35 PM utils.logger.MyLogger warning
+WARNING: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 6:30:35 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 6:30:35 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61079
+апр 25, 2023 6:30:35 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 6:30:35 PM utils.logger.MyLogger warning
+WARNING: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 6:30:35 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 6:32:11 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61095
+апр 25, 2023 6:32:11 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 6:32:11 PM utils.logger.MyLogger warning
+WARNING: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 6:32:11 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 6:52:17 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T18:52:17.811
+апр 25, 2023 6:52:30 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61483
+апр 25, 2023 6:53:15 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61497
+апр 25, 2023 6:53:55 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61513
+апр 25, 2023 6:54:28 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61534
+апр 25, 2023 6:55:28 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T18:55:28.507
+апр 25, 2023 6:55:35 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61571
+апр 25, 2023 6:55:35 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 6:55:35 PM utils.logger.MyLogger warning
+WARNING: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 6:55:35 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 6:56:17 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61590
+апр 25, 2023 6:56:17 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 6:56:17 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@553a3d88}
+апр 25, 2023 6:56:17 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 6:59:12 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T18:59:12.439
+апр 25, 2023 6:59:20 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61642
+апр 25, 2023 6:59:20 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 6:59:20 PM utils.logger.MyLogger warning
+WARNING: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 6:59:20 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:00:05 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T19:00:05.761
+апр 25, 2023 7:00:13 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61660
+апр 25, 2023 7:00:13 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:00:13 PM utils.logger.MyLogger warning
+WARNING: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 7:00:13 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:00:53 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T19:00:53.918
+апр 25, 2023 7:01:00 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61676
+апр 25, 2023 7:01:00 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:01:00 PM utils.logger.MyLogger warning
+WARNING: Response: ok: false detail: Something went wrong with the server storage. Please, try again later. data: null
+апр 25, 2023 7:01:00 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:01:09 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T19:01:09.237
+апр 25, 2023 7:01:14 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61698
+апр 25, 2023 7:01:14 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:02:16 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T19:02:16.298
+апр 25, 2023 7:02:20 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61725
+апр 25, 2023 7:02:20 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:10:12 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T19:10:12.210
+апр 25, 2023 7:10:18 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61886
+апр 25, 2023 7:10:18 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:10:21 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@17579e0f}
+апр 25, 2023 7:10:21 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:37 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61931
+апр 25, 2023 7:14:37 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:37 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:37 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:37 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61932
+апр 25, 2023 7:14:37 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@481a15ff}
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61934
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61935
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@543788f3}
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61936
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61937
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4f51b3e0}
+апр 25, 2023 7:14:42 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61938
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61939
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@45afc369}
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61940
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61941
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@27c6e487}
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:43 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61942
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61943
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4206a205}
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61944
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61945
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2aece37d}
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:44 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61946
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61947
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@78dd667e}
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61948
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61950
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@71b1176b}
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61951
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:45 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61952
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6e4784bc}
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61953
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61954
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@32eff876}
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61955
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:46 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61956
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@145f66e3}
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61957
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61958
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@15de0b3c}
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61959
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61960
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@6db9f5a4}
+апр 25, 2023 7:14:47 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61961
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61962
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3d1cfad4}
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61963
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61964
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@25fb8912}
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:48 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61965
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61966
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2a265ea9}
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61967
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61968
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@673fdbce}
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:49 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61969
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61970
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@64b0598}
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61971
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61972
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@20d7d6fb}
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61973
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:50 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61974
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@60b4beb4}
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61975
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61976
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1603cd68}
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61977
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:51 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61978
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@38831718}
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61979
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61980
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2c5529ab}
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61981
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:52 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61982
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@784b990c}
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61983
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61984
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2b95e48b}
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61985
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61986
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2ed3b1f5}
+апр 25, 2023 7:14:53 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61987
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61988
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@a7e2d9d}
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61989
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61990
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5769e7ae}
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:54 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61991
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61992
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@11ee02f8}
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61993
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61994
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@15f193b8}
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61995
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:55 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61996
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@27e32fe4}
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61997
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61998
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@30135202}
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:61999
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:56 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62000
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4632cfc}
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62001
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62002
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7d37f1c}
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62003
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:57 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62004
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5e8c34a0}
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62005
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62006
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@61dde151}
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62007
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62008
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@75361cf6}
+апр 25, 2023 7:14:58 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62009
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62010
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4ee6291f}
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62011
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62012
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3a082ff4}
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:14:59 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62013
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62014
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4c7e978c}
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62015
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62016
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4b4ee511}
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62017
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:00 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62018
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5d342959}
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62019
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62020
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1f2f0109}
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62021
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:01 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62023
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5fcd1c5f}
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62024
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62025
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@43f03c23}
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62026
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:02 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62027
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@39da5e49}
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62029
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62033
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@66e827a8}
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62034
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62035
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2a8dd942}
+апр 25, 2023 7:15:03 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62036
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62037
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@527937d0}
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62038
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62039
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5c82031b}
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:04 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62040
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62041
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@12cd129c}
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62042
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62043
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@76a1146d}
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62044
+апр 25, 2023 7:15:05 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62045
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3dfe59d7}
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62046
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62047
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7858d31d}
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62048
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:06 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62049
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@279c4e3b}
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62050
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62051
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@10d4b573}
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62052
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:07 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62053
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5af40e45}
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62054
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62055
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@27a0e6ce}
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62056
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62057
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5c13af01}
+апр 25, 2023 7:15:08 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62058
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62059
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@10fc1a22}
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62060
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62061
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@366b4a7b}
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:09 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62062
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62063
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2e64ae1a}
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62064
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62065
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7c8f803d}
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:10 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62066
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62067
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3c538e62}
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62068
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62069
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@74ee97cb}
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62070
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:11 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62071
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@27107a97}
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62072
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62073
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@15a5cc6e}
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62074
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:12 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62075
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@623ed5ed}
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62076
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62077
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3fe21d0e}
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62078
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62079
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@73502d5e}
+апр 25, 2023 7:15:13 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62080
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62081
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@c651286}
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62082
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62083
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@41c56930}
+апр 25, 2023 7:15:14 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62084
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62085
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4b19ee18}
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62086
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62087
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@39aaa7db}
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:15 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62088
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62089
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4b024fb2}
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62090
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62091
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4d609cc3}
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62092
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:16 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62093
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@494c452b}
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62094
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62095
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4f7b4953}
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62096
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:17 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62097
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7731504}
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62098
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62099
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5ae06c93}
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62101
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62102
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7cb9295f}
+апр 25, 2023 7:15:18 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62104
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62105
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2aee0173}
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62106
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62107
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@60a98fa6}
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:19 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62108
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62109
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4dc74211}
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62110
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62111
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2b9132ad}
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62112
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:20 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62113
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5cd3f5bf}
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62114
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62115
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@93231b2}
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62116
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:21 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62117
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4a7812cb}
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62118
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62119
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@71da2e9e}
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62120
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62121
+апр 25, 2023 7:15:22 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2e1437aa}
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62122
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62123
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2465e8be}
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62124
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62125
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1ae042f3}
+апр 25, 2023 7:15:23 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62126
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62127
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@746a671}
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62128
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62129
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3bd05779}
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:24 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62130
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62131
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@365a0910}
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62132
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62133
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4228da9a}
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62134
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:25 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62135
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@167e559c}
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62136
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62137
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@660b292c}
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62138
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:26 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62139
+апр 25, 2023 7:15:27 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:27 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@28c7ae7f}
+апр 25, 2023 7:15:27 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:15:41 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62149
+апр 25, 2023 7:15:41 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:15:41 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4ac5bbc8}
+апр 25, 2023 7:15:41 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:16:05 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62151
+апр 25, 2023 7:16:05 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:16:05 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:16:05 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:16:05 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62152
+апр 25, 2023 7:16:05 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:16:05 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1b75f094}
+апр 25, 2023 7:16:05 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:16:14 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62158
+апр 25, 2023 7:16:14 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:16:14 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@7ec09f73}
+апр 25, 2023 7:16:14 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:16:47 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62170
+апр 25, 2023 7:16:47 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:16:47 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@4db0d696}
+апр 25, 2023 7:16:47 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:16:55 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62171
+апр 25, 2023 7:16:55 PM utils.logger.MyLogger info
+INFO: Request: clear
+апр 25, 2023 7:16:55 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: Collection cleared successfully data: null
+апр 25, 2023 7:16:55 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:16:55 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62172
+апр 25, 2023 7:16:55 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:16:55 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@ffeb49c}
+апр 25, 2023 7:16:55 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:18:11 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62186
+апр 25, 2023 7:18:11 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:18:11 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@3a9b4a6e}
+апр 25, 2023 7:18:11 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:18:57 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62200
+апр 25, 2023 7:18:57 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:18:57 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2202c350}
+апр 25, 2023 7:18:57 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:22:13 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62252
+апр 25, 2023 7:22:13 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:22:13 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2aad9c31}
+апр 25, 2023 7:22:13 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:22:34 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62267
+апр 25, 2023 7:22:34 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:22:34 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1c44579}
+апр 25, 2023 7:22:34 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:23:14 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62273
+апр 25, 2023 7:23:14 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:23:14 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@1b12f58d}
+апр 25, 2023 7:23:14 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:23:41 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62276
+апр 25, 2023 7:23:41 PM utils.logger.MyLogger info
+INFO: Request: clear
+апр 25, 2023 7:23:41 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: Collection cleared successfully data: null
+апр 25, 2023 7:23:41 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:23:41 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62277
+апр 25, 2023 7:23:41 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:23:41 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@695e9431}
+апр 25, 2023 7:23:41 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:25:54 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T19:25:54.658
+апр 25, 2023 7:31:56 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62435
+апр 25, 2023 7:31:56 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:33:06 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62457
+апр 25, 2023 7:33:06 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:33:06 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@33f88ab}
+апр 25, 2023 7:33:06 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:34:06 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62489
+апр 25, 2023 7:34:06 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:34:06 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@307f6b8c}
+апр 25, 2023 7:34:06 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:34:32 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62501
+апр 25, 2023 7:34:33 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:34:33 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:34:33 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:34:33 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62502
+апр 25, 2023 7:34:33 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:34:33 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@548ad73b}
+апр 25, 2023 7:34:33 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:38:46 PM utils.logger.MyLogger info
+INFO: Logger initialized at time: 2023-04-25T19:38:46.857
+апр 25, 2023 7:41:09 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62667
+апр 25, 2023 7:41:09 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:41:09 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@17579e0f}
+апр 25, 2023 7:41:09 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:48:54 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62867
+апр 25, 2023 7:48:54 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:48:54 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@467aecef}
+апр 25, 2023 7:48:54 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:50:29 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62894
+апр 25, 2023 7:50:29 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:50:29 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@2353b3e6}
+апр 25, 2023 7:50:29 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:51:28 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62909
+апр 25, 2023 7:51:28 PM utils.logger.MyLogger info
+INFO: Request: insert
+апр 25, 2023 7:51:28 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: StudyGroup added successfully data: null
+апр 25, 2023 7:51:28 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:51:28 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:62910
+апр 25, 2023 7:51:28 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 7:51:28 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@5c18298f}
+апр 25, 2023 7:51:28 PM utils.logger.MyLogger info
+INFO: Response sent
+апр 25, 2023 7:57:32 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:63065
+апр 25, 2023 7:57:32 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 8:01:46 PM utils.logger.MyLogger info
+INFO: Client connected: /127.0.0.1:63191
+апр 25, 2023 8:01:46 PM utils.logger.MyLogger info
+INFO: Request: get_collection_record
+апр 25, 2023 8:01:46 PM utils.logger.MyLogger info
+INFO: Response: ok: true detail: CollectionRecord loaded successfully data: {object=models.CollectionRecord@8b87145}
+апр 25, 2023 8:01:46 PM utils.logger.MyLogger info
+INFO: Response sent

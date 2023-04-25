@@ -107,4 +107,13 @@ public abstract class AbstractManager {
      * Saves the collection to a file.
      */
     public abstract void save();
+
+    /**
+     * 
+     * Sets the collection record.
+     * 
+     * @param filePath the file path of the collection record.
+     */
+    public abstract void setCollectionRecord(String filePath);
+
 }
