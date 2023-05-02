@@ -43,7 +43,8 @@ public class RemoveKeyCommand extends AbstractCollectionCommand {
     public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(1, inlineParams);
         // manager.removeKey(inlineParams.get(1));
+        manager.loadCollectionRecord();
         Response response = this.manager.removeKey(inlineParams.get(1));
-        output.writeLine(response.getMessage() + "\n");
+        output.writeLine(response.getDetail() + "\n");
     }
 }

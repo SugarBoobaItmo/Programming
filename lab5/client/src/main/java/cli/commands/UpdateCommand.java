@@ -49,6 +49,7 @@ public class UpdateCommand extends AbstractCollectionCommand {
         Checkers.checkLong(inlineParams.get(1));
 
         // Find the element to update.
+        manager.loadCollectionRecord();
         for (Map.Entry<String, StudyGroup> entry : manager.getCollection().entrySet()) {
             if (Integer.parseInt(inlineParams.get(1)) == entry.getValue().getId()) {
                 StudyGroup studyGroup;
@@ -60,8 +61,8 @@ public class UpdateCommand extends AbstractCollectionCommand {
                 }
                 // Update the element.
                 if (studyGroup != null) {
-                    Response response = manager.update(entry.getKey(), studyGroup);
-                    output.writeLine(response.getMessage() + "\n");
+                    Response response = manager.update(inlineParams.get(1), studyGroup);
+                    output.writeLine(response.getDetail() + "\n");
                 }
                 return;
             }

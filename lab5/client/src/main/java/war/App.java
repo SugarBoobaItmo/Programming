@@ -4,8 +4,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import cli.CLIClient;
-import cli.ServerAdapter;
-import cli.commands.AbstractCommand;
 import cli.commands.ClearCommand;
 import cli.commands.ExecuteScriptCommand;
 import cli.commands.ExitCommand;
@@ -23,17 +21,17 @@ import cli.commands.RemoveKeyCommand;
 import cli.commands.RemoveLowerCommand;
 import cli.commands.ShowCommand;
 import cli.commands.UpdateCommand;
-import cli.exceptions.CommandNotFound;
 import cli.terminal_commands.FuzzyCommand;
 import cli.terminal_commands.TerminalClear;
 import cli.terminal_commands.TerminalHelp;
 import collection_manager.AbstractManager;
 import collection_manager.RemoteManager;
+import serveradapter.ServerAdapter;
 
 public class App {
     public static void main(String[] args) {
 
-        CLIClient cli = new CLIClient(false);
+        CLIClient cli = new CLIClient(true);
 
         ServerAdapter serverAdapter = new ServerAdapter(8080, "localhost");
 
@@ -43,10 +41,10 @@ public class App {
 
         AbstractManager manager = new RemoteManager(serverAdapter);
 
-        cli.registerCommand("info", new InfoCommand(manager));
-        cli.registerCommand("show", new ShowCommand(manager));
+        cli.registerCommand("info", new InfoCommand(serverAdapter, manager));
+        cli.registerCommand("show", new ShowCommand(serverAdapter, manager));
         cli.registerCommand("clear", new ClearCommand(manager));
-        cli.registerCommand("exit", new ExitCommand());
+        cli.registerCommand("exit", new ExitCommand(serverAdapter, cli));
         cli.registerCommand("insert", new InsertCommand(manager));
         cli.registerCommand("print_descending", new PrintDescendingCommand(manager));
         cli.registerCommand("update", new UpdateCommand(manager));
@@ -65,6 +63,6 @@ public class App {
         cli.registerTerminalCommand("/fuzzyMode", new FuzzyCommand(cli));
 
         cli.startCLI();
-
+        scanner.close();
     }
 }

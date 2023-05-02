@@ -49,6 +49,7 @@ public class RemoveLowerCommand extends AbstractCollectionCommand {
 
         StudyGroup studyGroup;
 
+        manager.loadCollectionRecord();
         if (disableAttempts) {
             studyGroup = ElementCommand.readScriptElement(input, output);
         } else {
@@ -57,8 +58,7 @@ public class RemoveLowerCommand extends AbstractCollectionCommand {
 
         if (studyGroup != null) {
             Response response = manager.removeLower(studyGroup);
-            // output.writeLine("Lower elements were removed");
-            output.writeLine(response.getDetail());
+            output.writeLine(response.getDetail()+ "\n");
 
         } else {
             output.writeLine("Incorrect command, please write it with correct parameters" + "\n");

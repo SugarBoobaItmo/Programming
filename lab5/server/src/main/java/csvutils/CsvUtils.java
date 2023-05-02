@@ -71,7 +71,7 @@ public class CsvUtils {
         } catch (IOException ex) {
             // System.out.println(ColorText.colorText("No permission to write in file",
             // "red"));
-            System.out.println("No permission to write in file");
+            // System.out.println("No permission to write in file");
             throw new ServerStorageException("No permission to write in file");
         }
 
@@ -118,29 +118,18 @@ public class CsvUtils {
             csvReader.close();
             return new CollectionRecord(collection, info);
         } catch (CsvMalformedLineException e) {
-            // System.out.println(ColorText.colorText("Incorrect csv format for reading in line: "+rowNumber, "red"));
-            System.out.println("Incorrect csv format for reading in line: "+rowNumber);
-            throw new ServerStorageException();
+            
+            throw new ServerStorageException("Incorrect csv format for reading in line: "+rowNumber);
 
         } catch (SecurityException e) {
-            // System.out.println(ColorText.colorText("No permission to read file", "red"));
-            System.out.println("No permission to read file");
+            throw new ServerStorageException("No permission to read file");
         } catch (IOException e) {
-            // System.out.println(ColorText.colorText("No such file or no permission to read it", "red"));
-            // System.out.println("No such file or no permission to read it");
-            throw new ServerStorageException();
+            throw new ServerStorageException("No such file or no permission to read it");
         } catch (IllegalArgumentException e) {
-            // System.out.println(ColorText.colorText("Incorrect line: "+rowNumber, "red"));
-            System.out.println("Incorrect line: "+rowNumber);
-            throw new ServerStorageException();
+            throw new ServerStorageException("Incorrect line: "+rowNumber);
         } catch (Exception e) {
-            // System.out.println(ColorText.colorText("Incorrect file", "red"));
-            System.out.println("Incorrect file");
-            throw new ServerStorageException();
+            throw new ServerStorageException("Incorrect file");
         }
-
-        // collectionManager.initialize();
-        return null;
 
     }
 

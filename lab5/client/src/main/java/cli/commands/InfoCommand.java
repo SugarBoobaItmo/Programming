@@ -1,5 +1,7 @@
 package cli.commands;
 
+import java.io.IOException;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,6 +10,9 @@ import cli.commands.exceptions.ExecuteError;
 import cli.interfaces.LineReader;
 import cli.interfaces.LineWriter;
 import collection_manager.AbstractManager;
+import durgaapi.Response;
+import models.CollectionRecord;
+import serveradapter.ServerAdapter;
 
 /**
  * 
@@ -16,14 +21,17 @@ import collection_manager.AbstractManager;
  * 
  */
 public class InfoCommand extends AbstractCollectionCommand {
+    private ServerAdapter serverAdapter;
+    
     /**
      * 
      * Constructs a new InfoCommand with the specified collection manager.
      * 
      * @param manager the collection manager to be used
      */
-    public InfoCommand(AbstractManager manager) {
+    public InfoCommand(ServerAdapter serverAdapter, AbstractManager manager) {
         super("Info", "Write info about collection", new ArrayList<String>(), manager);
+        this.serverAdapter = serverAdapter;
     }
 
     /**
@@ -39,6 +47,16 @@ public class InfoCommand extends AbstractCollectionCommand {
     @Override
     public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(0, inlineParams);
-        output.writeLine(manager.getInfo().toString() + "\n");
+        try {
+
+            Response response = serverAdapter.sendRequest("info", null);
+            manager.setCollectionRecord((CollectionRecord) response.getData().get("object"));
+            output.writeLine(response.getDetail() + "\n");
+
+        } catch (UnknownHostException e) {
+            throw new ExecuteError("Server is not available");
+        } catch (IOException e) {
+            throw new ExecuteError("Server is not available");
+        }
     }
 }

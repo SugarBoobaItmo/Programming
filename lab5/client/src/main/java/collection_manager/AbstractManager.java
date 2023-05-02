@@ -56,6 +56,15 @@ public abstract class AbstractManager {
 
     /**
      * 
+     * Sets the collection record.
+     * 
+     * @param collectionRecord the collection record to set.
+     */
+    public void setCollectionRecord(CollectionRecord collectionRecord){
+        this.collectionRecord = collectionRecord;
+    }
+    /**
+     * 
      * Updates a study group in the collection.
      * 
      * @param index the index of the study group to update.
@@ -104,6 +113,11 @@ public abstract class AbstractManager {
      */
     public abstract Response insert(String index, StudyGroup group);
 
-    public abstract void setCollectionRecord();
+    /**
+     * 
+     * Loads the collection record.
+     * 
+     */
+    public abstract void loadCollectionRecord();
 
 }

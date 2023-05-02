@@ -1,9 +1,9 @@
 package cli;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -68,8 +68,9 @@ public class CLIClient {
 
     public void deleteCommand(String commandName) {
         if (this.commands.containsKey(commandName))
-        this.commands.remove(commandName);
+            this.commands.remove(commandName);
     }
+
     /**
      * 
      * Registers a new terminal command with the specified command name and
@@ -91,21 +92,25 @@ public class CLIClient {
 
     public void startCLI() {
         // randomly open files from folder "resources" and print them to console
-        File folder = new File("src/main/java/resources/ascii_picts");
-        File[] listOfFiles = folder.listFiles();
-        int randomFileIndex = (int) (Math.random() * listOfFiles.length);
-        File file = listOfFiles[randomFileIndex];
-            try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
-                String line;
-                System.out.println();
-                while ((line = reader.readLine()) != null) {
-                    System.out.println(line);
-                }
-                System.out.println();
-            
-            } catch (IOException e2) {
-                System.out.println(ColorText.colorText("Welcoming file not found.", "red"));
+
+        try {
+            String[] listOfFiles = {"first_picture.txt", "second_picture.txt", "third_picture.txt", "fourth_picture.txt", "fifth_picture.txt"};
+            int randomFileIndex = (int) (Math.random() * listOfFiles.length);
+            String fileName = listOfFiles[randomFileIndex];
+            InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("ascii_picts/" + fileName);
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            String line;
+            System.out.println(); 
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
             }
+            System.out.println();
+            reader.close();
+        } catch (IOException e) {
+            System.out.println(ColorText.colorText("File not found.", "red"));
+        }
+
         while (true) {
             // Catching an exception is necessary to skip command execution (for Ctrl+D)
             // write file from folder "resources" to folder "output"
@@ -116,8 +121,7 @@ public class CLIClient {
                 System.out.println("Goodbye!");
                 break;
 
-
-            } 
+            }
 
             String line = scanner.nextLine();
             List<String> params = parseParams(line);
@@ -137,14 +141,13 @@ public class CLIClient {
                     command.execute(params);
                 } catch (CommandNotFound e1) {
                     System.out.println(ColorText.colorText("Command not found: " + e1.getMessage(), "red"));
-                    
+
                 } catch (ExecuteError e1) {
                     System.out.println(ColorText.colorText("Error executing command: " + e1.getMessage(), "red"));
                 }
             }
         }
     }
-
 
     /**
      * 
@@ -162,6 +165,7 @@ public class CLIClient {
     /**
      * 
      * Resolves the command with the specified name.
+     * 
      * @param params the name of the command to resolve
      * @return the resolved command
      * @throws CommandNotFound if the command with the specified name is not found
@@ -179,16 +183,15 @@ public class CLIClient {
             terminal_commands.forEach((k, v) -> commands_array.add(k));
 
             for (String command : commands_array) {
-                
+
                 int distance = LevenshteinDistance.levenshteinDistance(commandName, command);
                 distances.put(command, distance);
             }
-        
+
             List<Map.Entry<String, Integer>> sortedEntries = new ArrayList<>(distances.entrySet());
             Collections.sort(sortedEntries, (e1, e2) -> e2.getValue().compareTo(e1.getValue()));
             // System.out.println(Arrays.toString(sortedEntries.toArray()));
             commandName = sortedEntries.get(0).getKey();
-
 
         }
         AbstractCommand command = this.commands.get(commandName);
@@ -205,7 +208,8 @@ public class CLIClient {
      * 
      * @param params the name of the terminal command to resolve
      * @return the resolved terminal command
-     * @throws CommandNotFound if the terminal command with the specified name is not found
+     * @throws CommandNotFound if the terminal command with the specified name is
+     *                         not found
      */
     public TerminalCommand resolveTerminalCommand(List<String> params) throws CommandNotFound {
         if (params.size() == 0) {
@@ -224,10 +228,10 @@ public class CLIClient {
      * 
      * Executes the specified command with the specified parameters.
      * 
-     * @param inlineParams  the parameters to pass to the command
-     * @param command the command to execute
-     * @param input   the input function to use
-     * @param output  the output function to use
+     * @param inlineParams the parameters to pass to the command
+     * @param command      the command to execute
+     * @param input        the input function to use
+     * @param output       the output function to use
      */
     public void executeCommand(List<String> inlineParams, AbstractCommand command, LineReader input,
             LineWriter output, boolean disableAttempts) {
@@ -282,6 +286,14 @@ public class CLIClient {
      */
     public void setFuzzyMode(boolean fuzzyMode) {
         this.fuzzyMode = fuzzyMode;
+    }
+
+    /**
+     * method for exit from program
+     */
+    public void exitProgram() {
+        System.out.println("Goodbye!");
+        System.exit(0);
     }
 
 }

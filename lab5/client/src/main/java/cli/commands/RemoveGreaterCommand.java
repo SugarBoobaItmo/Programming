@@ -50,7 +50,7 @@ public class RemoveGreaterCommand extends AbstractCollectionCommand {
         Checkers.checkInlineParamsCount(0, inlineParams);
 
         StudyGroup studyGroup;
-
+        manager.loadCollectionRecord();
         if (disableAttempts) {
             studyGroup = ElementCommand.readScriptElement(input, output);
         } else {
@@ -59,8 +59,7 @@ public class RemoveGreaterCommand extends AbstractCollectionCommand {
 
         if (studyGroup != null) {
             Response response = manager.removeGreater(studyGroup);
-            // output.writeLine("Greater elements were removed"+ "\n")
-            output.writeLine(response.getMessage() + "\n");
+            output.writeLine(response.getDetail() + "\n");
         } else {
             throw new GroupNotFound();
         }

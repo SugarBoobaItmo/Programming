@@ -27,7 +27,8 @@ public class InsertCommand extends AbstractCollectionCommand {
      * @param manager the AbstractManager object to manage the collection
      */
     public InsertCommand(AbstractManager manager) {
-        super("Insert", "Insert element to collection null", new ArrayList<String>(Arrays.asList("{element}")), manager);
+        super("Insert", "Insert element to collection null", new ArrayList<String>(Arrays.asList("{element}")),
+                manager);
     }
 
     /**
@@ -48,6 +49,7 @@ public class InsertCommand extends AbstractCollectionCommand {
         Checkers.checkInlineParamsCount(1, inlineParams);
 
         // check if key already exists
+        manager.loadCollectionRecord();
         if (manager.getCollection().containsKey(inlineParams.get(1))) {
             output.writeLine("Key already exists" + "\n");
             return;
@@ -56,7 +58,6 @@ public class InsertCommand extends AbstractCollectionCommand {
         StudyGroup studyGroup;
         if (disableAttempts) {
             studyGroup = ElementCommand.readScriptElement(input, output);
-            
 
         } else {
             studyGroup = ElementCommand.readElement(input, output);
