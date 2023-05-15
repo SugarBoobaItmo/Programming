@@ -10,5 +10,5 @@ public abstract class Handler {
     public abstract String getName();
 
     // The method that handles the request
-    public abstract Response handle(Request request, String userId);
+    public abstract Response handle(Request request, String userId) throws Exception;
 }

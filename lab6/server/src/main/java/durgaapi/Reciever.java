@@ -14,7 +14,8 @@ public class Reciever {
     // The list of handlers
     List<Handler> handlers = new ArrayList<Handler>();
 
-    public Reciever() {}
+    public Reciever() {
+    }
 
     /**
      * Register a handler
@@ -29,18 +30,21 @@ public class Reciever {
      * Handle a request
      * 
      * @param request The request to handle
-     * @param string The user id
+     * @param string  The user id
      * @return The response
      * @throws NotHandledException
      */
-    public Response handleRequest(Request request, String string) throws NotHandledException{
+    public Response handleRequest(Request request, String string) throws NotHandledException {
         for (Handler handler : handlers) {
             if (request.getCommand().equals(handler.getName())) {
-                return handler.handle(request, string);
+                try {
+                    return handler.handle(request, string);
+                } catch (Exception e) {
+                    return new Response(false, e.getMessage(), null);
+                }
             }
         }
         throw new NotHandledException();
     }
-
 
 }
