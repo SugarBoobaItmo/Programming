@@ -1,13 +1,11 @@
 package handlers;
 
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 
 import database.DatabaseManager;
@@ -24,35 +22,29 @@ public class LoginHandler extends Handler {
     }
 
     @Override
-    public Response handle(Request request, String userId) {
+    public Response handle(Request request, String userId) throws Exception {
         String login = (String) request.getData().get("login");
         String password = (String) request.getData().get("password");
 
         DatabaseManager databaseManager = new DatabaseManager();
 
-        try {
-            Connection connection = databaseManager.getConnection();
-            String sqlStatement = "SELECT id, password, salt FROM users WHERE login = ?";
-            PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
-            preparedStatement.setString(1, login);
-            ResultSet resultSet = preparedStatement.executeQuery();
+        Connection connection = databaseManager.getConnection();
+        String sqlStatement = "SELECT id, password, salt FROM users WHERE login = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
+        preparedStatement.setString(1, login);
+        ResultSet resultSet = preparedStatement.executeQuery();
 
-            if (resultSet.next()) {
-                String securePassword = getSecurePassword(password, resultSet.getBytes("salt"));
-                if (securePassword.equals(resultSet.getString("password"))) {
-                    HashMap<String, Object> data = new HashMap<>();
-                    data.put("id", resultSet.getString("id"));
-                    return new Response(true, "User logged in successfully", data);
-                } else {
-                    return new Response(false, "Wrong password", null);
-                }
+        if (resultSet.next()) {
+            String securePassword = getSecurePassword(password, resultSet.getBytes("salt"));
+            if (securePassword.equals(resultSet.getString("password"))) {
+                HashMap<String, Object> data = new HashMap<>();
+                data.put("id", resultSet.getString("id"));
+                return new Response(true, "User logged in successfully", data);
             } else {
-                return new Response(false, "User does not exist", null);
+                return new Response(false, "Wrong password", null);
             }
-        } catch (SQLException e) {
-            return new Response(false, e.getMessage(), null);
-        } catch (IOException e) {
-            return new Response(false, e.getMessage(), null);
+        } else {
+            return new Response(false, "User does not exist", null);
         }
     }
 

@@ -101,11 +101,10 @@ public class CollectionStorage {
 
             return collectionRecord;
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new ServerStorageException(e.getMessage());
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new ServerStorageException(e.getMessage());
         }
-        return collectionRecord;
     }
 
     /**

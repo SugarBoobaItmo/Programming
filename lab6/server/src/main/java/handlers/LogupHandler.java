@@ -1,6 +1,5 @@
 package handlers;
 
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -25,46 +24,38 @@ public class LogupHandler extends Handler {
     }
 
     @Override
-    public Response handle(Request request, String userId) {
+    public Response handle(Request request, String userId) throws Exception {
         String login = (String) request.getData().get("login");
         String password = (String) request.getData().get("password");
 
         DatabaseManager databaseManager = new DatabaseManager();
-        try {
-            Connection connection = databaseManager.getConnection();
-            if (userExists(connection, login)) {
-                return new Response(false, "User already exists", null);
-            }
-            String sqlStatement = "INSERT INTO users (login, password, salt) VALUES (?, ?, ?)";
-            PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
-
-            byte[] salt = getSalt();
-            String securePassword = getSecurePassword(password, salt);
-
-            preparedStatement.setString(1, login);
-            preparedStatement.setString(2, securePassword);
-            preparedStatement.setBytes(3, salt);
-            int rowsAffected = preparedStatement.executeUpdate();
-            if (rowsAffected > 0) {
-                String sqlStatement2 = "SELECT id FROM users WHERE login = ?";
-                PreparedStatement preparedStatement2 = connection.prepareStatement(sqlStatement2);
-                preparedStatement2.setString(1, login);
-
-                ResultSet id = preparedStatement2.executeQuery();
-                if (id.next()) {
-                    HashMap<String, Object> data = new HashMap<>();
-                    data.put("id", id.getLong(1));
-                    return new Response(true, "User registered successfully", data);
-                }
-            }
-            return new Response(false, "User registration failed", null);
-        } catch (SQLException e) {
-            return new Response(false, e.getMessage(), null);
-        } catch (IOException e) {
-            return new Response(false, e.getMessage(), null);
-        } catch (NoSuchAlgorithmException e) {
-            return new Response(false, e.getMessage(), null);
+        Connection connection = databaseManager.getConnection();
+        if (userExists(connection, login)) {
+            return new Response(false, "User already exists", null);
         }
+        String sqlStatement = "INSERT INTO users (login, password, salt) VALUES (?, ?, ?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
+
+        byte[] salt = getSalt();
+        String securePassword = getSecurePassword(password, salt);
+
+        preparedStatement.setString(1, login);
+        preparedStatement.setString(2, securePassword);
+        preparedStatement.setBytes(3, salt);
+        int rowsAffected = preparedStatement.executeUpdate();
+        if (rowsAffected > 0) {
+            String sqlStatement2 = "SELECT id FROM users WHERE login = ?";
+            PreparedStatement preparedStatement2 = connection.prepareStatement(sqlStatement2);
+            preparedStatement2.setString(1, login);
+
+            ResultSet id = preparedStatement2.executeQuery();
+            if (id.next()) {
+                HashMap<String, Object> data = new HashMap<>();
+                data.put("id", id.getLong(1));
+                return new Response(true, "User registered successfully", data);
+            }
+        }
+        return new Response(false, "User registration failed", null);
     }
 
     private boolean userExists(Connection connection, String login) {

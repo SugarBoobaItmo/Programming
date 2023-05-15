@@ -48,7 +48,7 @@ public class App {
 
         Server server;
         try {
-            server = new Server(8081, reciever);
+            server = new Server(8080, reciever);
             ExecutorService executor = Executors.newSingleThreadExecutor();
             AtomicBoolean stopFlag = new AtomicBoolean(false);
 

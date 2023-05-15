@@ -5,7 +5,6 @@ import java.util.HashMap;
 import durgaapi.Handler;
 import durgaapi.Request;
 import durgaapi.Response;
-import handlers.exceptions.ServerStorageException;
 import models.CollectionRecord;
 
 /**
@@ -31,18 +30,15 @@ public class InfoHandler extends Handler {
      * @return The response to the request.
      */
     @Override
-    public Response handle(Request request, String userId) {
+    public Response handle(Request request, String userId) throws Exception{
         CollectionRecord collectionRecord;
-        try {
-            collectionRecord = CollectionStorage.load(userId);
-            String info = collectionRecord.getInfo().toString() + " size= " + collectionRecord.getCollection().size();
+        collectionRecord = CollectionStorage.load(userId);
 
-            HashMap<String, Object> data = new HashMap<>();
-            data.put("object", collectionRecord);
+        String info = collectionRecord.getInfo().toString() + " size= " + collectionRecord.getCollection().size();
 
-            return new Response(true, info, data);
-        } catch (ServerStorageException e) {
-            return new Response(false, e.getMessage(), null);
-        }
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("object", collectionRecord);
+
+        return new Response(true, info, data);
     }
 }

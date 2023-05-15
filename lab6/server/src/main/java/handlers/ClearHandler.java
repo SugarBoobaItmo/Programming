@@ -1,9 +1,7 @@
 package handlers;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.HashMap;
 
 import database.DatabaseManager;
@@ -35,21 +33,14 @@ public class ClearHandler extends Handler {
      * @return The response to the request.
      */
     @Override
-    public Response handle(Request request, String userId) {
+    public Response handle(Request request, String userId) throws Exception {
         DatabaseManager dbManager = new DatabaseManager();
-        try {
-            Connection connection = dbManager.getConnection();
-            String sql = "DELETE FROM groups WHERE owner_id = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            statement.setString(1, userId);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        Connection connection = dbManager.getConnection();
+
+        String sql = "DELETE FROM groups WHERE owner_id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, userId);
+        statement.executeUpdate();
 
         HashMap<String, Object> data = new HashMap<>();
         data.put("object", new CollectionRecord());

@@ -1,16 +1,13 @@
 package handlers;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.HashMap;
 
 import database.DatabaseManager;
 import durgaapi.Handler;
 import durgaapi.Request;
 import durgaapi.Response;
-import handlers.exceptions.ServerStorageException;
 import models.CollectionRecord;
 import models.StudyGroup;
 
@@ -38,37 +35,28 @@ public class RemoveGreaterHandler extends Handler {
      * @return The response to the request.
      */
     @Override
-    public Response handle(Request request, String userId) {
-
+    public Response handle(Request request, String userId) throws Exception {
         CollectionRecord collectionRecord = new CollectionRecord();
-        try {
-            StudyGroup greater_group = (StudyGroup) request.getData().get("object");
+        StudyGroup greater_group = (StudyGroup) request.getData().get("object");
 
-            DatabaseManager databaseManager = new DatabaseManager();
-            Connection connection = databaseManager.getConnection();
+        DatabaseManager databaseManager = new DatabaseManager();
+        Connection connection = databaseManager.getConnection();
 
-            Long studentsCount = greater_group.getStudentsCount();
-            String sql = "DELETE FROM groups WHERE students_count > ? AND owner_id = ?";
-            PreparedStatement statement = connection.prepareStatement(sql);
-            if (studentsCount == null) {
-                studentsCount = 0L;
-            }
-            statement.setLong(1, studentsCount);
-            statement.setString(2, userId);
-            statement.executeUpdate();
-
-            collectionRecord.setCollection(CollectionStorage.load(userId.toString()).getCollection());
-
-            HashMap<String, Object> data = new HashMap<>();
-            data.put("object", collectionRecord);
-
-            return new Response(true, "Greater groups were dropped successfully", data);
-        } catch (SQLException e) {
-            return new Response(false, e.getMessage(), null);
-        } catch (IOException e) {
-            return new Response(false, e.getMessage(), null);
-        } catch (ServerStorageException e) {
-            return new Response(false, e.getMessage(), null);
+        Long studentsCount = greater_group.getStudentsCount();
+        String sql = "DELETE FROM groups WHERE students_count > ? AND owner_id = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        if (studentsCount == null) {
+            studentsCount = 0L;
         }
+        statement.setLong(1, studentsCount);
+        statement.setString(2, userId);
+        statement.executeUpdate();
+
+        collectionRecord.setCollection(CollectionStorage.load(userId.toString()).getCollection());
+
+        HashMap<String, Object> data = new HashMap<>();
+        data.put("object", collectionRecord);
+
+        return new Response(true, "Greater groups were dropped successfully", data);
     }
 }
