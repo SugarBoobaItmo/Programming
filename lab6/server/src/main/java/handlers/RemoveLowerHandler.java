@@ -1,6 +1,5 @@
 package handlers;
 
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,9 +18,9 @@ import models.StudyGroup;
  * Handler for the "remove_lower" command.
  * Removes all groups that are lower than the given one.
  */
-public class RemoveLowerHandler extends Handler{
+public class RemoveLowerHandler extends Handler {
     private String name = "remove_lower";
-    
+
     /**
      * @return The name of the command.
      */
@@ -29,20 +28,19 @@ public class RemoveLowerHandler extends Handler{
     public String getName() {
         return name;
     }
-    
+
     /**
      * Removes all groups that are lower than the given one.
+     * 
      * @param request The request to handle.
-     * @param userId The id of the user who sent the request.
+     * @param userId  The id of the user who sent the request.
      * @return The response to the request.
      */
     @Override
     public Response handle(Request request, String userId) {
         CollectionRecord collectionRecord = new CollectionRecord();
         try {
-            // collectionRecord = CollectionStorage.load(userId.toString());
             StudyGroup lower_group = (StudyGroup) request.getData().get("object");
-
 
             DatabaseManager databaseManager = new DatabaseManager();
             Connection connection = databaseManager.getConnection();
@@ -71,6 +69,4 @@ public class RemoveLowerHandler extends Handler{
             return new Response(false, e.getMessage(), null);
         }
     }
-
-    
 }

@@ -56,11 +56,10 @@ public class RemoveKeyHandler extends Handler {
             data.put("object", collectionRecord);
 
             if (rows == 0) {
-                return new Response(false, "You haven't got group with key = '"+key+"'", data);
+                return new Response(false, "You haven't got group with key = '" + key + "'", data);
             } else {
                 return new Response(true, "StudyGroup removed successfully", data);
             }
-
         } catch (SQLException e) {
             return new Response(false, e.getMessage(), null);
         } catch (IOException e) {
@@ -68,7 +67,5 @@ public class RemoveKeyHandler extends Handler {
         } catch (ServerStorageException e) {
             return new Response(false, e.getMessage(), null);
         }
-
     }
-
 }

@@ -45,7 +45,5 @@ public class GetCollectionRecordHandler extends Handler {
         } catch (ServerStorageException e) {
             return new Response(false, e.getMessage(), null);
         }
-
     }
-
 }

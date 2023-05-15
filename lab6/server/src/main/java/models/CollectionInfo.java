@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
  * It contains the creation time and the owner of the collection.
  * 
  */
-public class CollectionInfo implements java.io.Serializable{
+public class CollectionInfo implements java.io.Serializable {
     private static final long serialVersionUID = 1L;
     // creation time of the collection
     public final LocalDateTime creationTime;

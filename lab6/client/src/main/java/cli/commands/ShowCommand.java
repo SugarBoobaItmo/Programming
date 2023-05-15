@@ -61,8 +61,7 @@ public class ShowCommand extends AbstractCollectionCommand {
                 ColorText.colorText("· expelledStudents=", "yellow")+ ColorText.colorText(String.valueOf(v.getExpelledStudents()), "green") + "\n"+
                 ColorText.colorText("· transferredStudents=", "yellow")+ ColorText.colorText(String.valueOf(v.getTransferredStudents()), "green") + "\n"+         
                 ColorText.colorText("· semesterEnum=", "yellow")+ ColorText.colorText(String.valueOf(v.getSemesterEnum()), "green") + "\n"+
-                ColorText.colorText("· groupAdmin=", "yellow")+ ColorText.colorText(String.valueOf(v.getGroupAdmin()), "green") + "\n"+
-                ColorText.colorText("· owner=", "yellow")+ ColorText.colorText(String.valueOf(v.getOwner()), "green") + "\n\n"));
+                ColorText.colorText("· groupAdmin=", "yellow")+ ColorText.colorText(String.valueOf(v.getGroupAdmin()), "green") + "\n\n"));
             }
         } catch (UnknownHostException e) {
             throw new ExecuteError("Server is not available");

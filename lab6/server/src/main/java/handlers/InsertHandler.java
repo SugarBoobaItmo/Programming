@@ -14,7 +14,6 @@ import database.DatabaseManager;
 import durgaapi.Handler;
 import durgaapi.Request;
 import durgaapi.Response;
-import handlers.exceptions.ServerStorageException;
 import models.CollectionRecord;
 import models.StudyGroup;
 
@@ -29,7 +28,6 @@ import models.StudyGroup;
  * the handle method and getName method.
  */
 public class InsertHandler extends Handler {
-
     private String name = "insert";
 
     /**
@@ -44,7 +42,6 @@ public class InsertHandler extends Handler {
     }
 
     /**
-     * z
      * Handles the request to insert a new study group into the collection.
      * Generates a random id and
      * 
@@ -64,27 +61,23 @@ public class InsertHandler extends Handler {
 
         CollectionRecord collectionRecord = new CollectionRecord();
         try {
-            // collectionRecord = CollectionStorage.load(userId);
-            String argument = (String) request.getData().get("argument");
-            StudyGroup studyGroup = (StudyGroup) request.getData().get("object");
+            String argument = (String) request.getData().get("argument"); // key of the studyGroup
+            StudyGroup studyGroup = (StudyGroup) request.getData().get("object"); // studyGroup to add
 
-            // generate id and birthday
-            // studyGroup.setId(random.nextInt(1000000));
+            // generate birthday
             LocalDateTime date = LocalDateTime.now().minusYears(random.nextInt(3) - 17);
 
             if (studyGroup.getGroupAdmin() != null) {
                 studyGroup.getGroupAdmin().setBirthday(date);
             }
 
-            // check if key already exists in collection and add new studyGroup
-            // if (collectionRecord.getCollection().containsKey(argument)) {
-            // HashMap<String, Object> data = new HashMap<>();
-            // data.put("object", collectionRecord);
-
-            // return new Response(false, "Key already exists", data);
-            // } else {
             String checkKey = "SELECT * FROM groups WHERE key = ? and owner_id = ?";
-            String sqlStatement = "INSERT INTO groups (key, name, x, y, creation_date, students_count, expelled_students, transferred_students, semester, pers_id, owner_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, (SELECT id FROM person WHERE name = ? AND birthday = ? AND passportID = ? AND hairColor = ?), ?) RETURNING id";
+            String insertGroupQuery = "INSERT INTO groups "
+                    + "(key, name, x, y, creation_date, students_count, expelled_students, "
+                    + "transferred_students, semester, pers_id, owner_id) "
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, (SELECT id FROM person WHERE name = ? AND birthday = ? AND passportID = ? AND hairColor = ?), ?) "
+                    + "RETURNING id";
+
             DatabaseManager databaseManager = new DatabaseManager();
             Connection connection = databaseManager.getConnection();
 
@@ -92,12 +85,12 @@ public class InsertHandler extends Handler {
             checkStatement.setString(1, argument);
             checkStatement.setString(2, userId);
             ResultSet resultCheckSet = checkStatement.executeQuery();
-            // check if length of resultSet is 0
+            // check if key already present
             if (resultCheckSet.next()) {
                 return new Response(false, "Key already exists", null);
             }
 
-            PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
+            PreparedStatement preparedStatement = connection.prepareStatement(insertGroupQuery);
             preparedStatement.setString(1, argument);
             preparedStatement.setString(2, studyGroup.getName());
             preparedStatement.setInt(3, studyGroup.getCoordinates().getX());
@@ -117,9 +110,13 @@ public class InsertHandler extends Handler {
             }
 
             if (studyGroup.getGroupAdmin() != null) {
-                // String personSql = "INSERT INTO person (name, birthday, passportID, hairColor) VALUES (?, ?, ?, ?) WHERE NOT EXISTS (SELECT 1 FROM person WHERE name = ? AND birthday = ? AND passportID = ? AND hairColor = ?)";
-                String personSql = "INSERT INTO person (name, birthday, passportID, hairColor) SELECT ?, ?, ?, ? WHERE NOT EXISTS (SELECT 1 FROM person WHERE name = ? AND birthday = ? AND passportID = ? AND hairColor = ?)";
-                PreparedStatement personStatement = connection.prepareStatement(personSql);
+                String insertPersonQuery = "INSERT INTO person "
+                        + "(name, birthday, passportID, hairColor) "
+                        + "SELECT ?, ?, ?, ? "
+                        + "WHERE NOT EXISTS "
+                        + "(SELECT 1 FROM person WHERE name = ? AND birthday = ? AND passportID = ? AND hairColor = ?)";
+
+                PreparedStatement personStatement = connection.prepareStatement(insertPersonQuery);
                 personStatement.setString(1, studyGroup.getGroupAdmin().getName());
                 personStatement.setTimestamp(2, Timestamp.valueOf(studyGroup.getGroupAdmin().getBirthday()));
                 personStatement.setString(3, studyGroup.getGroupAdmin().getPassportID());
@@ -154,15 +151,10 @@ public class InsertHandler extends Handler {
             data.put("object", collectionRecord);
 
             return new Response(true, "StudyGroup added successfully", data);
-
-            // }
-            // } catch (ServerStorageException e) {
-            // return new Response(false, e.getMessage(), null);
         } catch (SQLException e) {
             return new Response(false, e.getMessage(), null);
         } catch (IOException e) {
             return new Response(false, e.getMessage(), null);
         }
-
     }
 }

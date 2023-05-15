@@ -33,7 +33,7 @@ public class App {
     public static void main(String[] args) {
         CLIClient cli = new CLIClient(true);
 
-        ServerAdapter serverAdapter = new ServerAdapter(8081, "localhost");
+        ServerAdapter serverAdapter = new ServerAdapter(8080, "localhost");
 
         Scanner scanner = new Scanner(System.in);
         List<String> params = cli.parseParams("login");

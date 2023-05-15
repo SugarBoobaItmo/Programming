@@ -12,7 +12,7 @@ import models.CollectionRecord;
  * Handler for the "show" command.
  * Shows the collection.
  */
-public class ShowHandler extends Handler{
+public class ShowHandler extends Handler {
     private String name = "show";
 
     /**
@@ -25,8 +25,9 @@ public class ShowHandler extends Handler{
 
     /**
      * Shows the collection.
+     * 
      * @param request The request to handle.
-     * @param userId The id of the user who sent the request.
+     * @param userId  The id of the user who sent the request.
      * @return The response to the request.
      */
     @Override
@@ -37,7 +38,7 @@ public class ShowHandler extends Handler{
 
             HashMap<String, Object> data = new HashMap<>();
             data.put("object", collectionRecord);
-            
+
             return new Response(true, "Collection record was successfully loaded", data);
         } catch (ServerStorageException e) {
             return new Response(false, e.getMessage(), null);

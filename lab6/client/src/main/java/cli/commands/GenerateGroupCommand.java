@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import com.opencsv.exceptions.CsvValidationException;
 
@@ -64,6 +65,7 @@ public class GenerateGroupCommand extends AbstractCollectionCommand {
         }
         // generate groups and add them to collection
         int count = Integer.parseInt(inlineParams.get(1));
+        Random random = new Random();
         for (int i = 0; i < count; i++) {
             try {
                 String[] new_group = RandomGroup.getRandomGroup();
@@ -71,11 +73,14 @@ public class GenerateGroupCommand extends AbstractCollectionCommand {
 
                 // check if key already exists
                 manager.loadCollectionRecord();
-                if (manager.getCollection().containsKey(i + "")) {
+                int key = random.nextInt(10000) + 1;
+                if (manager.getCollection().containsKey(key + "")) {
                     output.writeLine("Key already exists" + "\n");
+                    output.writeLine("Generated " + count + " groups" + "\n");
+
                     return;
                 }
-                manager.insert(i + "", studyGroup);
+                manager.insert(key + "", studyGroup);
                 
             } catch (CsvValidationException e) {
                 throw new ExecuteError("Error reading file for group generation");

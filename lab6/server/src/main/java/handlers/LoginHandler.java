@@ -15,7 +15,7 @@ import durgaapi.Handler;
 import durgaapi.Request;
 import durgaapi.Response;
 
-public class LoginHandler extends Handler{
+public class LoginHandler extends Handler {
     private String name = "login";
 
     @Override
@@ -29,14 +29,14 @@ public class LoginHandler extends Handler{
         String password = (String) request.getData().get("password");
 
         DatabaseManager databaseManager = new DatabaseManager();
-    
+
         try {
             Connection connection = databaseManager.getConnection();
             String sqlStatement = "SELECT id, password, salt FROM users WHERE login = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
             preparedStatement.setString(1, login);
             ResultSet resultSet = preparedStatement.executeQuery();
-            
+
             if (resultSet.next()) {
                 String securePassword = getSecurePassword(password, resultSet.getBytes("salt"));
                 if (securePassword.equals(resultSet.getString("password"))) {
@@ -49,17 +49,14 @@ public class LoginHandler extends Handler{
             } else {
                 return new Response(false, "User does not exist", null);
             }
-
         } catch (SQLException e) {
             return new Response(false, e.getMessage(), null);
         } catch (IOException e) {
             return new Response(false, e.getMessage(), null);
         }
-
     }
 
     public static String getSecurePassword(String password, byte[] salt) {
-
         String generatedPassword = null;
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-384");
@@ -75,5 +72,4 @@ public class LoginHandler extends Handler{
         }
         return generatedPassword;
     }
-    
 }

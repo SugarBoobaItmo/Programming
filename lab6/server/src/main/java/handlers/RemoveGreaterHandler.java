@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Collection;
 import java.util.HashMap;
 
 import database.DatabaseManager;
@@ -43,12 +42,8 @@ public class RemoveGreaterHandler extends Handler {
 
         CollectionRecord collectionRecord = new CollectionRecord();
         try {
-            // collectionRecord = CollectionStorage.load(userId.toString());
             StudyGroup greater_group = (StudyGroup) request.getData().get("object");
 
-            // remove collection elements that are greater than the given one
-            // collectionRecord.getCollection().entrySet()
-            // .removeIf(entry -> entry.getValue().compareTo(greater_group) > 0);
             DatabaseManager databaseManager = new DatabaseManager();
             Connection connection = databaseManager.getConnection();
 
@@ -76,5 +71,4 @@ public class RemoveGreaterHandler extends Handler {
             return new Response(false, e.getMessage(), null);
         }
     }
-
 }

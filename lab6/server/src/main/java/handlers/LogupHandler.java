@@ -56,12 +56,10 @@ public class LogupHandler extends Handler {
                     data.put("id", id.getLong(1));
                     return new Response(true, "User registered successfully", data);
                 }
-
             }
             return new Response(false, "User registration failed", null);
         } catch (SQLException e) {
             return new Response(false, e.getMessage(), null);
-
         } catch (IOException e) {
             return new Response(false, e.getMessage(), null);
         } catch (NoSuchAlgorithmException e) {
@@ -85,7 +83,6 @@ public class LogupHandler extends Handler {
     }
 
     public static String getSecurePassword(String password, byte[] salt) {
-
         String generatedPassword = null;
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-384");
@@ -108,5 +105,4 @@ public class LogupHandler extends Handler {
         random.nextBytes(salt);
         return salt;
     }
-
 }

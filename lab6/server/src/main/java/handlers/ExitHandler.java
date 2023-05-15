@@ -5,7 +5,6 @@ import java.util.HashMap;
 import durgaapi.Handler;
 import durgaapi.Request;
 import durgaapi.Response;
-import handlers.exceptions.ServerStorageException;
 import models.CollectionRecord;
 
 /**
@@ -39,19 +38,9 @@ public class ExitHandler extends Handler {
     @Override
     public Response handle(Request request, String userId) {
         HashMap<String, CollectionRecord> con = CollectionStorage.getConnectionMap();
-        // if Map of connections contains key, save collectionRecord to file and remove
-        // from Map
         if (con.containsKey(userId)) {
-            CollectionRecord collectionRecord = con.get(userId);
-            // try {
-                // CollectionStorage.save(userId, collectionRecord);
-                
-            // } catch (ServerStorageException e) {
-            //     return new Response(false, e.getMessage(), null);
-            // }
             con.remove(userId);
         }
         return new Response(true, "Client is shutting down", null);
     }
-
 }

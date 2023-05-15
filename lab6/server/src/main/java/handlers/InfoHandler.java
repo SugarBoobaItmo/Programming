@@ -25,8 +25,9 @@ public class InfoHandler extends Handler {
 
     /**
      * Shows information about the collection.
+     * 
      * @param request The request to handle.
-     * @param userId The id of the user who sent the request.
+     * @param userId  The id of the user who sent the request.
      * @return The response to the request.
      */
     @Override
@@ -35,7 +36,7 @@ public class InfoHandler extends Handler {
         try {
             collectionRecord = CollectionStorage.load(userId);
             String info = collectionRecord.getInfo().toString() + " size= " + collectionRecord.getCollection().size();
-            
+
             HashMap<String, Object> data = new HashMap<>();
             data.put("object", collectionRecord);
 
@@ -44,5 +45,4 @@ public class InfoHandler extends Handler {
             return new Response(false, e.getMessage(), null);
         }
     }
-
 }
