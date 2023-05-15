@@ -14,7 +14,7 @@ public class Client {
             Person person = new Person("John", 30, true);
             objectOutputStream.writeObject(person);
             objectOutputStream.flush();
-
+            
             System.out.println("Request sent");
 
         } catch (Exception e) {
