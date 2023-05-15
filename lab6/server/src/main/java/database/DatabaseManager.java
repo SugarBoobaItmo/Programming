@@ -13,7 +13,7 @@ public class DatabaseManager {
         Properties properties = new Properties();
         Connection connection = null;
         // System.out.println(new InputStreamReader(new FileInputStream("/src/main/java/database/db.cfg")));
-        try (InputStream input = new FileInputStream("src/main/java/resources/db.cfg")) {
+        try (InputStream input = new FileInputStream("src/main/resources/db.cfg")) {
             properties.load(input);
         }
         try {
