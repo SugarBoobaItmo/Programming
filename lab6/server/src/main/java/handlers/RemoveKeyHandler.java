@@ -3,12 +3,15 @@ package handlers;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import database.DatabaseManager;
 import durgaapi.Handler;
 import durgaapi.Request;
 import durgaapi.Response;
 import models.CollectionRecord;
+import models.StudyGroup;
 
 /**
  * Handler for the "remove_key" command.
@@ -34,7 +37,7 @@ public class RemoveKeyHandler extends Handler {
      */
     @Override
     public Response handle(Request request, String userId) throws Exception {
-        CollectionRecord collectionRecord = new CollectionRecord();
+        CollectionRecord collectionRecord = CollectionStorage.getCollectionRecord();
 
         String key = (String) request.getData().get("argument");
         DatabaseManager dbManager = new DatabaseManager();
@@ -45,7 +48,19 @@ public class RemoveKeyHandler extends Handler {
         statement.setString(2, key);
         // statement.executeUpdate();
         int rows = statement.executeUpdate();
-        collectionRecord.setCollection(CollectionStorage.load(userId.toString()).getCollection());
+
+        synchronized (collectionRecord.getCollection()) {
+            Iterator<Map.Entry<String, StudyGroup>> iterator = collectionRecord.getCollection().entrySet().iterator();
+            while (iterator.hasNext()) {
+                Map.Entry<String, StudyGroup> entry = iterator.next();
+                if (entry.getKey().equals(key) && entry.getValue().getOwner().equals(userId)) {
+                    iterator.remove();
+                }
+            }
+
+        }
+        connection.close();
+
         HashMap<String, Object> data = new HashMap<>();
         data.put("object", collectionRecord);
 

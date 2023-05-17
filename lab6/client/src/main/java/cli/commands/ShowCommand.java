@@ -46,9 +46,12 @@ public class ShowCommand extends AbstractCollectionCommand {
     @Override
     public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(0, inlineParams);
+        manager.loadCollectionRecord();
+
         try {
             Response response = serverAdapter.sendRequest("show", null);
             manager.setCollectionRecord((CollectionRecord) response.getData().get("object"));
+            
             if (manager.getCollection() == null || manager.getCollection().size() == 0) {
                 output.writeLine("Collection is empty" + "\n");
             } else {

@@ -49,6 +49,8 @@ public class LogupHandler extends Handler {
             preparedStatement2.setString(1, login);
 
             ResultSet id = preparedStatement2.executeQuery();
+            connection.close();
+
             if (id.next()) {
                 HashMap<String, Object> data = new HashMap<>();
                 data.put("id", id.getLong(1));
@@ -64,6 +66,8 @@ public class LogupHandler extends Handler {
             PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
             preparedStatement.setString(1, login);
             ResultSet resultSet = preparedStatement.executeQuery();
+            connection.close();
+
             if (resultSet.next()) {
                 return true;
             }

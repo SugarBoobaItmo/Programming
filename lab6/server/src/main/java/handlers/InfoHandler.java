@@ -32,8 +32,8 @@ public class InfoHandler extends Handler {
     @Override
     public Response handle(Request request, String userId) throws Exception{
         CollectionRecord collectionRecord;
-        collectionRecord = CollectionStorage.load(userId);
-
+        collectionRecord = CollectionStorage.getCollectionRecord();
+        
         String info = collectionRecord.getInfo().toString() + " size= " + collectionRecord.getCollection().size();
 
         HashMap<String, Object> data = new HashMap<>();

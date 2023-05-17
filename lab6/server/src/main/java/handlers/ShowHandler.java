@@ -32,7 +32,10 @@ public class ShowHandler extends Handler {
     @Override
     public Response handle(Request request, String userId) throws Exception {
         CollectionRecord collectionRecord;
-        collectionRecord = CollectionStorage.load(userId);
+        // collectionRecord = CollectionStorage.load(userId);
+        synchronized (CollectionRecord.class) {
+            collectionRecord = CollectionStorage.getCollectionRecord();
+        }
 
         HashMap<String, Object> data = new HashMap<>();
         data.put("object", collectionRecord);

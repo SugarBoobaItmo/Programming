@@ -1,5 +1,6 @@
 package durgaapi;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,8 +40,10 @@ public class Reciever {
             if (request.getCommand().equals(handler.getName())) {
                 try {
                     return handler.handle(request, string);
+                } catch (SQLException e) {
+                    return new Response(false, "Something went wrong on server", null);
                 } catch (Exception e) {
-                    return new Response(false, e.getMessage(), null);
+                    return new Response(false, "Something went wrong on server", null);
                 }
             }
         }

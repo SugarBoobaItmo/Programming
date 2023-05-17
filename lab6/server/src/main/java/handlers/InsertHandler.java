@@ -57,7 +57,7 @@ public class InsertHandler extends Handler {
     public Response handle(Request request, String userId) throws Exception {
         Random random = new Random();
 
-        CollectionRecord collectionRecord = new CollectionRecord();
+        CollectionRecord collectionRecord = CollectionStorage.getCollectionRecord();
         String argument = (String) request.getData().get("argument"); // key of the studyGroup
         StudyGroup studyGroup = (StudyGroup) request.getData().get("object"); // studyGroup to add
 
@@ -142,9 +142,15 @@ public class InsertHandler extends Handler {
             studyGroup.setId(id);
         }
 
+        connection.close();
+        
         HashMap<String, Object> data = new HashMap<>();
         studyGroup.setOwner(userId);
-        collectionRecord.getCollection().put(argument, studyGroup);
+        synchronized (collectionRecord) {
+            collectionRecord.getCollection().put(argument, studyGroup);
+        }
+        // collectionRecord.getCollection().put(argument, studyGroup);
+
         data.put("object", collectionRecord);
 
         return new Response(true, "StudyGroup added successfully", data);

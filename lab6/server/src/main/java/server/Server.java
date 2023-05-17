@@ -11,11 +11,14 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ForkJoinPool;
 
 import durgaapi.Reciever;
 import durgaapi.Request;
@@ -37,7 +40,11 @@ public class Server {
     private Selector selector;
     private ServerSocketChannel ssc;
     private Reciever reciever;
-    private ExecutorService executorService = Executors.newFixedThreadPool(10);
+    private ForkJoinPool readPool;
+    private ExecutorService processPool;
+    private ForkJoinPool sendPool;
+    // private List<Object> synchronizedCollection =
+    // Collections.synchronizedList(new ArrayList<>());
 
     /**
      * 
@@ -66,6 +73,10 @@ public class Server {
 
             this.reciever = reciever;
 
+            this.readPool = new ForkJoinPool();
+            this.processPool = Executors.newFixedThreadPool(10);
+            this.sendPool = new ForkJoinPool();
+
         } catch (IOException e) {
             throw new ServerException("Failed to start server");
         }
@@ -89,6 +100,7 @@ public class Server {
             }
             // create a set of selected keys
             Set<SelectionKey> keys = selector.selectedKeys();
+            List<Callable<Void>> readTasks = new ArrayList<>();
             // iterate over keys
             for (Iterator<SelectionKey> iter = keys.iterator(); iter.hasNext();) {
                 SelectionKey key = iter.next();
@@ -103,13 +115,18 @@ public class Server {
                         logger.info("Client connected");
                     }
                     if (key.isReadable()) {
-                        readRequest(key, reciever);
+                        readTasks.add(() -> {
+                            readRequest(key, reciever);
+                            return null;
+                        });
 
                     }
 
                 }
             }
-
+            if (!readTasks.isEmpty()) {
+                readPool.invokeAll(readTasks);
+            }
         } catch (IOException e) {
             throw new ServerException("Failed to run server");
         }
@@ -127,19 +144,36 @@ public class Server {
      * @throws IOException if there is an error sending the response
      */
     public void sendResponse(Object response, SocketChannel sc) throws IOException {
+        sendPool.execute(() -> {
+            try {
+                // serialize response object
+                ByteBuffer buffer = encodeObject(response);
+                buffer.flip();
 
+                // send serialized response object
+                while (buffer.hasRemaining()) {
+                    sc.write(buffer);
+                }
+
+                logger.info("Response sent");
+                // close socket channel
+                sc.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         // serialize response object
-        ByteBuffer buffer = encodeObject(response);
-        buffer.flip();
+        // ByteBuffer buffer = encodeObject(response);
+        // buffer.flip();
 
-        // send serialized response object
-        while (buffer.hasRemaining()) {
-            sc.write(buffer);
-        }
+        // // send serialized response object
+        // while (buffer.hasRemaining()) {
+        //     sc.write(buffer);
+        // }
 
-        logger.info("Response sent");
-        // close socket channel
-        sc.close();
+        // logger.info("Response sent");
+        // // close socket channel
+        // sc.close();
 
     }
 
@@ -159,31 +193,35 @@ public class Server {
         SocketChannel sc = (SocketChannel) key.channel();
         ByteBuffer buffer = ByteBuffer.allocate(16384);
 
-        try {
-            sc.read(buffer);
-            buffer.flip();
+        processPool.submit(() -> {
+            try {
+                sc.read(buffer);
+                buffer.flip();
 
-            // creating request object from serialized data
-            Request request = (Request) decodeObject(buffer);
-            logger.info("Request: " + request.getCommand());
+                // creating request object from serialized data
+                Request request = (Request) decodeObject(buffer);
+                logger.info("Request: " + request.getCommand());
 
-            // handling request
-            
-            Response response = reciever.handleRequest(request, request.getLogin());
+                // handling request
 
-            if (response.isOk()) {
-                logger.info("Response: " + response.getMessage());
-            } else {
-                logger.warning("Response: " + response.getMessage());
+                Response response = reciever.handleRequest(request, request.getLogin());
+
+                if (response.isOk()) {
+                    logger.info("Response: " + response.getMessage());
+                } else {
+                    logger.warning("Response: " + response.getMessage());
+                }
+
+                // sending response
+                sendResponse(response, sc);
+            } catch (IOException e) {
+                throw new ServerException("Failed to read request");
+            } catch (Exception e) {
+                throw new ServerException("Failed to handle request");
             }
-
-            // sending response
-            sendResponse(response, sc);
-        } catch (IOException e) {
-            throw new ServerException("Failed to read request");
-        } catch (Exception e) {
-            throw new ServerException("Failed to handle request");
-        }
+            return null;
+        });
+        
     }
 
     /**

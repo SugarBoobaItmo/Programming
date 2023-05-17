@@ -47,6 +47,8 @@ public class InfoCommand extends AbstractCollectionCommand {
     @Override
     public void execute(List<String> inlineParams, LineReader input, LineWriter output, boolean disableAttempts) throws ExecuteError {
         Checkers.checkInlineParamsCount(0, inlineParams);
+        manager.loadCollectionRecord();
+
         try {
 
             Response response = serverAdapter.sendRequest("info", null);

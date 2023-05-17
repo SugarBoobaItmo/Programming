@@ -34,7 +34,10 @@ public class GetCollectionRecordHandler extends Handler {
     @Override
     public Response handle(Request request, String userId) throws Exception {
         CollectionRecord collectionRecord;
-        collectionRecord = CollectionStorage.load(userId.toString());
+
+        synchronized (CollectionRecord.class) {
+            collectionRecord = CollectionStorage.load(userId.toString());
+        }
 
         HashMap<String, Object> data = new HashMap<>();
         data.put("object", collectionRecord);

@@ -24,7 +24,7 @@ public class UpdateHandler extends Handler {
 
     @Override
     public Response handle(Request request, String userId) throws Exception {
-        CollectionRecord collectionRecord = new CollectionRecord();
+        CollectionRecord collectionRecord = CollectionStorage.getCollectionRecord();
 
         DatabaseManager databaseManager = new DatabaseManager();
         String argument = (String) request.getData().get("argument");
@@ -78,15 +78,25 @@ public class UpdateHandler extends Handler {
         }
         preparedStatement.setInt(13, Integer.parseInt(argument));
         preparedStatement.setString(14, userId);
-        System.out.println(preparedStatement.toString());
 
         int rowsAffected = preparedStatement.executeUpdate();
         if (rowsAffected > 0) {
             HashMap<String, Object> data = new HashMap<>();
+            synchronized (collectionRecord) {
+                collectionRecord.getCollection().forEach((key, value) -> {
+                    if (value.getId() == Integer.parseInt(argument)) {
+                        collectionRecord.getCollection().remove(key);
+                    }
+                });
+            }
+            
             data.put("object", collectionRecord);
             return new Response(true, "StudyGroup updated successfully", data);
 
         }
+
+        connection.close();
+
         HashMap<String, Object> data = new HashMap<>();
         data.put("object", collectionRecord);
         return new Response(false,

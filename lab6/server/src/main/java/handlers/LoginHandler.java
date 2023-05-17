@@ -33,7 +33,7 @@ public class LoginHandler extends Handler {
         PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
         preparedStatement.setString(1, login);
         ResultSet resultSet = preparedStatement.executeQuery();
-
+        connection.close();
         if (resultSet.next()) {
             String securePassword = getSecurePassword(password, resultSet.getBytes("salt"));
             if (securePassword.equals(resultSet.getString("password"))) {

@@ -40,7 +40,7 @@ public class CollectionStorage {
      * @throws ServerStorageException if an error occurs while loading the
      *                                collection
      */
-    public static CollectionRecord load(String userAdress) throws ServerStorageException {
+    public static synchronized CollectionRecord load(String userAdress) throws ServerStorageException {
         if (collectionRecord == null) {
             collectionRecord = createNewCollectionRecord(userAdress);
         }
@@ -97,6 +97,7 @@ public class CollectionStorage {
                 studyGroup.setOwner(owner);
 
                 collectionRecord.getCollection().put(resultSet.getString("key"), studyGroup);
+                connection.close();
             } while (resultSet.next());
 
             return collectionRecord;
@@ -136,4 +137,19 @@ public class CollectionStorage {
     public static HashMap<String, CollectionRecord> getConnectionMap() {
         return connectionMap;
     }
+
+    public static CollectionRecord getCollectionRecord() {
+        if (collectionRecord == null) {
+            try {
+                // collectionRecord = createNewCollectionRecord("server");
+                collectionRecord = load("server");
+            } catch (ServerStorageException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+
+            }
+        }
+        return collectionRecord;
+    }
+    
 }
