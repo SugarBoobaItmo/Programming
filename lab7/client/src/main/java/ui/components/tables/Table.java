@@ -1,5 +1,7 @@
 package ui.components.tables;
 
+import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -22,6 +24,12 @@ public class Table extends JPanel implements CustomColor {
 
     public Table() {
         this.table = new JTable();
+        table.setOpaque(false);
+        table.getTableHeader().setBackground(WHITE);
+        table.setFont(new Font("Arial", Font.PLAIN, 12));
+        table.setRowHeight(25);
+        table.setShowGrid(false);
+        table.setIntercellSpacing(new Dimension(0, 0));
 
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.getViewport().setOpaque(false);
