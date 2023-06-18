@@ -61,29 +61,30 @@ public class LoginCommand extends AbstractCommand {
         while (!flag) {
             String choice = input.readLine();
             if (choice.equals("1") && login(input, output)) {
-                
+
                 // login(input, output);
                 flag = true;
             } else if (choice.equals("2") && logup(input, output)) {
                 // logup(input, output);
                 flag = true;
             } else {
-                output.writeLine("Incorrect choice, please try again, you stupid dummy" + "\n");
-                output.writeLine("Please enter 1 to login or 2 to register: ");
+                output.writeError("Incorrect choice, please try again, you stupid dummy" + "\n");
+                output.writeError("Please enter 1 to login or 2 to register: ");
             }
         }
         // output.writeLine("Please enter your login (only numb or symb): ");
         // boolean login_flag = false;
         // while (!login_flag) {
-        //     String login = input.readLine();
-        //     login_flag = checkLogin(login);
-        //     if (login_flag) {
-        //         serverAdapter.setLogin(login);
-        //     } else {
-        //         output.writeLine("Login is incorrect, please try again, you stupid dummy" + "\n");
-        //         output.writeLine("Please enter your login (only numb or symb): ");
+        // String login = input.readLine();
+        // login_flag = checkLogin(login);
+        // if (login_flag) {
+        // serverAdapter.setLogin(login);
+        // } else {
+        // output.writeLine("Login is incorrect, please try again, you stupid dummy" +
+        // "\n");
+        // output.writeLine("Please enter your login (only numb or symb): ");
 
-        //     }
+        // }
         // }
     }
 
@@ -104,12 +105,17 @@ public class LoginCommand extends AbstractCommand {
 
     }
 
-    public boolean login(LineReader input, LineWriter output) throws ExecuteError{
-        output.writeLine("Please enter your login: ");
+    public boolean login(LineReader input, LineWriter output) throws ExecuteError {
+        // output.writeLine("Please enter your login: ");
         String login = input.readLine();
-        output.writeLine("Please enter your password: ");
+        // output.writeLine("Please enter your password: ");
         String password = input.readLine();
-        
+
+        if (checkLogin(login) == false) {
+            output.writeError("Login is incorrect, please try again, you stupid dummy" + "\n");
+            return false;
+        }
+
         HashMap<String, Object> map = new HashMap<>();
         // map.put(login, password);
         map.put("login", login);
@@ -119,12 +125,14 @@ public class LoginCommand extends AbstractCommand {
             Response response = serverAdapter.sendRequest("login", map);
             if (!response.isOk()) {
                 // throw new ExecuteError("Login or password is incorrect");
-                output.writeLine("Login or password is incorrect"+ "\n");
+                output.writeError("Login or password is incorrect" + "\n");
                 return false;
-                
+
             }
             String id = response.getData().get("id").toString();
-            serverAdapter.setLogin(id);            
+            serverAdapter.setLogin(id);
+            serverAdapter.setUsername(login);
+
             return true;
         } catch (UnknownHostException e) {
             throw new ExecuteError("Server is not available");
@@ -135,11 +143,16 @@ public class LoginCommand extends AbstractCommand {
         }
     }
 
-    public boolean logup(LineReader input, LineWriter output) throws ExecuteError{
-        output.writeLine("Please enter your login: ");
+    public boolean logup(LineReader input, LineWriter output) throws ExecuteError {
+        // output.writeLine("Please enter your login: ");
         String login = input.readLine();
-        output.writeLine("Please enter your password: ");
+        // output.writeLine("Please enter your password: ");
         String password = input.readLine();
+
+        if (checkLogin(login) == false) {
+            output.writeError("Login is incorrect, please try again, you stupid dummy" + "\n");
+            return false;
+        }
 
         HashMap<String, Object> map = new HashMap<>();
         // map.put(login, password);
@@ -150,13 +163,13 @@ public class LoginCommand extends AbstractCommand {
             Response response = serverAdapter.sendRequest("logup", map);
             if (!response.isOk()) {
                 // throw new ExecuteError("Sorry, this login is already taken");
-                output.writeLine("Sorry, this login is already taken"+ "\n");
+                output.writeError("Sorry, this login is already taken" + "\n");
                 return false;
 
-                
             }
-            String id =  response.getData().get("id").toString();
+            String id = response.getData().get("id").toString();
             serverAdapter.setLogin(id);
+            serverAdapter.setUsername(login);
             return true;
         } catch (UnknownHostException e) {
             throw new ExecuteError("Server is not available");
@@ -164,7 +177,7 @@ public class LoginCommand extends AbstractCommand {
         } catch (IOException e) {
             throw new ExecuteError("Server is not available");
 
-        } 
+        }
     }
 
 }

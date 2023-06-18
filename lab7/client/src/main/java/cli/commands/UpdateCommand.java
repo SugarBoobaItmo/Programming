@@ -71,7 +71,7 @@ public class UpdateCommand extends AbstractCollectionCommand {
                 }
                 return;
             } else if (Integer.parseInt(inlineParams.get(1)) == entry.getValue().getId() && !entry.getValue().getOwner().equals(serverAdapter.getLogin())) {
-                output.writeLine("Man, get your hands off someone else's" + "\n");
+                output.writeError("Man, get your hands off someone else's" + "\n");
                 return;
             }
         }

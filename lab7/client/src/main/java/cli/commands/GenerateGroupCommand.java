@@ -74,7 +74,7 @@ public class GenerateGroupCommand extends AbstractCollectionCommand {
                 manager.loadCollectionRecord();
                 int key = random.nextInt(10000) + 1;
                 if (manager.getCollection().containsKey(key + "")) {
-                    output.writeLine("Key already exists" + "\n");
+                    output.writeError("Key already exists" + "\n");
                     output.writeLine("Generated " + count + " groups" + "\n");
 
                     return;

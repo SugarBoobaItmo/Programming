@@ -51,7 +51,7 @@ public class InsertCommand extends AbstractCollectionCommand {
         // check if key already exists
         manager.loadCollectionRecord();
         if (manager.getCollection().containsKey(inlineParams.get(1))) {
-            output.writeLine("Key already exists" + "\n");
+            output.writeError("Key already exists" + "\n");
             return;
         }
         // logic for reading insertion from script
@@ -67,7 +67,7 @@ public class InsertCommand extends AbstractCollectionCommand {
             Response response = manager.insert(inlineParams.get(1), studyGroup);
             output.writeLine(response.getDetail() + "\n");
         } else {
-            output.writeLine("Study group not found" + "\n");
+            output.writeError("Study group not found" + "\n");
             return;
         }
     }

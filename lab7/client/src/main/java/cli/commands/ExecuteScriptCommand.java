@@ -95,7 +95,7 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
                     }
 
                 } catch (CommandNotFound e) {
-                    output.writeLine(ColorText.colorText("Command not found: " + e.getMessage() + "\n", "red"));
+                    output.writeError(ColorText.colorText("Command not found: " + e.getMessage() + "\n", "red"));
                 } 
 
             }
@@ -110,7 +110,7 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
         output.writeLine("Script execution finished"+"\n");
         
         } catch (IOException e) {
-            output.writeLine(ColorText.colorText("Error reading script file" + "\n", "red"));
+            output.writeError(ColorText.colorText("Error reading script file" + "\n", "red"));
         }
     }
 
@@ -127,7 +127,7 @@ public class ExecuteScriptCommand extends CLISupportedCommand {
             try {
                 return reader.readLine();
             } catch (IOException e) {
-                output.writeLine(ColorText.colorText("Error reading script file" + "\n", "red"));
+                output.writeError(ColorText.colorText("Error reading script file" + "\n", "red"));
             }
             return null;
         }

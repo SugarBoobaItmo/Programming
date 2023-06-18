@@ -61,7 +61,7 @@ public class RemoveLowerCommand extends AbstractCollectionCommand {
             output.writeLine(response.getDetail()+ "\n");
 
         } else {
-            output.writeLine("Incorrect command, please write it with correct parameters" + "\n");
+            output.writeError("Incorrect command, please write it with correct parameters" + "\n");
             return;
         }
     }

@@ -5,7 +5,6 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
-import cli.CLIClient;
 import cli.commands.checker.Checkers;
 import cli.commands.exceptions.ExecuteError;
 import cli.interfaces.LineReader;
@@ -18,7 +17,7 @@ import serveradapter.ServerAdapter;
  * The ExitCommand class represents a command that exits the program.
  * 
  */
-public class ExitCommand extends CLISupportedCommand {
+public class ExitCommand extends AbstractCommand {
     private ServerAdapter serverAdapter;
     /**
      * 
@@ -26,8 +25,8 @@ public class ExitCommand extends CLISupportedCommand {
      * 
      * @param manager the collection manager to be used
      */
-    public ExitCommand(ServerAdapter serverAdapter, CLIClient cli) {
-        super("Exit", "Exit from program", new ArrayList<String>(), cli);
+    public ExitCommand(ServerAdapter serverAdapter) {
+        super("Exit", "Exit from program", new ArrayList<String>());
         this.serverAdapter = serverAdapter;
         
     }
@@ -52,10 +51,10 @@ public class ExitCommand extends CLISupportedCommand {
         } catch (UnknownHostException e) {
             System.out.println("Server is not available");
         } catch (IOException e) {
-            output.writeLine("Server is not available" + "\n");
+            output.writeError("Server is not available" + "\n");
         }
 
         // output.writeLine("Goodbye!" + "\n");
-        cli.exitProgram();
+        System.exit(0);
     }
 }
